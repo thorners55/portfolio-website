@@ -1,18 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio Site</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <h1>Stephanie's Portfolio Site</h1>
-    <p>Welcome to my website. Please enjoy your stay.</p>
-    <h2>Experience</h2>
-    <ul>
-        <li>BA History (International), University of Leeds, 2014-2018</li>
-        <li>Prince's Trust Executive, 2019</li>
-    </ul>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stephanie Thornley's Portfolio Site</title>
+    <link rel="stylesheet" href="index.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <header>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+      preserveAspectRatio="none"
+      style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 130px;
+        display: flex;
+        overflow: hidden;
+      "
+    >
+      <path
+        fill="#ffbd69"
+        fill-opacity="1"
+        d="M0,96L30,117.3C60,139,120,181,180,181.3C240,181,300,139,360,133.3C420,128,480,160,540,149.3C600,139,660,85,720,96C780,107,840,181,900,186.7C960,192,1020,128,1080,117.3C1140,107,1200,149,1260,165.3C1320,181,1380,171,1410,165.3L1440,160L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"
+      ></path>
+    </svg>
+
+    <div class="top-bar">
+      <h1>Stephanie Thornley</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills and Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <body>
+    <div class="about">
+      <div class="profile-image">
+        <img
+          src="./Stephanie-1.jpg"
+          alt="Stephanie sporting a cheesy grin"
+          width="200"
+        />
+      </div>
+      <h2>
+        Hi! I'm Stephanie, a Junior Software Developer based in Leeds
+      </h2>
+
+      <p class="blurb">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis
+        tortor eu ligula mollis sodales. Phasellus porta eget augue id egestas.
+        Morbi cursus nec velit sit amet ornare. Duis luctus odio in sapien
+        consectetur aliquet. Proin placerat lacus sed massa pharetra aliquet.
+        Aliquam sit amet justo diam. Maecenas in ipsum aliquet, congue justo id,
+        eleifend quam.
+      </p>
+    </div>
+    <div id="skills" class="skills">
+      <h3>Skills and Experience</h3>
+    </div>
+    <div id="projects" class="projects">
+      <h4>Projects</h4>
+    </div>
+    <div id="contact" class="contact">
+      <h4>Contact</h4>
+    </div>
+  </body>
 </html>

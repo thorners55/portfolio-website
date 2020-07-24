@@ -1,3 +1,130 @@
+html {
+  font-size: 16px;
+}
+body {
+  background-color: whitesmoke;
+  font-family: ShareTech;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: Nickainley;
+  src: url("./Nickainley-Normal.otf") format("opentype");
+}
+
+@font-face {
+  font-family: NovaMono;
+  src: url("./NovaMono-Regular.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: ShareTech;
+  src: url("./ShareTech-Regular.ttf") format("opentype");
+}
+
+.top-bar {
+  position: relative;
+}
+
 h1 {
-    color: green;
+  color: #381460;
+  font-family: Nickainley;
+  font-size: 45px;
+  padding-top: 50px;
+  padding-left: 15px;
+}
+
+nav {
+  right: 10px;
+  top: 65px;
+  font-size: 20px;
+  font-family: "NovaMono", sans-serif;
+  font-weight: bold;
+  position: absolute;
+}
+
+a {
+  color: #fe346e;
+  text-decoration: none;
+  padding-right: 15px;
+  margin-left: 40px;
+}
+
+p {
+  color: #381460;
+  text-align: center;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 70px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.blurb {
+  font-size: 20px;
+  padding-left: 250px;
+  padding-right: 250px;
+  padding-bottom: 100px;
+}
+
+.intro {
+  grid-area: intro;
+}
+
+h2 {
+  color: #00cba9;
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+}
+
+h3 {
+  scroll-margin-top: 100px;
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 30px;
+}
+
+.skills {
+  background-color: #381460;
+  color: whitesmoke;
+
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 100px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.projects {
+  color: #00cba9;
+
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 100px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.contact {
+  background-color: #381460;
+  color: whitesmoke;
+
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 100px;
+  margin-left: -10px;
+  margin-right: -10px;
 }
