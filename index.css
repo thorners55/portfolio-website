@@ -2,8 +2,8 @@ html {
   font-size: 16px;
 }
 body {
-  background-color: whitesmoke;
-  font-family: ShareTech;
+  background-color: rgb(246, 243, 243);
+  font-family: Asap;
   font-size: 16px;
   overflow-x: hidden;
 }
@@ -37,15 +37,14 @@ h1 {
 
 nav {
   right: 10px;
-  top: 65px;
+  top: 90px;
   font-size: 20px;
-  font-family: "NovaMono", sans-serif;
-  font-weight: bold;
+  font-family: "Asap", sans-serif;
   position: absolute;
 }
 
 a {
-  color: #fe346e;
+  color: #e03162be;
   text-decoration: none;
   padding-right: 15px;
   margin-left: 40px;
@@ -56,25 +55,193 @@ p {
   text-align: center;
 }
 
-.profile-image {
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
-  border-radius: 50%;
-  margin: auto;
-  margin-top: 70px;
+.box {
+  display: grid;
+  grid-template-columns: 40ch 15ch;
 }
 
-img {
-  width: 100%;
-  height: auto;
+.name {
+  padding-bottom: 7px;
+}
+
+.ray-diagonal {
+  background-color: #ffbd69;
+  width: 2.5px;
+  height: 17px;
+}
+.ray-vertical {
+  background-color: #ffbd69;
+  width: 3px;
+  height: 17px;
+}
+
+.ray-horizontal {
+  background-color: #ffbd69;
+  width: 17px;
+  height: 3px;
+}
+
+.ray-small {
+  background-color: #ffbd69;
+  width: 2px;
+  height: 10px;
+}
+
+.ray-1 {
+  position: absolute;
+  z-index: 1;
+  margin-left: 63px;
+  margin-top: 8px;
+}
+
+.ray-2 {
+  position: absolute;
+  z-index: 1;
+  margin-left: 16px;
+  margin-top: 52px;
+}
+
+.ray-3 {
+  position: absolute;
+  z-index: 1;
+  margin-top: 87px;
+  margin-left: 63px;
+}
+
+.ray-4 {
+  position: absolute;
+  z-index: 1;
+  margin-left: 97px;
+  margin-top: 52px;
+}
+
+.ray-5 {
+  position: absolute;
+  z-index: 1;
+  margin-left: 85px;
+  margin-top: 10px;
+  transform: rotate(30deg);
+}
+
+.ray-6 {
+  position: absolute;
+  z-index: 1;
+  margin-left: 100px;
+  margin-top: 25px;
+  transform: rotate(60deg);
+}
+
+.ray-7 {
+  position: absolute;
+  z-index: 1;
+  margin-left: 100px;
+  margin-top: 65px;
+  transform: rotate(-60deg);
+}
+
+.ray-8 {
+  position: absolute;
+  z-index: 1;
+  margin-left: 85px;
+  margin-top: 83px;
+  transform: rotate(-30deg);
+}
+
+.ray-9 {
+  position: absolute;
+  z-index: 1;
+  margin-left: 42px;
+  margin-top: 84px;
+  transform: rotate(30deg);
+}
+
+.ray-10 {
+  position: absolute;
+  z-index: 1;
+  margin-left: 25px;
+  margin-top: 65px;
+  transform: rotate(60deg);
+}
+
+.ray-11 {
+  position: absolute;
+  z-index: 1;
+  margin-left: 25px;
+  margin-top: 25px;
+  transform: rotate(-60deg);
+}
+
+.ray-12 {
+  position: absolute;
+  z-index: 1;
+  margin-left: 40px;
+  margin-top: 11px;
+  transform: rotate(-30deg);
+}
+
+.sun {
+  align-self: end;
+  position: relative;
+  margin-left: -20px;
+  z-index: 0;
+  height: 120px;
+}
+
+.circle {
+  width: 6ch;
+  height: 6ch;
+  background-color: #ffbd69;
+  border-radius: 50%;
+  margin-left: 40px;
+  margin-top: 30px;
+  display: inline-block;
+}
+
+.eye {
+  width: 0.9ch;
+  height: 0.9ch;
+  background-color: black;
+  border-radius: 50%;
+  margin-left: 1.5ch;
+  margin-top: 2.5ch;
+}
+
+.gleam {
+  width: 0.3ch;
+  height: 0.3ch;
+  background-color: white;
+  border-radius: 50%;
+  margin-left: 0.2ch;
+}
+
+.mouth {
+  height: 1ch;
+  width: 2ch;
+  background-color: black;
+  border-radius: 0 0 10px 10px;
+  margin-top: 0.4ch;
+  margin-left: 0.05ch;
+}
+
+.stephanie {
+  width: 20%;
+  margin: auto;
+}
+
+.photo {
+  width: 85%;
+  padding-left: 7.5%;
+  padding-top: 7.5%;
 }
 
 .blurb {
+  font-family: "Asap", sans-serif;
   font-size: 20px;
   padding-left: 250px;
   padding-right: 250px;
   padding-bottom: 100px;
+  color: #511d8d;
+  line-height: 1.6;
 }
 
 .intro {
@@ -82,7 +249,8 @@ img {
 }
 
 h2 {
-  color: #00cba9;
+  color: #381460;
+  font-family: "Asap", sans-serif;
   text-align: center;
   font-size: 30px;
   padding: 20px;
@@ -97,9 +265,8 @@ h4 {
   font-size: 30px;
 }
 
-.skills {
-  background-color: #381460;
-  color: whitesmoke;
+.section {
+  color: #381460;
 
   text-align: center;
   padding-top: 70px;
@@ -108,23 +275,8 @@ h4 {
   margin-right: -10px;
 }
 
-.projects {
-  color: #00cba9;
-
-  text-align: center;
-  padding-top: 70px;
-  padding-bottom: 100px;
-  margin-left: -10px;
-  margin-right: -10px;
-}
-
-.contact {
-  background-color: #381460;
-  color: whitesmoke;
-
-  text-align: center;
-  padding-top: 70px;
-  padding-bottom: 100px;
-  margin-left: -10px;
-  margin-right: -10px;
+.line {
+  border-bottom: 5px solid #ffbd69;
+  width: 300px;
+  margin: auto;
 }
