@@ -2,10 +2,13 @@ html {
   font-size: 16px;
 }
 body {
+  display: grid;
+  grid-column: 2;
   background-color: rgb(246, 243, 243);
   font-family: Asap;
   font-size: 16px;
   overflow-x: hidden;
+  margin: 0;
 }
 
 @font-face {
@@ -23,24 +26,69 @@ body {
   src: url("./ShareTech-Regular.ttf") format("opentype");
 }
 
-.top-bar {
+.page {
+  display: grid;
+  grid-template-columns: 20vw 80vw;
+}
+
+.nav-section {
+  display: grid;
+  grid-column: 1;
+  grid-template-columns: 30vw;
+  grid-template-rows: 33vh 33vh 33vh;
   position: relative;
+}
+
+.nav {
+  display: grid;
+  grid-column: 1;
+  grid-row: 2;
+  width: 50%;
+}
+
+nav {
+  font-size: 20px;
+  font-family: "Asap", sans-serif;
+}
+
+.wave {
+  display: grid;
+  grid-row: 1/4;
+  grid-column: 1;
+  width: 100vh;
+}
+
+.name-sun {
+  display: grid;
+  grid-template-columns: 25vw;
+  grid-template-rows: 100px 100px;
+  grid-template-areas: "sun" "name";
+  position: absolute;
+}
+
+.name {
+  display: grid;
+  grid-row: 1;
+  margin-top: -40px;
+  position: absolute;
+  grid-area: name;
+  padding-top: 50px;
+  padding-left: 15px;
+}
+
+.sun {
+  display: grid;
+  grid-row: 1;
+  grid-area: sun;
+  height: 120px;
+  position: absolute;
+  margin-left: 70px;
 }
 
 h1 {
   color: #381460;
   font-family: Nickainley;
-  font-size: 45px;
-  padding-top: 50px;
-  padding-left: 15px;
-}
-
-nav {
-  right: 10px;
-  top: 90px;
-  font-size: 20px;
-  font-family: "Asap", sans-serif;
-  position: absolute;
+  font-size: 40px;
 }
 
 a {
@@ -55,13 +103,8 @@ p {
   text-align: center;
 }
 
-.box {
-  display: grid;
-  grid-template-columns: 40ch 15ch;
-}
-
-.name {
-  padding-bottom: 7px;
+.rays {
+  position: absolute;
 }
 
 .ray-diagonal {
@@ -179,14 +222,6 @@ p {
   transform: rotate(-30deg);
 }
 
-.sun {
-  align-self: end;
-  position: relative;
-  margin-left: -20px;
-  z-index: 0;
-  height: 120px;
-}
-
 .circle {
   width: 6ch;
   height: 6ch;
@@ -252,8 +287,7 @@ h2 {
   color: #381460;
   font-family: "Asap", sans-serif;
   text-align: center;
-  font-size: 30px;
-  padding: 20px;
+  font-size: 20px;
 }
 
 h3 {
