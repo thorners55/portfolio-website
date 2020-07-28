@@ -4,11 +4,22 @@ html {
 body {
   display: grid;
   grid-column: 2;
-  background-color: rgb(246, 243, 243);
+  background: rgb(229, 142, 39);
+  background: linear-gradient(
+    82deg,
+    rgba(229, 142, 39, 0.9962428330707283) 16%,
+    rgba(138, 76, 76, 1) 33%,
+    rgba(61, 18, 121, 1) 77%,
+    rgba(20, 145, 133, 1) 99%
+  );
   font-family: Asap;
   font-size: 16px;
   overflow-x: hidden;
   margin: 0;
+}
+
+.body {
+  padding-top: 100px;
 }
 
 @font-face {
@@ -36,7 +47,7 @@ body {
   grid-column: 1;
   grid-template-columns: 30vw;
   grid-template-rows: 33vh 33vh 33vh;
-  position: relative;
+  position: fixed;
 }
 
 .nav {
@@ -44,6 +55,7 @@ body {
   grid-column: 1;
   grid-row: 2;
   width: 50%;
+  margin-left: -8px;
 }
 
 nav {
@@ -72,8 +84,8 @@ nav {
   margin-top: -40px;
   position: absolute;
   grid-area: name;
-  padding-top: 50px;
-  padding-left: 15px;
+  margin-top: -60px;
+  padding-left: 30px;
 }
 
 .sun {
@@ -275,19 +287,12 @@ p {
   padding-left: 250px;
   padding-right: 250px;
   padding-bottom: 100px;
-  color: #511d8d;
-  line-height: 1.6;
+  color: whitesmoke;
+  line-height: 1.8;
 }
 
 .intro {
   grid-area: intro;
-}
-
-h2 {
-  color: #381460;
-  font-family: "Asap", sans-serif;
-  text-align: center;
-  font-size: 20px;
 }
 
 h3 {
@@ -300,7 +305,7 @@ h4 {
 }
 
 .section {
-  color: #381460;
+  color: whitesmoke;
 
   text-align: center;
   padding-top: 70px;
@@ -310,7 +315,7 @@ h4 {
 }
 
 .line {
-  border-bottom: 5px solid #ffbd69;
+  border-bottom: 5px solid #d28223;
   width: 300px;
   margin: auto;
 }
