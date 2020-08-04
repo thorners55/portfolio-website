@@ -4,14 +4,7 @@ html {
 body {
   display: grid;
   grid-column: 2;
-  background: rgb(229, 142, 39);
-  background: linear-gradient(
-    82deg,
-    rgba(229, 142, 39, 0.9962428330707283) 16%,
-    rgba(138, 76, 76, 1) 33%,
-    rgba(61, 18, 121, 1) 77%,
-    rgba(20, 145, 133, 1) 99%
-  );
+  background: #4acfac;
   font-family: Asap;
   font-size: 16px;
   overflow-x: hidden;
@@ -20,6 +13,8 @@ body {
 
 .body {
   padding-top: 100px;
+  font-size: 18px;
+  line-height: 1.8;
 }
 
 @font-face {
@@ -55,7 +50,7 @@ body {
   grid-column: 1;
   grid-row: 2;
   width: 50%;
-  margin-left: -8px;
+  margin-left: -20px;
 }
 
 nav {
@@ -70,22 +65,14 @@ nav {
   width: 100vh;
 }
 
-.name-sun {
-  display: grid;
-  grid-template-columns: 25vw;
-  grid-template-rows: 100px 100px;
-  grid-template-areas: "sun" "name";
-  position: absolute;
-}
-
 .name {
   display: grid;
   grid-row: 1;
   margin-top: -40px;
   position: absolute;
   grid-area: name;
-  margin-top: -60px;
-  padding-left: 30px;
+  margin-top: 40px;
+  padding-left: 20px;
 }
 
 .sun {
@@ -104,7 +91,8 @@ h1 {
 }
 
 a {
-  color: #e03162be;
+  color: #de2157;
+
   text-decoration: none;
   padding-right: 15px;
   margin-left: 40px;
@@ -113,6 +101,7 @@ a {
 p {
   color: #381460;
   text-align: center;
+  padding-bottom: 100px;
 }
 
 .rays {
@@ -287,8 +276,10 @@ p {
   padding-left: 250px;
   padding-right: 250px;
   padding-bottom: 100px;
-  color: whitesmoke;
+  color: #381460;
   line-height: 1.8;
+  opacity: 0;
+  display: none;
 }
 
 .intro {
@@ -306,16 +297,16 @@ h4 {
 
 .section {
   color: whitesmoke;
-
   text-align: center;
   padding-top: 70px;
-  padding-bottom: 100px;
+  padding-bottom: e 100px;
   margin-left: -10px;
   margin-right: -10px;
+  opacity: 0;
 }
 
 .line {
-  border-bottom: 5px solid #d28223;
+  border-bottom: 5px solid #fefefa;
   width: 300px;
   margin: auto;
 }
