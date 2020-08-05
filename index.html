@@ -7,129 +7,124 @@
     <link rel="stylesheet" href="index.css" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link
       href="https://fonts.googleapis.com/css2?family=Asap&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/animate.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>$(document).ready(function () {
-      $('.blurb').slideDown(1000).animate({ opacity: 1 }, 1000);
-
+    <script>
+      $(document).ready(function () {
+        $(".about").animate({ opacity: 1 }, 1000, function() {
+          $(".blurb").slideDown(1000)  
+        }
+      );
+       
         /* Every time the window is scrolled ... */
         $(window).scroll(function () {
-
           /* Check the location of each desired element */
-          $('.section').each(function (i) {
-            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+          $(".section").each(function (i) {
+            var bottom_of_object =
+              $(this).position().top + $(this).outerHeight();
             var bottom_of_window = $(window).scrollTop() + $(window).height();
-            console.log(bottom_of_window, " ", bottom_of_object);
-            console.log(bottom_of_window > bottom_of_object);
 
 
             /* If the object is completely visible in the window, fade it it */
             if (bottom_of_window > bottom_of_object) {
-              console.log("hi");
-
-              $(this).animate({opacity: 1}, 1000);
-
+              $(this).animate({ opacity: 1 }, 1000);
             }
-
           });
-
         });
-
-      });</script>
+      });
+    </script>
   </head>
-
- 
-  <div class="page">
-   
-    
-    <header>
-      <div class="nav-section">
-        <div class="wave">
-          <img src="assets/wave.svg" width="90%" height="105%" />
-        </div>
-      
-      
-        
-          <h1 class="name">
-            Stephanie<br>
-            Thornley
-          </h1>
-      
-        <nav class="nav">
-          <a href="#about">ABOUT</a>
-          <a href="#skills">SKILLS AND EXPERIENCE</a>
-          <a href="#projects">PROJECTS</a>
-          <a href="#contact">CONTACT</a>
-        </nav>
-      
-    </header>
-
-    <body>
-    
-      <div class="body">
-      
-      <div id="about" class="about">
-        <div class="stephanie">
+  
+    <div class="page">
+      <header>
+        <div class="nav-section">
           <img
             class="photo"
             src="./circle-cropped.png"
             alt="Stephanie sporting a cheesy grin"
             width="200"
           />
-        </div>
-      
-        <p class="blurb" >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis
-          tortor eu ligula mollis sodales. Phasellus porta eget augue id
-          egestas. Morbi cursus nec velit sit amet ornare. Duis luctus odio in
-          sapien consectetur aliquet. Proin placerat lacus sed massa pharetra
-          aliquet. Aliquam sit amet justo diam. Maecenas in ipsum aliquet,
-          congue justo id, eleifend quam.
 
-        </p>
+          <nav>
+            <a href="#about">ABOUT</a><br />
+            <a href="#skills">SKILLS AND EXPERIENCE</a><br />
+            <a href="#projects">PROJECTS</a><br />
+            <a href="#contact">CONTACT</a>
+          </nav>
+        </div>
+      </header>
+      <main>
+      <body>
+      <div class="bod">
+        <div id="about" class="about section">
+        <h1> < Stephanie Thornley /> </h1>
+          <p class="blurb">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis
+            tortor eu ligula mollis sodales. Phasellus porta eget augue id
+            egestas. Morbi cursus nec velit sit amet ornare. Duis luctus odio in
+            sapien consectetur aliquet. Proin placerat lacus sed massa pharetra
+            aliquet. Aliquam sit amet justo diam. Maecenas in ipsum aliquet,
+            congue justo id, eleifend quam.<br><br>
+            
+            <b>Full Stack JavaScript Bootcamp, Northcoders</b><br>
+            March 2020 - June 2020<br>
+            <b>BA (Hons) History, University of Leeds</b><br> 
+            2014 - 2018<br>
+            <b>Study year abroad, Nagoya University, Japan</b><br>
+            2016-2017<br>
+            </p>
+          <div class="line"></div>
+        </div>
+        <div id="skills" class="section">
+          <h2>Skills and Experience</h2>
+          <p>
+            Nulla facilisi. Donec eget nulla id nisi aliquam condimentum nec ac
+            purus. Curabitur urna metus, dapibus id felis ut, interdum eleifend
+            eros. Proin ac dolor risus. Praesent at arcu quis neque ultrices
+            ultrices. Praesent ut odio non ex elementum rutrum. Vestibulum
+            interdum semper sagittis. Sed vel euismod elit. Phasellus sed
+            maximus magna, vel commodo massa. Etiam eget ultrices arcu, id
+            egestas eros. Sed sagittis sapien sed finibus finibus. In vel lorem
+            iaculis, lacinia sapien et, accumsan diam. Vestibulum euismod neque
+            ac nisi tempus malesuada. Vivamus sapien sapien, vulputate elementum
+            est sit amet, bibendum pharetra quam. Pellentesque volutpat blandit
+            est, vitae porttitor odio consectetur et. Cras bibendum ipsum sit
+            amet efficitur feugiat.
+          </p>
+          <div class="line"></div>
+        </div>
+
+        <div id="projects" class="section">
+          <h3>Projects</h3>
+          <p>
+            In hac habitasse platea dictumst. Morbi varius ante ac leo porta,
+            maximus porttitor risus euismod. Duis varius justo tellus, eget
+            sagittis lorem dignissim id. Pellentesque habitant morbi tristique
+            senectus et netus et malesuada fames ac turpis egestas. Proin orci
+            sem, ornare et mollis eget, facilisis sed dolor. Proin non orci
+            nisl. In ultrices dignissim arcu, a volutpat nunc tristique nec.
+            Nulla vel imperdiet lorem, nec laoreet ante. Aliquam dolor libero,
+            iaculis at elementum ultrices, ultricies quis orci. Nullam vel lorem
+            non diam ultricies porta vel id massa. Donec ac sem eros. Nulla
+            placerat, lorem quis ultrices cursus, elit lectus rhoncus turpis,
+            nec convallis turpis neque in nisi. Cras eleifend orci et elit
+            viverra volutpat. Suspendisse egestas nibh euismod augue fringilla,
+            sed consequat justo dictum. Duis tempor suscipit augue pellentesque
+            bibendum.
+          </p>
+          <div class="line"></div>
+        </div>
+        <div id="contact" class="section">
+          <h4>Contact</h4>
+          <p>Twitter GitHub Dev.to Email Contact form</p>
+        <a class="twitter-timeline" data-width="250" data-height="300" data-theme="dark"
+          href="https://twitter.com/stephaniethorns?ref_src=twsrc%5Etfw">Tweets by stephaniethorns</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
       </div>
-      <div class="line"></div>
-      <div id="skills" class="section">
-        <h3>Skills and Experience</h3>
-        <p>Nulla facilisi. Donec eget nulla id nisi aliquam condimentum nec ac purus. Curabitur urna metus, dapibus id felis ut,
-        interdum eleifend eros. Proin ac dolor risus. Praesent at arcu quis neque ultrices ultrices. Praesent ut odio non ex
-        elementum rutrum. Vestibulum interdum semper sagittis. Sed vel euismod elit. Phasellus sed maximus magna, vel commodo
-        massa. Etiam eget ultrices arcu, id egestas eros. Sed sagittis sapien sed finibus finibus. In vel lorem iaculis, lacinia
-        sapien et, accumsan diam. Vestibulum euismod neque ac nisi tempus malesuada. Vivamus sapien sapien, vulputate elementum
-        est sit amet, bibendum pharetra quam. Pellentesque volutpat blandit est, vitae porttitor odio consectetur et. Cras
-        bibendum ipsum sit amet efficitur feugiat.</p>
-      </div>
-      <div class="line"></div>
-      <div id="projects" class="section">
-        <h4>Projects</h4>
-        <p>In hac habitasse platea dictumst. Morbi varius ante ac leo porta, maximus porttitor risus euismod. Duis varius justo
-        tellus, eget sagittis lorem dignissim id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-        turpis egestas. Proin orci sem, ornare et mollis eget, facilisis sed dolor. Proin non orci nisl. In ultrices dignissim
-        arcu, a volutpat nunc tristique nec. Nulla vel imperdiet lorem, nec laoreet ante. Aliquam dolor libero, iaculis at
-        elementum ultrices, ultricies quis orci. Nullam vel lorem non diam ultricies porta vel id massa. Donec ac sem eros.
-        Nulla placerat, lorem quis ultrices cursus, elit lectus rhoncus turpis, nec convallis turpis neque in nisi. Cras
-        eleifend orci et elit viverra volutpat. Suspendisse egestas nibh euismod augue fringilla, sed consequat justo dictum.
-        Duis tempor suscipit augue pellentesque bibendum.
-        </p>
-      </div>
-      <div class="line"></div>
-      <div id="contact" class="section">
-        <h4>Contact</h4>
-        <p>Twitter
-          GitHub
-          Email
-          Contact form
-        </p>
-      </div>
-    </body>
-  </div>
-  </div>
-  
+    </div>
+  </body>
+  </main>
 </html>
