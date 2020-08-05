@@ -13,23 +13,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
       $(document).ready(function () {
+        /* Load about section and slide on site load */
         $(".about").animate({ opacity: 1 }, 1000, function() {
           $(".blurb").slideDown(1000)  
         }
       );
-       
         /* Every time the window is scrolled ... */
         $(window).scroll(function () {
-          /* Check the location of each desired element */
+          /* Check the location of each 'section'. If it is more than 1/5th of the screen height from the bottom of the screen, fade in */
+          let screenBottom = $($(window).scrollTop() + $(window).height());
+          let appearAfterScroll = $(window).height() / 5;
+          
           $(".section").each(function (i) {
-            var bottom_of_object =
-              $(this).position().top + $(this).outerHeight();
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
-
-
-            /* If the object is completely visible in the window, fade it it */
-            if (bottom_of_window > bottom_of_object) {
-              $(this).animate({ opacity: 1 }, 1000);
+            if (($(this).position().top + appearAfterScroll) < screenBottom[0]) {
+               $(this).animate({ opacity: 1 }, 1000);
             }
           });
         });
@@ -51,6 +48,7 @@
             <a href="#about">ABOUT</a><br />
             <a href="#skills">SKILLS AND EXPERIENCE</a><br />
             <a href="#projects">PROJECTS</a><br />
+            <a href="#blog">BLOG</a><br>
             <a href="#contact">CONTACT</a>
           </nav>
         </div>
@@ -58,7 +56,7 @@
       <main>
       <body>
       <div class="bod">
-        <div id="about" class="about section">
+        <div id="about" class="about">
         <h1> < Stephanie Thornley /> </h1>
           <p class="blurb">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis
@@ -80,18 +78,33 @@
         <div id="skills" class="section">
           <h2>Skills and Experience</h2>
           <p>
-            Nulla facilisi. Donec eget nulla id nisi aliquam condimentum nec ac
-            purus. Curabitur urna metus, dapibus id felis ut, interdum eleifend
-            eros. Proin ac dolor risus. Praesent at arcu quis neque ultrices
-            ultrices. Praesent ut odio non ex elementum rutrum. Vestibulum
-            interdum semper sagittis. Sed vel euismod elit. Phasellus sed
-            maximus magna, vel commodo massa. Etiam eget ultrices arcu, id
-            egestas eros. Sed sagittis sapien sed finibus finibus. In vel lorem
-            iaculis, lacinia sapien et, accumsan diam. Vestibulum euismod neque
-            ac nisi tempus malesuada. Vivamus sapien sapien, vulputate elementum
-            est sit amet, bibendum pharetra quam. Pellentesque volutpat blandit
-            est, vitae porttitor odio consectetur et. Cras bibendum ipsum sit
-            amet efficitur feugiat.
+            Technical skills:
+            <ul><b>
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>React Native</li>
+              <li>PostgresSQL</li>
+              <li>Express</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>jQuery</li>
+              <li>Node.js</li>
+              <li>Git</li></b>
+            </ul>
+
+            Experience:
+            <ul>
+              <li><b>Full Stack Coding Bootcamp, Northcoders</b></li>
+              <li><b>Executive, The Prince's Trust</b></li> 
+              <li><b>Outdoor Food and Beverage Vendor, Walt Disney World Florida</b></li>
+            </ul>
+
+            Volunteer work:
+            <ul>
+              <li><b>Volunteer, Lighthouse Futures Trust</b></li>
+              <li><b>Team Mate, Over The Wall</b></li>
+              <li><b>Secretary, Guide Dogs Society @ Leeds University Union</b></li>
+            </ul>
           </p>
           <div class="line"></div>
         </div>
@@ -99,26 +112,19 @@
         <div id="projects" class="section">
           <h3>Projects</h3>
           <p>
-            In hac habitasse platea dictumst. Morbi varius ante ac leo porta,
-            maximus porttitor risus euismod. Duis varius justo tellus, eget
-            sagittis lorem dignissim id. Pellentesque habitant morbi tristique
-            senectus et netus et malesuada fames ac turpis egestas. Proin orci
-            sem, ornare et mollis eget, facilisis sed dolor. Proin non orci
-            nisl. In ultrices dignissim arcu, a volutpat nunc tristique nec.
-            Nulla vel imperdiet lorem, nec laoreet ante. Aliquam dolor libero,
-            iaculis at elementum ultrices, ultricies quis orci. Nullam vel lorem
-            non diam ultricies porta vel id massa. Donec ac sem eros. Nulla
-            placerat, lorem quis ultrices cursus, elit lectus rhoncus turpis,
-            nec convallis turpis neque in nisi. Cras eleifend orci et elit
-            viverra volutpat. Suspendisse egestas nibh euismod augue fringilla,
-            sed consequat justo dictum. Duis tempor suscipit augue pellentesque
-            bibendum.
+            Budding<br>
+            NC News
           </p>
           <div class="line"></div>
         </div>
+        <div id="blog" class="section">
+          <h4>Blog</h4>
+          <p></p>
+          <div class="line"></div>
+        </div>
         <div id="contact" class="section">
-          <h4>Contact</h4>
-          <p>Twitter GitHub Dev.to Email Contact form</p>
+          <h5>Contact</h5>
+          <p>Twitter GitHub LinkedIn Dev.to Email Contact form</p>
         <a class="twitter-timeline" data-width="250" data-height="300" data-theme="dark"
           href="https://twitter.com/stephaniethorns?ref_src=twsrc%5Etfw">Tweets by stephaniethorns</a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

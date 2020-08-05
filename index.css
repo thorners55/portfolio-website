@@ -66,13 +66,14 @@ h1 {
 
 h2,
 h3,
-h4 {
+h4,
+h5 {
   font-size: 25px;
 }
 
 .section {
   opacity: 0;
-  padding-bottom: 30vh;
+  margin-bottom: 10vh;
 }
 
 .line {
@@ -82,12 +83,21 @@ h4 {
 
 .about {
   opacity: 0;
+  margin-bottom: 10vh;
 }
 
 .blurb {
   display: none;
 }
 
-.header {
-  opacity: 0;
+li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 15px;
+}
+
+li:before {
+  content: "\25BA \0020";
+  position: absolute;
+  left: -10px;
 }
