@@ -30,6 +30,13 @@
             }
           });
         });
+
+         $(".accordion").click(function () {
+          console.log("hi");
+           var expanded = $(this).attr("aria-expanded");
+           console.log(expanded);
+          $(this).attr("aria-expanded", !expanded.toString())
+        })
       });
     </script>
   </head>
@@ -67,72 +74,116 @@
             <b>BA (Hons) History, University of Leeds</b><br> 
             2014 - 2018<br>
             <b>Study year abroad, Nagoya University, Japan</b><br>
-            2016-2017<br>
+            2016 - 2017<br>
             </p>
           <div class="line"></div>
         </div>
-        <div id="skills" class="section">
+        <section  class="section">
           <h2>Skills and Experience</h2>
           <div class="skills-and-exp">
-            <div>
-            <p class="tech-skills"> 
-              Technical skills:
-              <ul><b>
+            <section>
+            <h3><button aria-expanded="false" aria-controls="tech-skills" class="accordion" id="tech-skills">
+              Technical skills</button></h3>
+              <ul id="tech-skills" role="region" aria-labeledby="skills-and-exp tech-skills"><b>
                 <li>JavaScript</li>
                 <li>React</li>
                 <li>React Native</li>
                 <li>PostgresSQL</li>
                 <li>Express</li>
-                <li>HTML</li>
-                <li>CSS</li>
+                <li>HTML/HTML5</li>
+                <li>CSS/CSS3</li>
+                <li>Semantic markup</li>
                 <li>jQuery</li>
                 <li>Node.js</li>
                 <li>Git</li>
-                <li>TDD</li></b>
+                <li>TDD</li>
+                <li>Accessibility</li>
+                <li>Agile development</li></b>
+                
               </ul>
-            </p>
-            </div>
+            </section>
 
-            <div>
-            <p class="non-tech-skills">
-              Non-technical skils:
+            <section>
+            <h3>
+              Non-technical skills</h3>
               <ul><b>
                 <li>Independent learning and research</li>
                 <li>Communication</li>
                 <li>Critical thinking</li>
                 <li>Self-motivation and positivity</li>
+                <li>Cultural awareness and sensitivity</li>
               </b></ul>
-            </p>
-            </div>
-
-            <div>
-            <p class="experience">
-              Experience:
-              <ul>
-                <li><b>Full Stack Coding Bootcamp, Northcoders</b></li>
-                <li><b>Executive, The Prince's Trust</b></li> 
-                <li><b>Outdoor Food and Beverage Vendor, Walt Disney World Florida</b></li>
+        
+              <h3>Training</h3>
+              <ul><b>
+              <li>Disability support - partial sightedness, autism spectrum condition, and learning difficulties</li>
+              <li>Mental health awareness</li>
+              <li>Knowledge of accessibility and appropriate adjustments</li>
+                </b>
               </ul>
-            </p>
-            </div>
+            </section>
 
-            <div>
-            <p class="volunteer">
-              Volunteer work:
+            <section>
+            <h3>
+              Experience:</h3>
               <ul>
-                <li><b>Volunteer, Lighthouse Futures Trust</b></li>
-                <li><b>Team Mate, Over The Wall</b></li>
-                <li><b>Secretary, Guide Dogs Society at Leeds University Union</b></li>
+                <li><b>Full Stack Coding Bootcamp, Northcoders</b>
+                <ul>
+                  <li>3 month intensive JavaScript coding bootcamp delivered remotely due to lockdown</li>
+                  <li>Lectures, sprints, pair programming</li>
+                  <li>Final group, student-led project, creating a mobile app, 'Budding', using agile development</li>
+                </ul>
+               </li>
+                <li><b>Executive, The Prince's Trust</b>
+                <ul>
+                  <li>Building young people's skills and motivation, helping them to build confidence and find employment</li>
+                  <li>Working with young people from a range of social and cultural backgrounds, in a variety of settings</li>
+                  <li>Outreach and recruitment, delivering life skills sessions, liaising with external partners, risk assessments and safeguarding, providing emotional support to young people</li>
+                </ul>
+                </li> 
+                <li><b>Outdoor Food and Beverage Vendor, Walt Disney World</b>
+                <ul>
+                  <li>Spending a summer working at Disney's Hollywood Studios as part of their highly competitive international Cultural Exchange Programme</li>
+                  <li>Food handling and preparation, machine maintenance, customer service and cash handling</li>
+                </ul></li>
               </ul>
-            </p>
-            </div>
+            </section>
+
+            <section>
+            <h3>
+              Volunteer work:</h3>
+              <ul>
+                <li><b>Chaperone, Lighthouse Futures Trust</b>
+                <ul>
+                  <li>Chaperoned Connections Club events for young people with an autism spectrum condition to socialise with others</li>
+                  <li>Fully trained on working with adults with autism spectrum condition</li>
+                  <li>Attended events (e.g. drinks, bowling) to socialise and to ensure the event was running smoothly, everyone felt safe, and make sure everybody was included in activities and conversations</li>
+                </ul>
+                </li>
+                <li><b>Team Mate, Over The Wall</b>
+                <ul>
+                  <li>
+                    24/7 care for children affected by serious illnesses and their siblings during residential activity camps
+                  </li>
+                  <li>Participating in activities with children designed to encourage them to recognise their potential, focusing heavily on specific positive labelling</li>
+                  <li>Dynamically assessing risk and safeguarding</li>
+                </ul>
+                </li>
+                <li><b>Secretary, Guide Dogs Society at Leeds University Union</b>
+                <ul>
+                  <li>Organising and running fundraising events to raise awareness of the Guide Dogs charity to the student population and general public</li>
+                  <li>Processing administrative documents and permits for the society, including completing risk assessment forms and submitting expense reports to the Union</li>
+                  <li>Received an award from Union for the best collaborative society</li>
+                </ul></li>
+              </ul>
+            </section>
             
-          </div>
+          </section>
           <div class="line"></div>
         </div>
 
         <div id="projects" class="section">
-          <h3>Projects</h3>
+          <h2>Projects</h2>
           <p>
             Budding<br>
             NC News
@@ -140,16 +191,16 @@
           <div class="line"></div>
         </div>
         <div id="blog" class="section">
-          <h4>Blog</h4>
+          <h2>Blog</h2>
           <p></p>
           <div class="line"></div>
         </div>
         <div id="contact" class="section">
-          <h5>Contact</h5>
+          <h2>Contact</h2>
           <p>Twitter GitHub LinkedIn Dev.to Email Contact form</p>
-        <a class="twitter-timeline" data-width="250" data-height="300" data-theme="dark"
+        <embed><a class="twitter-timeline" data-width="250" data-height="300" data-theme="dark"
           href="https://twitter.com/stephaniethorns?ref_src=twsrc%5Etfw">Tweets by stephaniethorns</a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></embed>
         </div>
       </div>
     </div>

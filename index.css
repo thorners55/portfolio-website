@@ -69,11 +69,12 @@ h1 {
   font-size: 50px;
 }
 
-h2,
-h3,
-h4,
-h5 {
+h2 {
   font-size: 25px;
+}
+
+h3 {
+  font-size: 20px;
 }
 
 .section {
@@ -102,7 +103,7 @@ li {
 }
 
 li:before {
-  content: "\25BA \0020";
+  content: "\263B";
   position: absolute;
   left: -10px;
 }
@@ -111,21 +112,4 @@ li:before {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: auto auto;
-}
-
-.tech-skills {
-  grid-area: tech-skills;
-}
-
-.non-tech-skills {
-  grid-area: non-tech-skills;
-}
-
-.experience {
-  grid-area: experience;
-  padding-right: 5%;
-}
-
-.volunteer {
-  grid-area: volunteer;
 }
