@@ -32,9 +32,16 @@
         });
 
          $(".accordion").each(function () {
+
+          // tech skills is open when page loads
+          if ($(this).attr("id") === "tech-skills-heading") {
+            var nextElement = $(this).next();
+             nextElement.css("display", "block")
+          }
+
+          // shows/hides content when click heading
            $(this).click(function() {
              var nextElement = $(this).next();
-             console.log(nextElement.css("display"))
 
              if (nextElement.css("display") === "block") {
                nextElement.css("display", "none")
@@ -43,14 +50,18 @@
                nextElement.css("display", "block")
              }
 
-             console.log($(this).attr("aria-expanded"));
              if ($(this).attr("aria-expanded") === "true") {
                var flipped = "false";
              }
              else {
                var flipped = "true";
              }
+
              $(this).attr("aria-expanded", flipped)
+
+             // close other content except this one clicked on
+            // DO THIS NEXT TIME
+
            })
          })
       })
@@ -84,68 +95,54 @@
         <h1> < Stephanie Thornley /> </h1>
           <p class="blurb">
             Hello! I'm Stephanie, a hopeful Junior Software Developer from Leeds. I've gone from History grad to coding bootcamp grad, which seems like a big change, but they're not too different - both require logical thinking and an ability to appreciate the smaller details as well as the bigger picture.
-            I love the process of coding (even debugging!), but I also enjoy learning about the history of tech and how advancements in tech are affected by society.
-            <br><br>
-            <b>Full Stack JavaScript Bootcamp, Northcoders</b><br>
-            March 2020 - June 2020<br>
-            <b>BA (Hons) History, University of Leeds</b><br> 
-            2014 - 2018<br>
-            <b>Study year abroad, Nagoya University, Japan</b><br>
-            2016 - 2017<br>
+            I love the process of coding (even debugging!), but I also enjoy learning about the history of tech and how advancements in tech are affected by social issues.
             </p>
           <div class="line"></div>
         </div>
+
         <section  class="section">
           <h2>Skills and Experience</h2>
           <div>
             <section>
-            <button aria-expanded="false" aria-controls="tech-skills" class="accordion" id="tech-skills-heading"><h3>
-              Technical skills</h3></button>
+            <button aria-expanded="true" aria-controls="tech-skills" class="accordion" id="tech-skills-heading">
+              <h3> Technical skills</h3></button>
               <ul id="tech-skills" role="region" aria-labeledby="tech-skills-heading" class="accordion info">
-                <li><h4>Programming languages</h4>
-                JavaScript, HTML/HTML5, CSS/CSS3</li>
-                <li><h4>Database systems</h4>
-                PostgresSQL</li>
-                <li><h4>Frameworks and libraries</h4>
-                React, React Native, jQuery, Node.js, Express</li>
-                <li><h4>Tools and skills</h4>
-                Git, TDD, semantic markup, accessibility, agile development</li>
+                <li>JavaScript, HTML/HTML5, CSS/CSS3</li>
+                <li>PostgresSQL</li>
+                <li>React, React Native, jQuery, Node.js, Express</li>
+                <li>Git, TDD, semantic markup, accessibility, agile development</li>
             </section>
 
             <section>
-            <button aria-expanded="false" aria-controls="non-tech-skills" class="accordion" id="non-tech-skills-button">
-              <h3>Non-technical skills</h3></button>
-              <ul id="non-tech-skills" role="region" aria-labeledby="tech-skills-button" class="accordion info"><b>
+            <button aria-expanded="true" aria-controls="non-tech-skills" class="accordion" id="non-tech-skills-button">
+              <h3> Non-technical skills</h3></button>
+              <ul id="non-tech-skills" role="region" aria-labeledby="tech-skills-button" class="accordion info">
+                <li>Disability support in partial sightedness and Autism Spectrum Condition</li>
+                <li>Mental health awareness and support</li>
+                <li>Cultural awareness and sensitivity</li>
                 <li>Independent learning and research</li>
                 <li>Communication</li>
                 <li>Critical thinking</li>
                 <li>Self-motivation and positivity</li>
-                <li>Cultural awareness and sensitivity</li>
-              </b></ul>
+              </ul>
             </section>
 
             <section>
-              <button aria-expanded="false" aria-controls="tech-experience" class="accordion" id="tech-experience-button">
-            <h3>
-              Technical experience and training</h3></button>
-              <ul id="tech-experience" role="region" aria-labeledby="tech-experience-button" class="accordion info">
-                <li><b>Full Stack Coding Bootcamp, Northcoders</b>
-                <ul>
-                  <li>3 month intensive JavaScript coding bootcamp delivered remotely due to lockdown</li>
-                  <li>Lectures, sprints, pair programming</li>
-                  <li>Final group, student-led project, creating a mobile app, 'Budding', using agile development</li>
-                </ul>
-               </li>
-              </ul>
-
               <button aria-expanded="false" aria-controls="non-tech-experience" class="accordion" id="non-tech-experience-button">
-                <h3>
-                  Non-technical experience and training</h3>
+                <h3> Experience</h3> 
               </button>
               <ul id="non-tech-experience" role="region" aria-labeledby="non-tech-experience-button" class="accordion info">
+                <li><b>Full Stack Coding Bootcamp, Northcoders</b>
+                  <ul>
+                    <li>3 month intensive JavaScript coding bootcamp delivered remotely due to lockdown</li>
+                    <li>Daily lectures and sprints</li>
+                    <li>Pair programming</li>
+                    <li>Final group, student-led project, creating a mobile app, 'Budding', using agile development</li>
+                  </ul>
+                </li>
                 <li><b>Executive, The Prince's Trust</b>
                 <ul>
-                  <li>Building young people's skills and motivation, helping them to build confidence and find employment</li>
+                  <li>Building young people's skills and motivation, helping them to gain confidence and find employment</li>
                   <li>Working with young people from a range of social and cultural backgrounds, in a variety of settings</li>
                   <li>Outreach and recruitment, delivering life skills sessions, liaising with external partners, risk assessments and safeguarding, providing emotional support to young people</li>
                   <h4>Volunteer work</h4>
@@ -153,7 +150,6 @@
                     <ul>
                       <li>Chaperoned Connections Club events for young people with an autism spectrum condition to socialise with others
                       </li>
-                      <li>Fully trained on working with adults with autism spectrum condition</li>
                       <li>Attended events (e.g. drinks, bowling) to socialise and to ensure the event was running smoothly, everyone felt
                         safe, and make sure everybody was included in activities and conversations</li>
                     </ul>
@@ -172,18 +168,10 @@
                     <ul>
                       <li>Organising and running fundraising events to raise awareness of the Guide Dogs charity to the student population
                         and general public</li>
-                      <li>Processing administrative documents and permits for the society, including completing risk assessment forms and
-                        submitting expense reports to the Union</li>
-                      <li>Received an award from Union for the best collaborative society</li>
+                      <li>Processing administrative documents and permits for the society</li>
+
                     </ul>
                   </li>
-                  <h4>Training</h4>
-                  <ul><b>
-                      <li>Disability support - partial sightedness, autism spectrum condition, and learning difficulties</li>
-                      <li>Mental health awareness</li>
-                      <li>Knowledge of accessibility and appropriate adjustments</li>
-                    </b>
-                  </ul>
                 </ul>
                 </li> 
               </ul>

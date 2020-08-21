@@ -13,6 +13,7 @@ body {
   font-family: "Asap", sans-serif;
   margin: 0;
   line-height: 1.8;
+  color: #381460;
 }
 
 .bod {
@@ -77,6 +78,11 @@ h2 {
 
 h3 {
   font-size: 20px;
+  color: #381460;
+}
+
+h3:before {
+  content: "\25BA";
 }
 
 .section {
@@ -85,7 +91,7 @@ h3 {
 }
 
 .line {
-  border-bottom: 5px solid #fefefa;
+  border-bottom: 5px solid #bca2dd;
   width: 300px;
 }
 
@@ -104,12 +110,12 @@ li {
   padding-left: 15px;
 }
 
-li:before {
-  content: "\263B";
-  position: absolute;
-  left: -10px;
-}
-
 .info {
   display: none;
+}
+
+button {
+  background-color: #fefefa;
+  border: none;
+  font-family: "Asap", sans-serif;
 }
