@@ -35,30 +35,30 @@
          $(".accordion").each(function () {
           // shows/hides content when click heading
            $(this).click(function() {
+            // console.log($(this).attr("aria-expanded"), $(this)[0].innerText);
+
             // collapse any h3 element that is expanded (arrow pointing down) and toggle class, which will make arrow point right, but NOT the one you have clicked on. Only the one you have clicked on will point down
             $("h3.expanded").not($(this).find("h3")).toggleClass("expanded");
             
             // this enables you to click on the heading and have it toggle the arrow
-            $(this).find("h3").toggleClass("expanded");
-
-            // this gets the next element (the ul tag) and toggles between hiding or showing the ul, also animates it
-            // slides up everything EXCEPT the ul tag following the heading you have clicked on
-             var nextElement = $(this).next(); 
-             nextElement.slideToggle();
-             $(".info").not(nextElement).slideUp();
-
-             if ($(this).attr("aria-expanded") === "true") {
+            // switches aria-expanded between true and false on the heading you have clicked 
+            if ($(this).attr("aria-expanded") === "true") {
                var flipped = "false";
              }
              else {
                var flipped = "true";
              }
 
-             $(this).attr("aria-expanded", flipped)
+            $(this).find("h3").toggleClass("expanded");
+            $(this).attr("aria-expanded", flipped);
 
-            // change aria-expanded to true or false
-            
-  
+            // this gets the next element (the ul tag) and toggles between hiding or showing the ul, also animates it
+            // slides up everything EXCEPT the ul tag following the heading you have clicked on
+            // sets aria-expanded to false on everything but EXCEPT the button you have clicked on
+             var nextElement = $(this).next(); 
+             nextElement.slideToggle();
+             $(".info").not(nextElement).slideUp();
+             $("button").not($(this)).attr("aria-expanded", "false")
            })
          })
       })
