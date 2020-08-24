@@ -35,17 +35,17 @@
          $(".accordion").each(function () {
           // shows/hides content when click heading
            $(this).click(function() {
-            //changes arrow to pointing down when click heading
+            // collapse any h3 element that is expanded (arrow pointing down) and toggle class, which will make arrow point right, but NOT the one you have clicked on. Only the one you have clicked on will point down
+            $("h3.expanded").not($(this).find("h3")).toggleClass("expanded");
+            
+            // this enables you to click on the heading and have it toggle the arrow
             $(this).find("h3").toggleClass("expanded");
 
-             var nextElement = $(this).next();
-
-             if (nextElement.css("display") === "block") {
-               nextElement.css("display", "none")
-             }
-             else {
-               nextElement.css("display", "block")
-             }
+            // this gets the next element (the ul tag) and toggles between hiding or showing the ul, also animates it
+            // slides up everything EXCEPT the ul tag following the heading you have clicked on
+             var nextElement = $(this).next(); 
+             nextElement.slideToggle();
+             $(".info").not(nextElement).slideUp();
 
              if ($(this).attr("aria-expanded") === "true") {
                var flipped = "false";
@@ -56,9 +56,9 @@
 
              $(this).attr("aria-expanded", flipped)
 
-             // close other content except this one clicked on
-            // DO THIS NEXT TIME
-
+            // change aria-expanded to true or false
+            
+  
            })
          })
       })
@@ -100,6 +100,7 @@
           <h2>Skills and Experience</h2>
           <div>
             <section>
+            <div>
             <button aria-expanded="false" aria-controls="tech-skills" class="accordion" id="tech-skills-heading">
               <h3> Technical skills</h3></button>
               <ul id="tech-skills" role="region" aria-labeledby="tech-skills-heading" class="accordion info">
@@ -110,9 +111,11 @@
                   PostgresSQL</li><br>
                 <li><b>Tools and processes</b><br>
                   Git, TDD, semantic markup, accessibility, agile development</li>
+                  </div>
             </section>
 
             <section>
+              <div>
             <button aria-expanded="false" aria-controls="non-tech-skills" class="accordion" id="non-tech-skills-button">
               <h3> Non-technical skills</h3></button>
               <ul id="non-tech-skills" role="region" aria-labeledby="tech-skills-button" class="accordion info">
@@ -124,9 +127,11 @@
                 <li>Critical thinking</li>
                 <li>Self-motivation and positivity</li>
               </ul>
+              </div>
             </section>
 
             <section>
+              <div>
               <button aria-expanded="false" aria-controls="non-tech-experience" class="accordion" id="non-tech-experience-button">
                 <h3> Experience</h3> 
               </button>
@@ -174,6 +179,7 @@
                 </ul>
                 </li> 
               </ul>
+              </div>
             </section>
 
            
