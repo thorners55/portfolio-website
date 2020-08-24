@@ -77,14 +77,15 @@ h2 {
   font-size: 25px;
 }
 
-h3 {
+h3,
+h4 {
   font-size: 20px;
   color: #381460;
 }
 
 h3::before {
   content: "\25BA";
-  color: green;
+  color: #007000;
   padding-right: 1ch;
 }
 
@@ -111,10 +112,20 @@ h3.expanded::before {
   display: none;
 }
 
-li {
+.experience {
   list-style-type: none;
-  position: relative;
-  padding-left: 15px;
+}
+
+.experience ul {
+  list-style-type: disc;
+}
+
+ul {
+  padding-bottom: 1em;
+}
+
+button + ul {
+  padding-left: 6ch;
 }
 
 .info {
