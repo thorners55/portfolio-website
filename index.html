@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Asap&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@350&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
       $(document).ready(function () {
@@ -32,15 +33,11 @@
         });
 
          $(".accordion").each(function () {
-
-          // tech skills is open when page loads
-          if ($(this).attr("id") === "tech-skills-heading") {
-            var nextElement = $(this).next();
-             nextElement.css("display", "block")
-          }
-
           // shows/hides content when click heading
            $(this).click(function() {
+            //changes arrow to pointing down when click heading
+            $(this).find("h3").toggleClass("expanded");
+
              var nextElement = $(this).next();
 
              if (nextElement.css("display") === "block") {
@@ -94,8 +91,7 @@
         <div id="about" class="about">
         <h1> < Stephanie Thornley /> </h1>
           <p class="blurb">
-            Hello! I'm Stephanie, a hopeful Junior Software Developer from Leeds. I've gone from History grad to coding bootcamp grad, which seems like a big change, but they're not too different - both require logical thinking and an ability to appreciate the smaller details as well as the bigger picture.
-            I love the process of coding (even debugging!), but I also enjoy learning about the history of tech and how advancements in tech are affected by social issues.
+            Hello! I'm Stephanie, a hopeful Junior Software Developer from Leeds. I've gone from History grad to coding bootcamp grad, which seems like a big change, but they're not too different - as a logical thinker who appreciates the smaller details as well as the bigger picture, the transition came naturally to me. I love the process of coding (even debugging!), but I also enjoy learning about the history of tech and how advancements in technology are affected by social issues.
             </p>
           <div class="line"></div>
         </div>
@@ -104,17 +100,20 @@
           <h2>Skills and Experience</h2>
           <div>
             <section>
-            <button aria-expanded="true" aria-controls="tech-skills" class="accordion" id="tech-skills-heading">
+            <button aria-expanded="false" aria-controls="tech-skills" class="accordion" id="tech-skills-heading">
               <h3> Technical skills</h3></button>
               <ul id="tech-skills" role="region" aria-labeledby="tech-skills-heading" class="accordion info">
-                <li>JavaScript, HTML/HTML5, CSS/CSS3</li>
-                <li>PostgresSQL</li>
-                <li>React, React Native, jQuery, Node.js, Express</li>
-                <li>Git, TDD, semantic markup, accessibility, agile development</li>
+                <li><b>Languages</b><br> JavaScript, HTML/HTML5, CSS/CSS3</li><br>
+                  <li><b>Frameworks and libraries</b><br>
+                    React, React Native, jQuery, Node.js, Express, Jest</li><br>
+                <li><b>Database systems</b><br>
+                  PostgresSQL</li><br>
+                <li><b>Tools and processes</b><br>
+                  Git, TDD, semantic markup, accessibility, agile development</li>
             </section>
 
             <section>
-            <button aria-expanded="true" aria-controls="non-tech-skills" class="accordion" id="non-tech-skills-button">
+            <button aria-expanded="false" aria-controls="non-tech-skills" class="accordion" id="non-tech-skills-button">
               <h3> Non-technical skills</h3></button>
               <ul id="non-tech-skills" role="region" aria-labeledby="tech-skills-button" class="accordion info">
                 <li>Disability support in partial sightedness and Autism Spectrum Condition</li>

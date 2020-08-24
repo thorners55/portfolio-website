@@ -10,7 +10,7 @@ html {
 
 body {
   background: #fefefa;
-  font-family: "Asap", sans-serif;
+  font-family: "Work Sans", sans-serif;
   margin: 0;
   line-height: 1.8;
   color: #381460;
@@ -41,7 +41,7 @@ body {
 
 nav {
   font-family: "Asap", sans-serif;
-  font-weight: bold;
+  font-weight: 700;
   color: #381460;
   padding-top: 10%;
   line-height: 2;
@@ -68,11 +68,12 @@ p + ul {
 }
 
 h1 {
-  font-family: Nickainley;
+  font-family: "Asap";
   font-size: 50px;
 }
 
 h2 {
+  font-family: "Asap";
   font-size: 25px;
 }
 
@@ -81,8 +82,14 @@ h3 {
   color: #381460;
 }
 
-h3:before {
+h3::before {
   content: "\25BA";
+  color: green;
+  padding-right: 1ch;
+}
+
+h3.expanded::before {
+  content: "\25BC";
 }
 
 .section {
@@ -117,5 +124,5 @@ li {
 button {
   background-color: #fefefa;
   border: none;
-  font-family: "Asap", sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
