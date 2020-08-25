@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Asap&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@350&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
       $(document).ready(function () {
@@ -33,10 +33,12 @@
         });
 
          $(".accordion").each(function () {
-           
+          
           // shows/hides content when click heading
-           $(this).click(function() {
-            // console.log($(this).attr("aria-expanded"), $(this)[0].innerText);
+           $(this).click(function(event) {
+            // will only collapse or expand when press on the button or the heading, not the ul
+            var target = $(event.target);
+            if (target.is("button") || target.is("h3")) {
 
             // collapse any h3 element that is expanded (arrow pointing down) and toggle class, which will make arrow point right, but NOT the one you have clicked on. Only the one you have clicked on will point down
             $("h3.expanded").not($(this).find("h3")).toggleClass("expanded");
@@ -60,8 +62,20 @@
              nextElement.slideToggle();
              $(".info").not(nextElement).slideUp();
              $("button").not($(this)).attr("aria-expanded", "false")
-           })
+           }})
          })
+
+         $("button").each(function() {
+          $(this).mouseover(function () {
+             $(this).find("h3").css("color", "#b21f66");
+           })
+         }) 
+
+          $("button").each(function () {
+          $(this).mouseleave(function () {
+            $(this).find("h3").css("color", "#381460"); 
+          })
+        }) 
       })
          
     </script>
@@ -79,7 +93,7 @@
 
           <nav>
             <a href="#about">ABOUT</a><br />
-            <a href="#skills">SKILLS</a><br />
+            <a href="#skills">SKILLS AND EXPERIENCE</a><br />
             <a href="#projects">PROJECTS</a><br />
             <a href="#blog">BLOG</a><br>
             <a href="#contact">CONTACT</a>
@@ -92,17 +106,19 @@
         <div id="about" class="about">
         <h1> < Stephanie Thornley /> </h1>
           <p class="blurb">
-            Hello! I'm Stephanie, a hopeful Junior Software Developer from Leeds. I've gone from History grad to coding bootcamp grad, which seems like a big change, but they're not too different - as a logical thinker who appreciates the smaller details as well as the bigger picture, the transition came naturally to me. I love the process of coding (even debugging!), but I also enjoy learning about the history of tech and how advancements in technology are affected by social issues.
+            Hello! I'm Stephanie, a hopeful Junior Software Developer from Leeds.<br>
+            I've gone from History grad to coding bootcamp grad, which seems like a big change, but they're not too different - as a logical thinker who appreciates the smaller details as well as the bigger picture, the transition came naturally to me. I love the process of coding (even debugging!), but I also enjoy learning about the history of tech and how advancements in technology are affected by social issues.
             </p>
           <div class="line"></div>
         </div>
 
-        <section  class="section">
+        <div>
+        <section>
           <h2>Skills and Experience</h2>
-          <div>
+          
             <section>
             <button aria-expanded="false" aria-controls="tech-skills" class="accordion" id="tech-skills-heading">
-              <h3> Technical skills</h3></button>
+              <h3 class="skills-heading">Technical skills</h3></button>
               <ul id="tech-skills" role="region" aria-labeledby="tech-skills-heading" class="accordion info tech-skills">
                 <li><b>Languages</b><br> JavaScript, HTML/HTML5, CSS/CSS3</li><br>
                   <li><b>Frameworks and libraries</b><br>
@@ -116,7 +132,7 @@
 
             <section>
             <button aria-expanded="false" aria-controls="non-tech-skills" class="accordion" id="non-tech-skills-button">
-              <h3> Non-technical skills</h3></button>
+              <h3 class="skills-heading">Non-technical skills</h3></button>
               <ul id="non-tech-skills" role="region" aria-labeledby="tech-skills-button" class="accordion info ">
                 <li>Disability support in partial sightedness and Autism Spectrum Condition</li>
                 <li>Mental health awareness and support</li>
@@ -130,7 +146,7 @@
 
             <section>
               <button aria-expanded="false" aria-controls="non-tech-experience" class="accordion non-tech-experience" id="non-tech-experience-button">
-                <h3> Experience</h3> 
+                <h3 class="skills-heading">Experience</h3> 
               </button>
               <ul id="non-tech-experience" role="region" aria-labeledby="non-tech-experience-button" class="accordion info experience">
                 <li><b>Full Stack Coding Bootcamp, Northcoders</b>
@@ -178,37 +194,47 @@
                 </li> 
               </ul>
             </section>
-
-           
-            
           </section>
           <div class="line"></div>
-        </div>
-
-  
-
-        <div id="projects" class="section">
+          </div>
+          
+        <div>
+        <section>
           <h2>Projects</h2>
-          <p>
-            Budding<br>
-            NC News
-          </p>
-          <div class="line"></div>
+          <div class="card">
+            <h3 class="project">Budding</h3>
+          </div>
+          <div class="card">
+            <h3 class="project">NC News</h3>
+          </div>
+          
+        </section>
+        <div class="line"></div>
         </div>
-        <div id="blog" class="section">
+          
+          
+       
+        <div>
+        <section>
           <h2>Blog</h2>
-          <p></p>
+        </section>
           <div class="line"></div>
         </div>
-        <div id="contact" class="section">
+
+
+
+        <div>
+        <section>
           <h2>Contact</h2>
           <p>Twitter GitHub LinkedIn Dev.to Email Contact form</p>
         <embed><a class="twitter-timeline" data-width="250" data-height="300" data-theme="dark"
           href="https://twitter.com/stephaniethorns?ref_src=twsrc%5Etfw">Tweets by stephaniethorns</a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></embed>
+        </section>
         </div>
-      </div>
+        </div>
     </div>
+  
   </body>
   </main>
 </html>

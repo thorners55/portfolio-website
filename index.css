@@ -42,14 +42,24 @@ body {
 nav {
   font-family: "Asap", sans-serif;
   font-weight: 700;
-  color: #381460;
   padding-top: 10%;
-  line-height: 2;
   margin-left: 10%;
 }
 
 a {
+  display: block;
   text-decoration: none;
+  cursor: pointer;
+  pointer-events: auto;
+  margin-bottom: -15px;
+}
+
+a:visited {
+  color: #381460;
+}
+
+a:hover {
+  color: #b21f66;
 }
 
 p {
@@ -74,38 +84,35 @@ h1 {
 
 h2 {
   font-family: "Asap";
-  font-size: 25px;
+  font-size: 30px;
 }
 
 h3,
 h4 {
-  font-size: 20px;
+  font-size: 22px;
   color: #381460;
 }
 
-h3::before {
-  content: "\25BA";
-  color: #007000;
-  padding-right: 1ch;
+h3.skills-heading {
+  text-decoration: underline;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
-h3.expanded::before {
+h3.skills-heading:before {
+  content: "\25BA";
+  color: #03a090;
+  padding-right: 1ch;
+  display: inline-block;
+}
+
+h3.expanded:before {
   content: "\25BC";
 }
 
-.section {
-  opacity: 0;
-  margin-bottom: 10vh;
-}
-
 .line {
-  border-bottom: 5px solid #bca2dd;
+  border-bottom: 5px solid #a07dcf;
   width: 300px;
-}
-
-.about {
-  opacity: 0;
-  margin-bottom: 10vh;
 }
 
 .blurb {
@@ -135,5 +142,18 @@ button + ul {
 button {
   background-color: #fefefa;
   border: none;
-  font-family: "Work Sans", sans-serif;
+  font-family: "WorkSans", sans-serif;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.card {
+  box-shadow: -4px -4px 20px 0 #949494;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+div > section {
+  margin-top: 15vh;
+  margin-bottom: 15vh;
 }
