@@ -62,11 +62,6 @@ a:hover {
   color: #b21f66;
 }
 
-p {
-  color: #381460;
-  padding-bottom: 10vh;
-}
-
 p + ul {
   margin-top: -10vh;
   display: inline-block;
@@ -117,6 +112,7 @@ h3.expanded:before {
 
 .blurb {
   display: none;
+  padding-bottom: 10vh;
 }
 
 .experience {
@@ -149,11 +145,69 @@ button {
 
 .card {
   box-shadow: -4px -4px 20px 0 #949494;
-  transition: 0.3s;
   border-radius: 5px;
+  margin: 50px 0 70px 0;
+  padding: 40px 40px 10px 40px;
+}
+
+.card > p {
+  width: 450px;
+  text-align: justify;
+}
+
+.budding-demo-card {
+  box-shadow: -4px -4px 20px 0 #949494;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 2;
+  left: 520px;
+  top: 215px;
+  width: 25vw;
+  height: 40%;
+  background-color: #fefefa;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
 }
 
 div > section {
   margin-top: 15vh;
   margin-bottom: 15vh;
+}
+
+ul.project-tech li {
+  display: inline;
+  font-size: 20px;
+}
+
+ul.project-tech {
+  margin-top: -25px;
+  margin-left: -40px;
+}
+
+div.project-links > a {
+  display: inline-block;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.project-links {
+  text-align: center;
+}
+
+.nc-news-demo-card {
+  box-shadow: -4px -4px 20px 0 #949494;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 2;
+  left: 520px;
+  top: 100px;
+  width: 25vw;
+  height: 80%;
+  background-color: #fefefa;
 }
