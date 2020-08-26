@@ -24,26 +24,41 @@
           /* Check the location of each 'section'. If it is more than 1/5th of the screen height from the bottom of the screen, fade in */
           let screenBottom = $($(window).scrollTop() + $(window).height());
           let appearAfterScroll = $(window).height() / 5;
+          let navFocus = $(window).height() / 2;
           
-          $(".section").each(function (i) {
+          $(".section").each(function () {
             if (($(this).position().top + appearAfterScroll) < screenBottom[0]) {
                $(this).animate({ opacity: 1 }, 1000);
+            
+            }
+            
+            /* Shows underline on focused section on nav bar */
+            let focusedSection = "." + $(this).attr("id");
+            let focusedSectionClass = ".nav-" + $(this).attr("id");
+            if (($(this).position().top + navFocus)  < screenBottom[0]) {
+                 $(focusedSectionClass).css("border-bottom", "3px solid #b21f66").css("width", "100px");
             }
           });
+           
+        
         });
+       
+
+       
+
 
          $(".accordion").each(function () {
           
-          // shows/hides content when click heading
+          /* Shows/hides content when click heading */
            $(this).click(function(event) {
-            // will only collapse or expand when press on the button or the heading, not the ul
+            /* Will only collapse or expand when press on the button or the heading, not the ul */
             var target = $(event.target);
             if (target.is("button") || target.is("h3")) {
 
-            // collapse any h3 element that is expanded (arrow pointing down) and toggle class, which will make arrow point right, but NOT the one you have clicked on. Only the one you have clicked on will point down
+            /* Collapse any h3 element that is expanded (arrow pointing down) and toggle class, which will make arrow point right, but NOT the one you have clicked on. Only the one you have clicked on will point down */
             $("h3.expanded").not($(this).find("h3")).toggleClass("expanded");
             
-            // this enables you to click on the heading and have it toggle the arrow
+            /* Enable clicking on the heading and have it toggle the arrow */
             // switches aria-expanded between true and false on the heading you have clicked 
             if ($(this).attr("aria-expanded") === "true") {
                var flipped = "false";
@@ -55,9 +70,9 @@
             $(this).find("h3").toggleClass("expanded");
             $(this).attr("aria-expanded", flipped);
 
-            // this gets the next element (the ul tag) and toggles between hiding or showing the ul, also animates it
-            // slides up everything EXCEPT the ul tag following the heading you have clicked on
-            // sets aria-expanded to false on everything but EXCEPT the button you have clicked on
+            /* Gets the next element (the ul tag) and toggles between hiding or showing the ul, also animates it.
+            Slides up everything EXCEPT the ul tag following the heading clicked on.
+            Sets aria-expanded to false on everything but EXCEPT the button clicked on.*/
              var nextElement = $(this).next(); 
              nextElement.slideToggle();
              $(".info").not(nextElement).slideUp();
@@ -92,18 +107,18 @@
           />
 
           <nav>
-            <a href="#about">ABOUT</a><br />
-            <a href="#skills">SKILLS AND EXPERIENCE</a><br />
-            <a href="#projects">PROJECTS</a><br />
-            <a href="#blog">BLOG</a><br>
-            <a href="#contact">CONTACT</a>
+            <a href="#about" class="nav-about">ABOUT</a><br />
+            <a href="#skills" class="nav-skills">SKILLS AND EXPERIENCE</a><br />
+            <a href="#projects" class="nav-projects">PROJECTS</a><br />
+            <a href="#blog" class="nav-blog">BLOG</a><br>
+            <a href="#contact" class="nav-contact">CONTACT</a>
           </nav>
         </div>
       </header>
       <main>
       <body>
       <div class="bod">
-        <div id="about" class="about">
+        <div id="about" class="about section">
         <h1> < Stephanie Thornley /> </h1>
           <p class="blurb">
             Hello! I'm Stephanie, a hopeful Junior Software Developer from Leeds.<br>
@@ -112,7 +127,7 @@
           <div class="line"></div>
         </div>
 
-        <div id="skills">
+        <div id="skills" class="section skills">
         <section>
           <h2>Skills and Experience</h2>
           
@@ -198,7 +213,7 @@
           <div class="line"></div>
           </div>
           
-        <div id="projects">
+        <div id="projects" class="section projects">
         <section>
           <h2>Projects</h2>
           <div class="container">
@@ -259,7 +274,7 @@
           
           
        
-        <div id="blog">
+        <div id="blog" class="section blog">
         <section>
           <h2>Blog</h2>
         </section>
@@ -268,7 +283,7 @@
 
 
 
-        <div id="contact">
+        <div id="contact" class="section contact">
         <section>
           <h2>Contact</h2>
           <p>Twitter GitHub LinkedIn Dev.to Email Contact form</p>

@@ -16,6 +16,14 @@ body {
   color: #381460;
 }
 
+.section {
+  opacity: 0;
+}
+
+.active {
+  color: green;
+}
+
 .bod {
   display: grid;
   grid-area: bod;
