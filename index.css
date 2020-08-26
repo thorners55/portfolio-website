@@ -198,14 +198,11 @@ ul.project-tech {
 div.project-links > a {
   display: inline-block;
   padding: 15px;
+  padding-left: 0px;
   margin-bottom: 20px;
   font-weight: bold;
   font-size: 18px;
   text-decoration: underline;
-}
-
-.project-links {
-  text-align: center;
 }
 
 .nc-news-demo-card {
@@ -213,9 +210,25 @@ div.project-links > a {
   border-radius: 5px;
   position: absolute;
   z-index: 2;
-  left: 520px;
+  left: 380px;
   top: 100px;
-  width: 25vw;
-  height: 80%;
+  width: 35vw;
+  height: 20em;
   background-color: #fefefa;
+}
+
+.nc-news-p {
+  width: 300px !important;
+  padding-bottom: 20px;
+}
+
+.nc-news-project-links > a {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: underline;
+  padding: 15px;
+  padding-left: 0px;
+  text-align: center;
 }

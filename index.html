@@ -31,7 +31,7 @@
                $(this).animate({ opacity: 1 }, 1000);
             
             }
-            /* Shows underline on focused section on nav bar */
+            /* Shows underline only on nav link in nav bar corresponding to the section screen is on */
             let focusedSection = "." + $(this).attr("id");
             let focusedSectionClass = ".nav-" + $(this).attr("id");
             if (($(this).position().top + navFocus)  < screenBottom[0]) {
@@ -42,16 +42,9 @@
             // If scroll away from section, take off underline
             // Only have one nav link underlined
           });
-           
-        
         });
        
-
-       
-
-
          $(".accordion").each(function () {
-          
           /* Shows/hides content when click heading */
            $(this).click(function(event) {
             /* Will only collapse or expand when press on the button or the heading, not the ul */
@@ -255,10 +248,10 @@
                     <li>Axios, </li>
                     <li>CSS</li>
                   </ul>
-                  <p>A Reddit-style discussion website with articles and comments that users can up vote or down vote, browse by topic, and sort by date or most popular. <br>
+                  <p class="nc-news-p">A Reddit-style discussion website with articles and comments that users can up vote or down vote, browse by topic, and sort by date or most popular. <br>
                   <br>
                   Back-end and front-end made as part of the Northcoders bootcamp coursework.</p>
-                  <div class="project-links">
+                  <div class="nc-news-project-links">
                     <a href="#">Live site</a>
                     <a href="#">Back-end code</a>
                     <a href="#">Front-end code</a>
