@@ -31,13 +31,16 @@
                $(this).animate({ opacity: 1 }, 1000);
             
             }
-            
             /* Shows underline on focused section on nav bar */
             let focusedSection = "." + $(this).attr("id");
             let focusedSectionClass = ".nav-" + $(this).attr("id");
             if (($(this).position().top + navFocus)  < screenBottom[0]) {
                  $(focusedSectionClass).css("border-bottom", "3px solid #b21f66").css("width", "100px");
-            }
+                 $(".nav-link").not($(focusedSectionClass)).css("border-bottom", "3px solid #fefefa");
+            } 
+
+            // If scroll away from section, take off underline
+            // Only have one nav link underlined
           });
            
         
@@ -107,11 +110,11 @@
           />
 
           <nav>
-            <a href="#about" class="nav-about">ABOUT</a><br />
-            <a href="#skills" class="nav-skills">SKILLS AND EXPERIENCE</a><br />
-            <a href="#projects" class="nav-projects">PROJECTS</a><br />
-            <a href="#blog" class="nav-blog">BLOG</a><br>
-            <a href="#contact" class="nav-contact">CONTACT</a>
+            <a href="#about" class="nav-about nav-link">ABOUT</a><br />
+            <a href="#skills" class="nav-skills nav-link">SKILLS AND EXPERIENCE</a><br />
+            <a href="#projects" class="nav-projects nav-link">PROJECTS</a><br />
+            <a href="#blog" class="nav-blog nav-link">BLOG</a><br>
+            <a href="#contact" class="nav-contact nav-link">CONTACT</a>
           </nav>
         </div>
       </header>
