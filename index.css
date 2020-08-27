@@ -236,9 +236,9 @@ div.project-links > a {
   background-color: #03a090;
   border-radius: 50%;
   display: inline-block;
-  opacity: 1;
   position: relative;
   margin-top: -40px;
+  opacity: 0;
 }
 
 footer {

@@ -31,13 +31,12 @@
           $(".section").each(function () {
             if (($(this).position().top + appearAfterScroll) < screenBottom[0]) {
                $(this).animate({ opacity: 1 }, 1000);
-               /* If the section is contacts, animate social media logos to bounce */
+               /* If the section is contacts, animate social media logos bounce and fade in one after the other */
                if (($(this).attr("id")) === "contact" && $(this).css("opacity") === "0") {
                  $(".dot").each(function (i) {
-                   console.log(i);
                    $(this).delay(500*i).animate(
-                     { top: -10 }, "fast"
-                   )
+                     { top: -10 }, "fast",
+                   ).animate({ opacity: 1 }, "fast")
                      .animate(
                        { top: 30 }, "fast"
                      )
