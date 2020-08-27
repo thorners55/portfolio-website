@@ -28,20 +28,25 @@
           let appearAfterScroll = $(window).height() / 5;
           let navFocus = $(window).height() / 2;
           
-          $(".section").each(function (count) {
+          $(".section").each(function () {
             if (($(this).position().top + appearAfterScroll) < screenBottom[0]) {
                $(this).animate({ opacity: 1 }, 1000);
+               /* If the section is contacts, animate social media logos to bounce */
                if (($(this).attr("id")) === "contact" && $(this).css("opacity") === "0") {
-                $(this).find("span")
-                   .animate(
-                     { top: -10 }, "slow"
+                 $(".dot").each(function (i) {
+                   console.log(i);
+                   $(this).delay(500*i).animate(
+                     { top: -10 }, "fast"
                    )
-                   .animate(
-                     { top: 30 }, 
-                   )
-                    .animate(
-                    { top: 10 }, "slow",
-                  )
+                     .animate(
+                       { top: 30 }, "fast"
+                     )
+                     .animate(
+                       { top: 10 }, "fast",
+                     )
+                 } )
+           
+                  
                }
             }
 
