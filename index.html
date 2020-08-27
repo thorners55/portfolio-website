@@ -19,6 +19,8 @@
           $(".blurb").slideDown(1000)  
         }
       );
+
+      $(".nav-about").css("border-bottom", "3px solid #b21f66").css("width", "100px");
   
 
         /* Every time the window is scrolled ... */
@@ -31,7 +33,7 @@
           $(".section").each(function () {
             if (($(this).position().top + appearAfterScroll) < screenBottom[0]) {
                $(this).animate({ opacity: 1 }, 1000);
-               /* If the section is contacts, animate social media logos bounce and fade in one after the other */
+               /* If the section is contacts, animate social media logos to bounce and fade in one after the other */
                if (($(this).attr("id")) === "contact" && $(this).css("opacity") === "0") {
                  $(".dot").each(function (i) {
                    $(this).delay(500*i).animate(
@@ -55,10 +57,7 @@
             if (($(this).position().top + navFocus)  < screenBottom[0]) {
                  $(focusedSectionClass).css("border-bottom", "3px solid #b21f66").css("width", "100px");
                  $(".nav-link").not($(focusedSectionClass)).css("border-bottom", "3px solid #fefefa");
-            } 
-
-            // If scroll away from section, take off underline
-            // Only have one nav link underlined
+            }
           });
         });
        
