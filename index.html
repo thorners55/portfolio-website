@@ -35,7 +35,7 @@
                $(this).animate({ opacity: 1 }, 1000);
                /* If the section is contacts, animate social media logos to bounce and fade in one after the other */
                if (($(this).attr("id")) === "contact" && $(this).css("opacity") === "0") {
-                 $(".dot").each(function (i) {
+                 $(".logo").each(function (i) {
                    $(this).delay(500*i).animate(
                      { top: -10 }, "fast",
                    ).animate({ opacity: 1 }, "fast")
@@ -299,12 +299,12 @@
         <div id="contact" class="section contact">
         <section>
           <h2>Contact</h2>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
+          <img src="./assets/SVGs/dev.to-logo.svg" class="logo" alt="DEV logo">
+          <img src="./assets/SVGs/github-logo.svg" class="logo" alt="GitHub logo">
+          <img src="./assets/SVGs/twitter-logo.svg" class="logo" alt="Twitter logo">
+          <img src="./assets/SVGs/linkedin-logo.svg" class="logo" alt="LinkedIn logo">
           
-          <p>Twitter GitHub LinkedIn Dev.to Email Contact form</p>
+        <br><br><br>
         <embed><a class="twitter-timeline" data-width="250" data-height="300" data-theme="dark"
           href="https://twitter.com/stephaniethorns?ref_src=twsrc%5Etfw">Tweets by stephaniethorns</a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></embed>
