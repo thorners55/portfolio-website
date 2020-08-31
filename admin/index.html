@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stephanie Thornley's Portfolio Site</title>
+    <link rel="stylesheet" href="index.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asap&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        /* Load about section and slide on site load */
+        $(".about").animate({ opacity: 1 }, 1000, function() {
+          $(".blurb").slideDown(1000)  
+        }
+      );
+
+      $(".nav-about").css("border-bottom", "3px solid #b21f66").css("width", "100px");
+  
+
+        /* Every time the window is scrolled ... */
+        $(window).scroll(function () {
+          /* Check the location of each 'section'. If it is more than 1/5th of the screen height from the bottom of the screen, fade in */
+          let screenBottom = $($(window).scrollTop() + $(window).height());
+          let appearAfterScroll = $(window).height() / 5;
+          let navFocus = $(window).height() / 2;
+          
+          $(".section").each(function () {
+            if (($(this).position().top + appearAfterScroll) < screenBottom[0]) {
+               $(this).animate({ opacity: 1 }, 1000);
+               /* If the section is contacts, animate social media logos to bounce and fade in one after the other */
+               if (($(this).attr("id")) === "contact" && $(this).css("opacity") === "0") {
+                 $(".logo").each(function (i) {
+                   $(this).delay(500*i).animate(
+                     { top: -10 }, "fast",
+                   ).animate({ opacity: 1 }, "fast")
+                     .animate(
+                       { top: 30 }, "fast"
+                     )
+                     .animate(
+                       { top: 10 }, "fast",
+                     )
+                 } )
+           
+                  
+               }
+            }
+
+            /* Shows underline only on nav link in nav bar corresponding to the section screen is on */
+            let focusedSection = "." + $(this).attr("id");
+            let focusedSectionClass = ".nav-" + $(this).attr("id");
+            if (($(this).position().top + navFocus)  < screenBottom[0]) {
+                 $(focusedSectionClass).css("border-bottom", "3px solid #b21f66").css("width", "100px");
+                 $(".nav-link").not($(focusedSectionClass)).css("border-bottom", "3px solid #fefefa");
+            }
+          });
+        });
+       
+         $(".accordion").each(function () {
+          /* Shows/hides content when click heading */
+           $(this).click(function(event) {
+            /* Will only collapse or expand when press on the button or the heading, not the ul */
+            var target = $(event.target);
+            if (target.is("button") || target.is("h3")) {
+
+            /* Collapse any h3 element that is expanded (arrow pointing down) and toggle class, which will make arrow point right, but NOT the one you have clicked on. Only the one you have clicked on will point down */
+            $("h3.expanded").not($(this).find("h3")).toggleClass("expanded");
+            
+            /* Enable clicking on the heading and have it toggle the arrow */
+            // switches aria-expanded between true and false on the heading you have clicked 
+            if ($(this).attr("aria-expanded") === "true") {
+               var flipped = "false";
+             }
+             else {
+               var flipped = "true";
+             }
+
+            $(this).find("h3").toggleClass("expanded");
+            $(this).attr("aria-expanded", flipped);
+
+            /* Gets the next element (the ul tag) and toggles between hiding or showing the ul, also animates it.
+            Slides up everything EXCEPT the ul tag following the heading clicked on.
+            Sets aria-expanded to false on everything but EXCEPT the button clicked on.*/
+             var nextElement = $(this).next(); 
+             nextElement.slideToggle();
+             $(".info").not(nextElement).slideUp();
+             $("button").not($(this)).attr("aria-expanded", "false")
+           }})
+         })
+
+         $("button").each(function() {
+          $(this).mouseover(function () {
+             $(this).find("h3").css("color", "#b21f66");
+           })
+         }) 
+
+          $("button").each(function () {
+          $(this).mouseleave(function () {
+            $(this).find("h3").css("color", "#381460"); 
+          })
+        }) 
+      })
+         
+    </script>
+  </head>
+  
+    <div class="page">
+      <header>
+        <div class="nav-section">
+          <img
+            class="photo"
+            src="./assets/circle-cropped.png"
+            alt="Stephanie sporting a cheesy grin"
+            width="200"
+          />
+
+          <nav>
+            <a href="#about" class="nav-about nav-link">ABOUT</a><br />
+            <a href="#skills" class="nav-skills nav-link">SKILLS AND EXPERIENCE</a><br />
+            <a href="#projects" class="nav-projects nav-link">PROJECTS</a><br />
+            <a href="#blog" class="nav-blog nav-link">BLOG</a><br>
+            <a href="#contact" class="nav-contact nav-link">CONTACT</a>
+          </nav>
+        </div>
+      </header>
+      <main>
+      <body>
+      <div class="bod">
+        <div id="about" class="about section">
+        <h1> < Stephanie Thornley /> </h1>
+          <p class="blurb">
+            Hello! I'm Stephanie, a hopeful Junior Software Developer from Leeds.<br>
+            I've gone from History grad to coding bootcamp grad, which seems like a big change, but they're not too different - as a logical thinker who appreciates the smaller details as well as the bigger picture, the transition came naturally to me. I love the process of coding (even debugging!), but I also enjoy learning about the history of tech and how advancements in technology are affected by social issues.
+            </p>
+          <div class="line"></div>
+        </div>
+
+        <div id="skills" class="section skills">
+        <section>
+          <h2>Skills and Experience</h2>
+          
+            <section>
+            <button aria-expanded="false" aria-controls="tech-skills" class="accordion" id="tech-skills-heading">
+              <h3 class="skills-heading">Technical skills</h3></button>
+              <ul id="tech-skills" role="region" aria-labeledby="tech-skills-heading" class="accordion info tech-skills">
+                <li><b>Languages</b><br> JavaScript, HTML/HTML5, CSS/CSS3</li><br>
+                  <li><b>Frameworks and libraries</b><br>
+                    React, React Native, Expo, jQuery, Node.js, Express, Jest</li><br>
+                <li><b>Database systems</b><br>
+                  PostgresSQL</li><br>
+                <li><b>Tools and processes</b><br>
+                  Git, TDD, semantic markup, accessibility, agile development</li>
+              </ul>  
+            </section>
+
+            <section>
+            <button aria-expanded="false" aria-controls="non-tech-skills" class="accordion" id="non-tech-skills-button">
+              <h3 class="skills-heading">Non-technical skills</h3></button>
+              <ul id="non-tech-skills" role="region" aria-labeledby="tech-skills-button" class="accordion info ">
+                <li>Disability support in partial sightedness and Autism Spectrum Condition</li>
+                <li>Mental health awareness and support</li>
+                <li>Cultural awareness and sensitivity</li>
+                <li>Independent learning and research</li>
+                <li>Communication</li>
+                <li>Critical thinking</li>
+                <li>Self-motivation and positivity</li>
+              </ul>
+            </section>
+
+            <section>
+              <button aria-expanded="false" aria-controls="non-tech-experience" class="accordion non-tech-experience" id="non-tech-experience-button">
+                <h3 class="skills-heading">Experience</h3> 
+              </button>
+              <ul id="non-tech-experience" role="region" aria-labeledby="non-tech-experience-button" class="accordion info experience">
+                <li><b>Full Stack Coding Bootcamp, Northcoders</b>
+                  <ul>
+                    <li>3 month intensive JavaScript coding bootcamp delivered remotely due to lockdown</li>
+                    <li>Daily lectures and sprints</li>
+                    <li>Pair programming</li>
+                    <li>Final group, student-led project, creating a mobile app, 'Budding', using agile development</li>
+                  </ul>
+                </li>
+                <li><b>Executive, The Prince's Trust</b>
+                <ul>
+                  <li>Building young people's skills and motivation, helping them to gain confidence and find employment</li>
+                  <li>Working with young people from a range of social and cultural backgrounds, in a variety of settings</li>
+                  <li>Outreach and recruitment, delivering life skills sessions, liaising with external partners, risk assessments and safeguarding, providing emotional support to young people</li>
+                </ul>
+                <h4>Volunteer work</h4>
+                  <li><b>Chaperone, Lighthouse Futures Trust</b>
+                    <ul>
+                      <li>Chaperoned Connections Club events for young people with an autism spectrum condition to socialise with others
+                      </li>
+                      <li>Attended events (e.g. drinks, bowling) to socialise and to ensure the event was running smoothly, everyone felt
+                        safe, and make sure everybody was included in activities and conversations</li>
+                    </ul>
+                  </li>
+                  <li><b>Team Mate, Over The Wall</b>
+                    <ul>
+                      <li>
+                        24/7 care for children affected by serious illnesses and their siblings during residential activity camps
+                      </li>
+                      <li>Participating in activities with children designed to encourage them to recognise their potential, focusing
+                        heavily on specific positive labelling</li>
+                      <li>Dynamically assessing risk and safeguarding</li>
+                    </ul>
+                  </li>
+                  <li><b>Secretary, Guide Dogs Society at Leeds University Union</b>
+                    <ul>
+                      <li>Organising and running fundraising events to raise awareness of the Guide Dogs charity to the student population
+                        and general public</li>
+                      <li>Processing administrative documents and permits for the society</li>
+
+                    </ul>
+                  </li>
+                </ul>
+                </li> 
+              </ul>
+            </section>
+          </section>
+          <div class="line"></div>
+          </div>
+          
+        <div id="projects" class="section projects">
+        <section>
+          <h2>Projects</h2>
+          <div class="container">
+            <div class="card">
+              <h3 class="project">Budding</h3>
+              <ul class="project-tech">
+                <li>JavaScript, </li>
+                <li>React Native, </li>
+                <li>Expo, </li>
+                <li>PostgresSQL, </li>
+                <li>AWS S3, </li>
+                <li>CSS, </li>
+                <li>Node.js, </li>
+                <li>Express.js </li>
+              </ul>
+              <p>Budding is an app for measuring and tracking the progress of plants using a photograph and the pot height measurement, made in two weeks as the final group project for the Northcoders coding bootcamp course.<br>
+              <br>
+              The user places a markers on the photo at the bottom of the pot, the top of the pot, and top of the plant. The app uses the position of these markers to calculate the distance between the bottom and top of the pot in pixels, and create a pixel-to-cm scale using the real-life pot height. It then uses this scale to calculate the real-life height of the plant. Each time a user measures their plant, it is saved as a snapshot and can be viewed on the plant page. Measurements displayed on a chart, enabling the user to track the growth of their plant over time.
+              </p>
+              <div class="project-links">
+                <a href="#">Live app</a>
+                <a href="#">Back-end code</a>
+                <a href="#">Front-end code</a>
+              </div>
+            </div>
+              <div class="budding-demo-card">
+                <h3>Video here</h3>
+              </div>
+
+              <div class="container">
+                <div class="card">
+                  <h3 class="project">NC News</h3>
+                  <ul class="project-tech">
+                    <li>JavaScript, </li>
+                    <li>React, </li>
+                    <li>Axios, </li>
+                    <li>CSS</li>
+                  </ul>
+                  <p class="nc-news-p">A Reddit-style discussion website with articles and comments that users can up vote or down vote, browse by topic, and sort by date or most popular. <br>
+                  <br>
+                  Back-end and front-end made as part of the Northcoders bootcamp coursework.</p>
+                  <div class="nc-news-project-links">
+                    <a href="#">Live site</a>
+                    <a href="#">Back-end code</a>
+                    <a href="#">Front-end code</a>
+                  </div>
+                </div>
+                <div class="nc-news-demo-card">
+                  <h3>Video here</h3>
+                </div>
+          </div>
+        
+         
+          
+        </section>
+        <div class="line"></div>
+        </div>
+          
+          
+       
+        <div id="blog" class="section blog">
+        <section>
+          <h2>Blog</h2>
+        </section>
+          <div class="line"></div>
+        </div>
+
+
+
+        <div id="contact" class="section contact">
+        <section>
+          <h2>Contact</h2>
+          <img src="./assets/SVGs/dev.to-logo.svg" class="logo" alt="DEV logo">
+          <img src="./assets/SVGs/github-logo.svg" class="logo" alt="GitHub logo">
+          <img src="./assets/SVGs/twitter-logo.svg" class="logo" alt="Twitter logo">
+          <img src="./assets/SVGs/linkedin-logo.svg" class="logo" alt="LinkedIn logo">
+          
+        <br><br><br>
+        <embed><a class="twitter-timeline" data-width="250" data-height="300" data-theme="dark"
+          href="https://twitter.com/stephaniethorns?ref_src=twsrc%5Etfw">Tweets by stephaniethorns</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></embed>
+        </section>
+        </div>
+        </div>
+    </div>
+  <footer>
+    <p><b>Stephanie Thornley, 2020</b><br>
+      Site built using HTML, CSS and jQuery - click here for source code</p>
+  </footer>
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  </body>
+  </main>
+</html>
