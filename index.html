@@ -20,21 +20,19 @@
         }
       );
 
-      $(".nav-about").css("border-bottom", "3px solid #b21f66").css("width", "100px");
-  
-
         /* Every time the window is scrolled ... */
         $(window).scroll(function () {
           /* Check the location of each 'section'. If it is more than 1/5th of the screen height from the bottom of the screen, fade in */
           let screenBottom = $($(window).scrollTop() + $(window).height());
-          let appearAfterScroll = $(window).height() / 5;
+          let appearAfterScroll = $(window).height() / 2;
           let navFocus = $(window).height() / 2;
+          
           
           $(".section").each(function () {
             if (($(this).position().top + appearAfterScroll) < screenBottom[0]) {
-               $(this).animate({ opacity: 1 }, 1000);
-               /* If the section is contacts, animate social media logos to bounce and fade in one after the other */
-               if (($(this).attr("id")) === "contact" && $(this).css("opacity") === "0") {
+               $(this).animate({ opacity: 1 }, 1200);
+               /* If the section is contacts and is first time have scrolled to contacts section, animate social media logos to bounce and fade in one after the other */
+               if (($(this).attr("id")) === "contact" && $(this).css("opacity") === "0") { 
                  $(".logo").each(function (i) {
                    $(this).delay(500*i).animate(
                      { top: -10 }, "fast",
@@ -51,12 +49,14 @@
                }
             }
 
-            /* Shows underline only on nav link in nav bar corresponding to the section screen is on */
+            /* Shows underline only on nav link in nav bar corresponding to the section screen is on.
+            When page loads at top, will automatically have "about" link underlined, scroll takes focused class off, then adds it back on upon scroll if this is the focused section */
+            $("nav-about").removeClass("focused-section-link");
             let focusedSection = "." + $(this).attr("id");
             let focusedSectionClass = ".nav-" + $(this).attr("id");
             if (($(this).position().top + navFocus)  < screenBottom[0]) {
-                 $(focusedSectionClass).css("border-bottom", "3px solid #b21f66").css("width", "100px");
-                 $(".nav-link").not($(focusedSectionClass)).css("border-bottom", "3px solid #fefefa");
+                 $(focusedSectionClass).addClass("focused-section-link");
+                 $(".nav-link").not($(focusedSectionClass)).removeClass("focused-section-link");
             }
           });
         });
@@ -104,6 +104,15 @@
             $(this).find("h3").css("color", "#381460"); 
           })
         }) 
+
+        /* On submit, form goes to Netlify, which emails me form input */
+        $("form").submit(function (e) {
+          e.preventDefault();
+          var $form = $(this);
+          $.post($form.attr("action"), $form.serialize()).then(function () {
+            alert("Thank you!");
+          });
+        });
       })
          
     </script>
@@ -120,7 +129,7 @@
           />
 
           <nav>
-            <a href="#about" class="nav-about nav-link">ABOUT</a><br />
+            <a href="#about" class="nav-about nav-link focused-section-link">ABOUT</a><br />
             <a href="#skills" class="nav-skills nav-link">SKILLS AND EXPERIENCE</a><br />
             <a href="#projects" class="nav-projects nav-link">PROJECTS</a><br />
             <a href="#blog" class="nav-blog nav-link">BLOG</a><br>
@@ -251,6 +260,7 @@
                 <a href="#">Back-end code</a>
                 <a href="#">Front-end code</a>
               </div>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/llKXad2gF8c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
               <div class="budding-demo-card">
                 <h3>Video here</h3>
@@ -285,16 +295,12 @@
         <div class="line"></div>
         </div>
           
-          
-       
         <div id="blog" class="section blog">
         <section>
           <h2>Blog</h2>
         </section>
           <div class="line"></div>
         </div>
-
-
 
         <div id="contact" class="section contact">
         <section>
@@ -303,8 +309,22 @@
           <img src="./assets/SVGs/github-logo.svg" class="logo" alt="GitHub logo">
           <img src="./assets/SVGs/twitter-logo.svg" class="logo" alt="Twitter logo">
           <img src="./assets/SVGs/linkedin-logo.svg" class="logo" alt="LinkedIn logo">
-          
         <br><br><br>
+
+        <form name="contact" method="POST" data-netlify="true">
+          <p>
+            <label>Name: <input type="text" name="name" /></label>
+          </p>
+          <p>
+            <label>Email: <input type="email" name="email" /></label>
+          </p>
+          <p>
+            <label>Message: <textarea name="message"></textarea></label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>
         <embed><a class="twitter-timeline" data-width="250" data-height="300" data-theme="dark"
           href="https://twitter.com/stephaniethorns?ref_src=twsrc%5Etfw">Tweets by stephaniethorns</a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></embed>

@@ -19,6 +19,7 @@ body {
 
 .section {
   opacity: 0;
+  scroll-margin-top: 5vh;
 }
 
 .bod {
@@ -57,6 +58,12 @@ a {
   cursor: pointer;
   pointer-events: auto;
   margin-bottom: -15px;
+  color: #381460;
+}
+
+nav > a {
+  border-bottom: 3px solid #fefefa;
+  width: 100px;
 }
 
 a:visited {
@@ -65,6 +72,11 @@ a:visited {
 
 a:hover {
   color: #b21f66;
+}
+
+.focused-section-link {
+  border-bottom: 3px solid #b21f66;
+  width: 100px;
 }
 
 p + ul {
@@ -168,8 +180,14 @@ button {
   left: 520px;
   top: 215px;
   width: 25vw;
-  height: 40%;
+  height: 30%;
   background-color: #fefefa;
+}
+
+iframe {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .container {
