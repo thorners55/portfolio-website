@@ -153,7 +153,7 @@ button + ul {
 }
 
 button {
-  background-color: #fefefa;
+  background-color: transparent;
   border: none;
   font-family: "WorkSans", sans-serif;
   cursor: pointer;
@@ -284,4 +284,88 @@ footer > p {
   font-size: 16px;
   color: #381460;
   padding-top: 50px;
+}
+
+form {
+  background-color: #ccbae3;
+  color: #03776a;
+  padding: 5%;
+  width: 50%;
+}
+
+.social-logos {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.contact-form-heading {
+  text-align: center;
+  margin-top: -5px;
+}
+
+label {
+  display: block;
+  position: absolute;
+  padding-left: 0.5em;
+  padding-top: 7px;
+  font-family: "Asap", sans-serif;
+  height: 20px;
+}
+
+input {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 4em;
+  padding-right: 0.5em;
+  font-family: "Work Sans", sans-serif;
+  font-size: 18px;
+  color: #381460;
+  width: 23ch;
+  background-color: #fafad2;
+  border: 0px solid;
+}
+
+input:focus {
+  outline-color: #03a090;
+}
+
+#message {
+  width: 95%;
+  height: 10em;
+}
+
+#message,
+textarea {
+  padding-top: 2.5em;
+  font-size: 16px;
+  color: #381460;
+  font-family: "Work Sans", sans-serif;
+  font-size: 18px;
+  resize: none;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  background-color: lightgoldenrodyellow;
+  border: 0px solid;
+}
+
+textarea:focus {
+  outline-color: #03a090;
+}
+
+.message {
+  display: block;
+  padding-right: 16.5em;
+  background-color: inherit;
+  margin-top: 1px;
+  margin-left: 1px;
+  padding-bottom: 20px;
+}
+
+form button {
+  background-color: #03a090;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 20px;
+  border: 1px solid #381460;
+  font-family: "Asap", sans-serif;
 }
