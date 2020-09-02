@@ -104,8 +104,81 @@
             $(this).find("h3").css("color", "#381460"); 
           })
         }) 
+        
+        /* FORM INPUTS:
+        Name: During input, if character length of name is less than 5, background of input box goes pink. Shows message telling minimum characters if less than 5 when leave the focus of the box.
+        Email: During input, if email does not match regex or is less than 6 characters, background of input box goes pink. Shows message telling minimum characters and allowed characters if less than 6 when leave the focus of the box.
+        Message: During input, if message does not match character length, background goes pink - changes to yellow when meets min character length */
+        $("#name").on("input", function () {
+          var name = $(this).val();
+          var re = /[!@#$£%^&*(),.?"':{}|<>12345678910¬`+\-_=\\~/\[\]]/;
+          var specialCharacter = re.test(name);
+          if (specialCharacter || name.length < 5) {
+            $(this).addClass("invalid");
+          }
+          else {
+            $(this).removeClass("invalid");
+          }
+        });
 
-        /* On submit, form goes to Netlify, which emails me form input */
+        $("#name").focusout(function () {
+         var name = $(this).val();
+          var re = /[!@#$£%^&*(),.?"':{}|<>12345678910¬`+\-_=\\~/\[\]]/;
+          var notName = re.test(name); 
+         if (notName || name.length < 5) {
+           $(".invalidnamemessage").show("fast");
+           $(this).addClass("invalid");
+         } else {
+           $(".invalidnamemessage").hide("fast");
+          $(this).removeClass("invalid");
+         }
+        })
+
+        $("#email").on("input", function () {
+          var email = $(this).val();
+          var re = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+          var isEmail = re.test(email);
+          if (!isEmail || email.length < 6 ) {
+            $(this).addClass("invalid");
+          } else {
+            $(this).removeClass("invalid");
+          }
+        })
+
+        $("#email").focusout(function () {
+          var re = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+          var isEmail = re.test($(this).val());
+          if (!isEmail || email.length < 6) {
+            $(".invalidemailmessage").show("fast");
+             $(this).addClass("invalid");
+          } else {
+            $(".invalidemailmessage").hide("fast");
+            $(this).removeClass("invalid");
+          }
+        })
+
+        $("#message").on("input", function() {
+          var message = $(this).val();
+          if (message.length < 70) {
+            $(this).addClass("invalid");
+          } else {
+            $(this).removeClass("invalid");
+          }
+        })
+
+        $("#message").focusout(function () {
+          var message = $(this).val();
+          if (message.length < 70) {
+            $(".invalidmessagemessage").show("fast");
+            $(this).addClass("invalid");
+          } else {
+            $(".invalidmessagemessage").hide("fast");
+            $(this).removeClass("invalid");
+          }
+        })
+
+
+        /* On contact form submit, form goes to Netlify, which emails me form input */
         $("form").submit(function (e) {
           e.preventDefault();
           var $form = $(this);
@@ -314,24 +387,25 @@
 
         <form name="contact" method="POST" data-netlify="true" class="card">
           <h3 class="contact-form-heading">Get in touch!</h3>
-          <p>
+    
             <div id="float-container" class="float-container">
-            <label for="name">Name </label><input type="text" name="name" id="name">
+            <label for="name">Name </label><input type="text" name="name" id="name" minlength="5" maxlength="30" required/>
+            <p class="invalidnamemessage">Name must have a minimum of 5 characters, no special characters</p>
             </div>
-          </p>
-          <p>
+
               <div id="float-container" class="float-container">
-            <label for="email">Email </label><input type="email" name="email" id="email" />
+            <label for="email">Email </label><input type="email" name="email" id="email" minlength ="6" maxlength="25" required/>
+            <p class="invalidemailmessage">Must be a valid email address with a minimum of 6 characters</p>
             </div>
-          </p>
-          <p>
+
             <div id="float-container" class="float-container">
-            <label for="message" class="message">Message</label> <textarea name="message" id="message" maxlength="600"></textarea>
+            <label for="message" class="message">Message</label> <textarea name="message" id="message" minlength="70" maxlength="600" required></textarea>
+            <p class="invalidmessagemessage">Message must be a minimum of 70 characters</p>
             </div>
-          </p>
-          <p>
+
+      
             <button type="submit" >Send</button>
-          </p>
+      
         </form>
         <embed><a class="twitter-timeline" data-width="250" data-height="300" data-theme="dark"
           href="https://twitter.com/stephaniethorns?ref_src=twsrc%5Etfw">Tweets by stephaniethorns</a>
