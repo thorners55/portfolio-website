@@ -294,8 +294,13 @@ form {
 }
 
 .social-logos {
-  margin-top: 70px;
-  margin-bottom: 70px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+div > a {
+  display: inline;
+  margin-right: 10px;
 }
 
 .contact-form-heading {
@@ -324,7 +329,7 @@ input {
   font-family: "Work Sans", sans-serif;
   font-size: 18px;
   color: #381460;
-  width: 78%;
+  width: 70%;
   background-color: #fafad2;
   border: 0px solid;
 }
@@ -416,3 +421,21 @@ form button:focus {
   padding-right: 20px;
   border: 1px solid #381460;
 } */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 40% 110%;
+  grid-gap: 10%;
+}
+
+.contact-grid > .card {
+  margin-top: 15px;
+}
+
+.twitter-border {
+  height: 301px;
+  width: 249px;
+  padding: 1px;
+  border-radius: 2%;
+  box-shadow: 0px 0px 20px 4px #949494;
+}
