@@ -428,3 +428,81 @@ footer > p {
   color: #381460;
   padding-top: 50px;
 }
+
+@media (max-width: 950px) {
+  html {
+    overflow-x: visible;
+    width: 100%;
+  }
+
+  body {
+    width: 100%;
+    margin: 10px;
+  }
+
+  .bod {
+    display: block;
+    padding: 0;
+  }
+
+  .page {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-rows: max-content;
+    grid-gap: 0;
+    grid-template-areas: "nav-section" "main";
+    margin-right: 10px;
+  }
+
+  header {
+    background-color: #c7b0de;
+    margin-top: -10px;
+    margin-left: -10px;
+  }
+
+  nav {
+    display: block;
+    width: 100%;
+    padding: 3ch 0;
+    text-align: center;
+    margin-left: 0px;
+    flex-wrap: wrap;
+  }
+
+  .nav-section {
+    display: flex;
+    position: static;
+    grid-area: nav-section;
+    font-size: 18px;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  nav > a {
+    display: block;
+    width: auto;
+    padding: 0.5ch;
+    margin: 0.2ch;
+    border: none;
+  }
+
+  nav > a:hover {
+    background-color: #fefefa;
+  }
+
+  .focused-section-link {
+    width: auto;
+    border: none;
+  }
+
+  main {
+    grid-area: main;
+    margin: 10px;
+  }
+
+  .photo {
+    padding-top: 5%;
+    width: 30%;
+  }
+}
