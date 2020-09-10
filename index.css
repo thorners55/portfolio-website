@@ -2,14 +2,19 @@ html {
   font-size: 18px;
   color: #381460;
   overflow-x: hidden;
+  margin: -10px -10px;
 }
 
-body {
+#wrapper {
   background: #fefefa;
   font-family: "Nunito", sans-serif;
-  margin: 0;
+  margin: -10px -10px;
   line-height: 1.8;
   color: #381460;
+  display: grid;
+  grid-gap: 5%;
+  grid-template-columns: 20% 75%;
+  grid-template-areas: nav-section bod;
 }
 
 a {
@@ -52,13 +57,6 @@ div > section {
   padding-top: 10vh;
   padding-right: 20vw;
   padding-bottom: 50px;
-}
-
-.page {
-  display: grid;
-  grid-gap: 5%;
-  grid-template-columns: 20% 75%;
-  grid-template-areas: nav-section bod;
 }
 
 /* Side area */
@@ -424,15 +422,17 @@ footer > p {
 }
 
 @media (max-width: 950px) {
-  html {
+  #wrapper {
+    position: absolute;
+    width: 100%;
     overflow-x: hidden;
-    width: 100%;
-  }
-
-  body {
-    width: 100%;
-
     margin: 0;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-rows: max-content;
+    grid-gap: 0;
+    grid-template-areas: "nav-section" "main";
+    margin-bottom: -10px;
   }
 
   .bod {
@@ -440,20 +440,9 @@ footer > p {
     padding: 0;
   }
 
-  .page {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-auto-rows: max-content;
-    grid-gap: 0;
-    grid-template-areas: "nav-section" "main";
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   header {
     background-color: #c7b0de;
     margin-top: -10px;
-    margin-left: -10px;
   }
 
   nav {
@@ -470,7 +459,6 @@ footer > p {
     position: static;
     grid-area: nav-section;
     font-size: 18px;
-    width: 100%;
     justify-content: space-evenly;
     flex-wrap: wrap;
   }
@@ -573,8 +561,9 @@ footer > p {
   .social-logos {
     margin-top: 60px;
     margin-bottom: 60px;
+    padding: 0 15%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   form {
@@ -638,5 +627,15 @@ footer > p {
 
   .contact-form-heading {
     margin-left: 0;
+  }
+
+  footer {
+    padding-bottom: 30px;
+  }
+
+  footer > p {
+    font-size: 16px;
+    color: #381460;
+    padding: 10px;
   }
 }
