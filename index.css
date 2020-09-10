@@ -172,11 +172,6 @@ button + ul {
 
 /* Main area - Projects */
 
-.container {
-  position: relative;
-  z-index: 1;
-}
-
 .card {
   box-shadow: -4px -4px 20px 0 #949494;
   border-radius: 5px;
@@ -301,10 +296,9 @@ form {
   color: #03776a;
   padding: 5%;
   width: 50%;
-}
-
-form.card {
-  width: 50%;
+  box-shadow: -4px -4px 20px 0 #949494;
+  border-radius: 5px;
+  margin-top: 3ch;
 }
 
 .contact-form-heading {
@@ -431,13 +425,14 @@ footer > p {
 
 @media (max-width: 950px) {
   html {
-    overflow-x: visible;
+    overflow-x: hidden;
     width: 100%;
   }
 
   body {
     width: 100%;
-    margin: 10px;
+
+    margin: 0;
   }
 
   .bod {
@@ -451,7 +446,8 @@ footer > p {
     grid-auto-rows: max-content;
     grid-gap: 0;
     grid-template-areas: "nav-section" "main";
-    margin-right: 10px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   header {
@@ -504,5 +500,143 @@ footer > p {
   .photo {
     padding-top: 5%;
     width: 30%;
+  }
+
+  .line {
+    margin: auto;
+  }
+
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  p.blurb {
+    padding: 0;
+    padding-left: 1ch;
+    padding-right: 1ch;
+    width: auto;
+  }
+
+  .card {
+    box-shadow: -4px -4px 20px 0 #949494;
+    border-radius: 5px;
+
+    padding: 40px 40px 60px 40px;
+    width: 70%;
+    margin: 50px auto;
+  }
+
+  #budding-more-info {
+    display: block;
+  }
+
+  .project-links,
+  .project-links > a {
+    display: block;
+    text-align: center;
+  }
+
+  .budding-demo-card {
+    box-shadow: -4px -4px 20px 0 #949494;
+    border-radius: 5px;
+    width: 90%;
+    height: 520px;
+    background-color: #fefefa;
+  }
+
+  .nc-news-demo-card {
+    box-shadow: -4px -4px 20px 0 #949494;
+    border-radius: 5px;
+    background-color: #fefefa;
+    height: 30vh;
+    width: 100%;
+    margin: 4ch 0;
+  }
+
+  .contact-grid {
+    display: block;
+  }
+
+  .contact-grid > .card {
+    margin-top: 15px;
+  }
+
+  .logo {
+    height: 50px;
+    margin-top: -60px;
+    opacity: 0;
+    display: inline-block;
+    position: relative;
+  }
+
+  .social-logos {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  form {
+    background-color: #ccbae3;
+    color: #03776a;
+    padding: 5%;
+    width: 80%;
+  }
+
+  form.card {
+    width: 70%;
+    margin: 0;
+    margin-right: 0;
+    margin-top: 0;
+  }
+
+  input {
+    padding-top: 13px;
+    padding-bottom: 10px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 18px;
+    color: #381460;
+    padding-right: 0.5em;
+    background-color: #fafad2;
+    border: 0px solid;
+  }
+
+  textarea {
+    padding-top: 2.5em;
+    font-size: 16px;
+    color: #381460;
+    font-family: "Work Sans", sans-serif;
+    font-size: 18px;
+    resize: none;
+
+    background-color: lightgoldenrodyellow;
+    border: 0px solid;
+    height: 10em;
+  }
+
+  label {
+    font-family: "Asap", sans-serif;
+    height: 20px;
+  }
+
+  .twitter-border {
+    height: 301px;
+    width: 249px;
+    padding: 1px;
+    border-radius: 2%;
+    box-shadow: 0px 0px 20px 4px #949494;
+    margin: auto;
+  }
+
+  .contact-grid > form {
+    margin: auto;
+    box-shadow: -4px -4px 20px 0 #949494;
+    border-radius: 5px;
+    margin-top: 3ch;
+  }
+
+  .contact-form-heading {
+    margin-left: 0;
   }
 }
