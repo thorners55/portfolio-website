@@ -47,6 +47,7 @@ ul {
 }
 
 button {
+  display: block;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -54,8 +55,7 @@ button {
 }
 
 div > section {
-  margin-top: 15vh;
-  margin-bottom: 15vh;
+  margin: 15vh 0;
 }
 
 /* Page layout */
@@ -68,7 +68,7 @@ div > section {
 
 /* Side area */
 
-.side-section {
+#side-section {
   display: grid;
   grid-template-columns: 18vw;
   grid-template-rows: 33vh 33vh 33vh;
@@ -296,7 +296,6 @@ div > a {
 
 .float-container {
   margin: 15px 0;
-
   width: 100%;
 }
 
@@ -345,11 +344,8 @@ label[for="message"] {
 }
 
 input {
-  padding-top: 13px;
-  padding-bottom: 10px;
-  padding-right: 0.5em;
-  padding-left: 4em;
-  font-family: "Work Sans", sans-serif;
+  padding: 13px 0.5em 10px 4em;
+  font-family: "Nunito", sans-serif;
   font-size: 18px;
   color: #381460;
   width: 70%;
@@ -365,7 +361,7 @@ textarea {
   padding-top: 2.5em;
   font-size: 16px;
   color: #381460;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 18px;
   resize: none;
   padding-left: 0.5em;
@@ -501,7 +497,7 @@ footer > p {
     flex: 1 0 auto;
   }
 
-  .side-section {
+  #side-section {
     display: flex;
     position: static;
     grid-area: side-section;
@@ -636,22 +632,11 @@ footer > p {
     margin-top: 0;
   }
 
-  input {
-    padding-top: 13px;
-    padding-bottom: 10px;
-    font-family: "Work Sans", sans-serif;
-    font-size: 18px;
-    color: #381460;
-    padding-right: 0.5em;
-    background-color: #fafad2;
-    border: 0px solid;
-  }
-
   textarea {
     padding-top: 2.5em;
     font-size: 16px;
     color: #381460;
-    font-family: "Work Sans", sans-serif;
+    font-family: "Nunito", sans-serif;
     font-size: 18px;
     resize: none;
 
@@ -708,6 +693,7 @@ footer > p {
   }
 
   #scroll-top-button {
+    display: block;
     height: 40px;
     width: 40px;
     position: fixed;
