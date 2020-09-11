@@ -1,3 +1,5 @@
+/* Global styles */
+
 html {
   font-size: 18px;
   color: #381460;
@@ -20,7 +22,7 @@ main {
   display: grid;
   grid-gap: 5%;
   grid-template-columns: 20% 75%;
-  grid-template-areas: "nav-section bod";
+  grid-template-areas: "side-section bod";
 }
 
 a {
@@ -66,7 +68,7 @@ div > section {
 
 /* Side area */
 
-.nav-section {
+.side-section {
   display: grid;
   grid-template-columns: 18vw;
   grid-template-rows: 33vh 33vh 33vh;
@@ -446,10 +448,16 @@ footer > p {
 }
 
 @media (max-width: 950px) {
+  /*Global styles*/
   html {
     padding: 0;
   }
 
+  .line {
+    margin: auto;
+  }
+
+  /* Page layout */
   #wrapper {
     position: absolute;
     width: auto;
@@ -459,7 +467,7 @@ footer > p {
     grid-template-columns: 100%;
     grid-auto-rows: max-content;
     grid-gap: 0;
-    grid-template-areas: "nav-section" "main";
+    grid-template-areas: "side-section" "main";
     margin-bottom: -10px;
     padding: 0;
   }
@@ -477,6 +485,8 @@ footer > p {
     padding-top: 0;
   }
 
+  /* Header and navigation */
+
   header {
     background-color: #c7b0de;
     margin-top: -10px;
@@ -491,10 +501,10 @@ footer > p {
     flex: 1 0 auto;
   }
 
-  .nav-section {
+  .side-section {
     display: flex;
     position: static;
-    grid-area: nav-section;
+    grid-area: side-section;
     font-size: 18px;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -524,9 +534,7 @@ footer > p {
     margin: 0;
   }
 
-  .line {
-    margin: auto;
-  }
+  /* Main area - About */
 
   h1,
   h2 {
@@ -538,6 +546,19 @@ footer > p {
     padding-bottom: 10vh;
     width: auto;
   }
+
+  /* Main area - Skills and Experience */
+
+  .experience {
+    list-style-type: none;
+    padding-inline-start: 10vw;
+  }
+
+  .experience > li > ul {
+    padding-inline-start: 5vw;
+  }
+
+  /* Main area - Projects */
 
   .card {
     box-shadow: -4px -4px 20px 0 #949494;
@@ -575,6 +596,8 @@ footer > p {
     background-color: #fefefa;
     height: 30vh;
   }
+
+  /* Main area - Contacts */
 
   .contact-grid {
     display: block;
@@ -667,6 +690,8 @@ footer > p {
     margin-left: 0;
   }
 
+  /* Footer */
+
   footer {
     display: block;
     padding-bottom: 30px;
@@ -699,14 +724,5 @@ footer > p {
 
   #scroll-top-button:hover {
     background-color: #b21f66;
-  }
-
-  .experience {
-    list-style-type: none;
-    padding-inline-start: 10vw;
-  }
-
-  .experience > li > ul {
-    padding-inline-start: 5vw;
   }
 }
