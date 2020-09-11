@@ -22,7 +22,7 @@ a {
   text-decoration: none;
   cursor: pointer;
   pointer-events: auto;
-  margin-bottom: -15px;
+  margin-bottom: 1ch;
   color: #381460;
 }
 
@@ -422,9 +422,13 @@ footer > p {
 }
 
 @media (max-width: 950px) {
+  html {
+    padding: 0;
+  }
+
   #wrapper {
     position: absolute;
-    width: 100%;
+    width: auto;
     overflow-x: hidden;
     margin: 0;
     display: grid;
@@ -433,11 +437,21 @@ footer > p {
     grid-gap: 0;
     grid-template-areas: "nav-section" "main";
     margin-bottom: -10px;
+    padding: 0;
+  }
+
+  main {
+    grid-area: main;
+    /*  margin: 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .bod {
-    display: block;
-    padding: 0;
+    padding-right: 0;
+    width: 90%;
+    padding-top: 0;
   }
 
   header {
@@ -446,12 +460,12 @@ footer > p {
   }
 
   nav {
-    display: block;
     width: 100%;
-    padding: 3ch 0;
+    padding: 1ch 0;
     text-align: center;
     margin-left: 0px;
     flex-wrap: wrap;
+    flex: 1 0 auto;
   }
 
   .nav-section {
@@ -461,13 +475,13 @@ footer > p {
     font-size: 18px;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    width: 100vw;
+    padding: 0;
   }
 
   nav > a {
     display: block;
     width: auto;
-    padding: 0.5ch;
-    margin: 0.2ch;
     border: none;
   }
 
@@ -480,14 +494,11 @@ footer > p {
     border: none;
   }
 
-  main {
-    grid-area: main;
-    margin: 10px;
-  }
-
   .photo {
-    padding-top: 5%;
-    width: 30%;
+    padding-top: 10%;
+    width: 20%;
+    height: 20%;
+    margin: 0;
   }
 
   .line {
@@ -501,15 +512,12 @@ footer > p {
 
   p.blurb {
     padding: 0;
-    padding-left: 1ch;
-    padding-right: 1ch;
     width: auto;
   }
 
   .card {
     box-shadow: -4px -4px 20px 0 #949494;
     border-radius: 5px;
-
     padding: 40px 40px 60px 40px;
     width: 70%;
     margin: 50px auto;
@@ -517,6 +525,10 @@ footer > p {
 
   #budding-more-info {
     display: block;
+  }
+
+  #budding-more-info > p {
+    padding: 0;
   }
 
   .project-links,
@@ -538,7 +550,6 @@ footer > p {
     border-radius: 5px;
     background-color: #fefefa;
     height: 30vh;
-    width: 100%;
     margin: 4ch 0;
   }
 
@@ -630,12 +641,16 @@ footer > p {
   }
 
   footer {
+    display: block;
     padding-bottom: 30px;
+    width: 100%;
   }
 
   footer > p {
+    margin: auto;
     font-size: 16px;
     color: #381460;
-    padding: 10px;
+    padding-top: 10%;
+    width: 70%;
   }
 }
