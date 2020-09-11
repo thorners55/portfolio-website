@@ -3,22 +3,24 @@ html {
   color: #381460;
   overflow-x: hidden;
   margin: -10px -10px;
+  background: #fefefa;
+  font-family: "Nunito", sans-serif;
+  line-height: 1.8;
+}
+
+body {
+  margin-bottom: -10px;
 }
 
 p {
   text-align: justify;
 }
 
-#wrapper {
-  background: #fefefa;
-  font-family: "Nunito", sans-serif;
-  margin: -10px -10px;
-  line-height: 1.8;
-  color: #381460;
+main {
   display: grid;
   grid-gap: 5%;
   grid-template-columns: 20% 75%;
-  grid-template-areas: nav-section bod;
+  grid-template-areas: "nav-section bod";
 }
 
 a {
@@ -60,7 +62,6 @@ div > section {
   grid-area: bod;
   padding-top: 10vh;
   padding-right: 20vw;
-  padding-bottom: 50px;
 }
 
 /* Side area */
@@ -430,11 +431,7 @@ footer {
   height: 150px;
   width: 100vw;
   text-align: center;
-  background: linear-gradient(
-    0deg,
-    rgba(160, 125, 207, 1) 0%,
-    rgba(254, 254, 250, 1) 100%
-  );
+  background: linear-gradient(0deg, #a07dcf 0%, #fefefa 100%);
 }
 
 footer > p {
