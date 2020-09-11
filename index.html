@@ -186,8 +186,10 @@
           var message = $(this).val();
           if (message.length < 70) {
             $(this).addClass("invalid");
+            $(".label-background").addClass("invalid");
           } else {
             $(this).removeClass("invalid");
+             $(".label-background").removeClass("invalid");
           }
         })
 
@@ -476,7 +478,7 @@
         
         <form name="contact" method="POST" data-netlify="true">
           <h3 class="contact-form-heading">Get in touch!</h3>
-    
+            <div id="form">
             <div id="float-container" class="float-container">
             <label for="name">Name </label><input type="text" name="name" id="name" minlength="5" maxlength="30" required/>
             <p class="invalid-name">Name must have a minimum of 5 characters, no special characters</p>
@@ -488,11 +490,14 @@
             </div>
 
             <div id="float-container" class="float-container">
-            <label for="message">Message</label> <textarea name="message" id="message" minlength="70" maxlength="600" required></textarea>
+            <div class="label-background">
+            <label for="message">Message</label> 
+            </div>
+            <textarea name="message" id="message"  minlength="70" maxlength="600" required></textarea>
             <p class="invalid-message">Message must be a minimum of 70 characters</p>
             </div>
             <button type="submit" >Send</button>
-      
+      </div>
         </form>
         </section>
       
