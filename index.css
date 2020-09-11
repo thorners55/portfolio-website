@@ -159,6 +159,10 @@ h3.expanded:before {
   display: none;
 }
 
+#tech-skills > li {
+  padding-bottom: 1em;
+}
+
 .experience {
   list-style-type: none;
 }
@@ -418,6 +422,8 @@ form button:focus {
   outline: 2px solid #b21f66;
 }
 
+/* Footer */
+
 footer {
   left: 0;
   bottom: 0;
@@ -435,6 +441,11 @@ footer > p {
   font-size: 16px;
   color: #381460;
   padding-top: 50px;
+  text-align: center;
+}
+
+#scroll-top-button {
+  display: none;
 }
 
 @media (max-width: 950px) {
@@ -566,7 +577,6 @@ footer > p {
     border-radius: 5px;
     background-color: #fefefa;
     height: 30vh;
-    margin: 4ch 0;
   }
 
   .contact-grid {
