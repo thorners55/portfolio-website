@@ -14,8 +14,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/fc41b503ab.js" crossorigin="anonymous"></script>
     <script>
       $(document).ready(function () {
+
+        $("#scroll-top-button").click(function () {
+         window.scrollTo(0,0)
+        })
+
         /* Load about section and slide on site load */
         $(".about").animate({ opacity: 1 }, 1000, function() {
           $(".blurb").slideDown(1000)  
@@ -295,7 +301,7 @@
               <button aria-expanded="false" aria-controls="non-tech-experience" class="accordion non-tech-experience" id="non-tech-experience-button">
                 <h3 class="skills-heading">Experience</h3> 
               </button>
-              <ul id="non-tech-experience" role="region" aria-labeledby="non-tech-experience-button" class="accordion info experience">
+              <ul role="region" aria-labeledby="non-tech-experience-button" class="accordion info experience">
                 <li><b>Full Stack Coding Bootcamp, Northcoders</b>
                   <ul>
                     <li>3 month intensive JavaScript coding bootcamp delivered remotely due to lockdown</li>
@@ -443,7 +449,7 @@
           <h2>Contact</h2>
           <div class="contact-grid">
           <div>
-          <p>Feel free to get in touch using the secure form provided, or reach out over LinkedIn or Twitter! </p>
+          <p>Feel free to get in touch using the secure form, or reach out on LinkedIn or Twitter! </p>
 
           <div class="social-logos">
             <a href="https://github.com/thorners55" target="_blank"><svg id="Layer_1" data-name="Layer 1"
@@ -505,6 +511,7 @@
         </div>
    
       </main>
+      <button id="scroll-top-button" title="Go to top"><span class="fas fa-arrow-up"></span></button>
   <footer>
     <p><b>Stephanie Thornley, 2020</b><br>
       Site built using HTML, CSS and jQuery - click here for source code</p>
