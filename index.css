@@ -221,7 +221,7 @@ ul.project-tech {
   color: #b21f66;
 }
 
-.budding-demo-card {
+.mobile-demo-card {
   box-shadow: -4px -4px 20px 0 #949494;
   border-radius: 5px;
   width: 350px;
@@ -243,7 +243,7 @@ ul.project-tech {
   text-decoration: underline;
 }
 
-.nc-news-demo-card {
+.desktop-demo-card {
   box-shadow: -4px -4px 20px 0 #949494;
   border-radius: 5px;
   background-color: #fefefa;
@@ -294,11 +294,6 @@ div > a {
   box-shadow: 0px 0px 20px 4px #949494;
 }
 
-.float-container {
-  margin: 15px 0;
-  width: 100%;
-}
-
 form {
   background-color: #ccbae3;
   color: #03776a;
@@ -309,6 +304,15 @@ form {
   margin-top: 3ch;
 }
 
+.screen-reader-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .contact-form-heading {
   text-align: center;
   margin-top: -5px;
@@ -316,35 +320,14 @@ form {
 }
 
 label {
-  display: block;
-  position: absolute;
-  padding-left: 0.5em;
-  padding-top: 7px;
   font-family: "Asap", sans-serif;
   height: 20px;
 }
 
-label[for="message"] {
-  display: block;
-  position: absolute;
-  width: 69%;
-  background-color: inherit;
-  margin-top: 1px;
-  margin-left: 1px;
-  padding-bottom: 20px;
-  z-index: 1;
-}
-
-.label-background {
-  position: absolute;
-  background-color: lightgoldenrodyellow;
-  margin-top: -1.5px;
-  z-index: 0;
-  width: 42%;
-}
-
 input {
-  padding: 13px 0.5em 10px 4em;
+  display: block;
+  padding: 1ch;
+  margin-bottom: 5%;
   font-family: "Nunito", sans-serif;
   font-size: 18px;
   color: #381460;
@@ -358,14 +341,12 @@ input:focus {
 }
 
 textarea {
-  padding-top: 2.5em;
   font-size: 16px;
   color: #381460;
   font-family: "Nunito", sans-serif;
   font-size: 18px;
   resize: none;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  padding: 0.5em;
   background-color: lightgoldenrodyellow;
   border: 0px solid;
   width: 100%;
@@ -386,6 +367,7 @@ textarea:focus {
 .invalid-message {
   color: #8c1d2a;
   display: none;
+  text-align: left;
 }
 
 form button {
@@ -393,11 +375,10 @@ form button {
   padding: 20px;
   font-size: 20px;
   border-radius: 20px;
-  margin: auto;
   font-family: "Asap", sans-serif;
   color: #fafad2;
   display: block;
-  margin-bottom: 20px;
+  margin: 5% auto;
 }
 
 input:-webkit-autofill,
@@ -546,7 +527,6 @@ footer > p {
   /* Main area - Skills and Experience */
 
   .experience {
-    list-style-type: none;
     padding-inline-start: 10vw;
   }
 
@@ -557,9 +537,6 @@ footer > p {
   /* Main area - Projects */
 
   .card {
-    box-shadow: -4px -4px 20px 0 #949494;
-    border-radius: 5px;
-    padding: 40px 40px 60px 40px;
     width: 70%;
     margin: 50px auto;
   }
@@ -578,18 +555,11 @@ footer > p {
     text-align: center;
   }
 
-  .budding-demo-card {
-    box-shadow: -4px -4px 20px 0 #949494;
-    border-radius: 5px;
+  .mobile-demo-card {
     width: 90%;
-    height: 520px;
-    background-color: #fefefa;
   }
 
-  .nc-news-demo-card {
-    box-shadow: -4px -4px 20px 0 #949494;
-    border-radius: 5px;
-    background-color: #fefefa;
+  .desktop-demo-card {
     height: 30vh;
   }
 
@@ -599,29 +569,13 @@ footer > p {
     display: block;
   }
 
-  .contact-grid > .card {
-    margin-top: 15px;
-  }
-
-  .logo {
-    height: 50px;
-    margin-top: -60px;
-    opacity: 0;
-    display: inline-block;
-    position: relative;
-  }
-
   .social-logos {
     margin: 40px 0;
     padding: 0 15%;
-    display: flex;
     justify-content: space-between;
   }
 
   form {
-    background-color: #ccbae3;
-    color: #03776a;
-    padding: 5%;
     width: 80%;
   }
 
@@ -632,34 +586,7 @@ footer > p {
     margin-top: 0;
   }
 
-  textarea {
-    padding-top: 2.5em;
-    font-size: 16px;
-    color: #381460;
-    font-family: "Nunito", sans-serif;
-    font-size: 18px;
-    resize: none;
-
-    background-color: lightgoldenrodyellow;
-    border: 0px solid;
-    height: 10em;
-  }
-
-  label {
-    font-family: "Asap", sans-serif;
-    height: 20px;
-  }
-
-  .label-background {
-    width: 100%;
-  }
-
   .twitter-border {
-    height: 301px;
-    width: 249px;
-    padding: 1px;
-    border-radius: 2%;
-    box-shadow: 0px 0px 20px 4px #949494;
     margin: auto;
     margin-bottom: 10vh;
   }
@@ -669,6 +596,8 @@ footer > p {
     box-shadow: -4px -4px 20px 0 #949494;
     border-radius: 5px;
     margin-top: 3ch;
+    padding-top: 10%;
+    padding-bottom: 10%;
   }
 
   .contact-form-heading {
@@ -685,11 +614,8 @@ footer > p {
 
   footer > p {
     margin: auto;
-    font-size: 16px;
-    color: #381460;
     padding-top: 10%;
     width: 70%;
-    text-align: center;
   }
 
   #scroll-top-button {

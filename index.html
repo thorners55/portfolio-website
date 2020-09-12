@@ -108,11 +108,9 @@
 
               /* Enable clicking on the heading and have it toggle the arrow */
               // switches aria-expanded between true and false on the heading you have clicked
-              if ($(this).attr("aria-expanded") === "true") {
-                var flipped = "false";
-              } else {
-                var flipped = "true";
-              }
+              let isExpanded = $(this).attr("aria-expanded");
+              isExpanded = isExpanded == "true";
+              let flipped = !isExpanded;
 
               $(this).find("h3").toggleClass("expanded");
               $(this).attr("aria-expanded", flipped);
@@ -127,7 +125,7 @@
             }
           });
         });
-        /* --------------END SKILLS AND EXP--------------*/
+        /* -------------END SKILLS AND EXP--------------*/
 
         /*-----------------PROJECTS-------------------*/
         /* Show/hide project button */
@@ -147,6 +145,15 @@
 
             $(this).parent().find(".hidden-info").slideToggle("slow");
           });
+
+        /* Change show/hide button aria-expanded when opened/closed */
+        $(".show-more-button").click(function () {
+          let isExpanded = $(this).attr("aria-expanded");
+          isExpanded = isExpanded == "true";
+          let flipped = !isExpanded;
+
+          $(this).attr("aria-expanded", flipped);
+        });
         /* -----------------END PROJECTS----------------*/
 
         /*----------------CONTACT-------------------*/
@@ -161,9 +168,11 @@
           if (specialCharacter || name.length < 5) {
             $(".invalid-name").show("fast");
             $(this).addClass("invalid");
+            $("#invalid-name").attr("aria-hidden", "false");
           } else {
             $(".invalid-name").hide("fast");
             $(this).removeClass("invalid");
+            $("#invalid-name").attr("aria-hidden", "true");
           }
         });
 
@@ -174,9 +183,11 @@
           if (notName || name.length < 5) {
             $(".invalid-name").show("fast");
             $(this).addClass("invalid");
+            $("#invalid-name").attr("aria-hidden", "false");
           } else {
             $(".invalid-name").hide("fast");
             $(this).removeClass("invalid");
+            $("#invalid-name").attr("aria-hidden", "true");
           }
         });
 
@@ -187,9 +198,11 @@
           if (!isEmail || email.length < 6) {
             $(".invalid-email").show("fast");
             $(this).addClass("invalid");
+            $("#invalid-email").attr("aria-hidden", "false");
           } else {
             $(".invalid-email").hide("fast");
             $(this).removeClass("invalid");
+            $("#invalid-email").attr("aria-hidden", "true");
           }
         });
 
@@ -199,9 +212,11 @@
           if (!isEmail || email.length < 6) {
             $(".invalid-email").show("fast");
             $(this).addClass("invalid");
+            $("#invalid-email").attr("aria-hidden", "false");
           } else {
             $(".invalid-email").hide("fast");
             $(this).removeClass("invalid");
+            $("#invalid-email").attr("aria-hidden", "true");
           }
         });
 
@@ -209,10 +224,10 @@
           var message = $(this).val();
           if (message.length < 70) {
             $(this).addClass("invalid");
-            $(".label-background").addClass("invalid");
+            $("#invalid-message").attr("aria-hidden", "false");
           } else {
             $(this).removeClass("invalid");
-            $(".label-background").removeClass("invalid");
+            $("#invalid-message").attr("aria-hidden", "true");
           }
         });
 
@@ -221,9 +236,13 @@
           if (message.length < 70) {
             $(".invalid-message").show("fast");
             $(this).addClass("invalid");
+            $(".label-background").addClass("invalid");
+            $("#invalid-message").attr("aria-hidden", "false");
           } else {
             $(".invalid-message").hide("fast");
             $(this).removeClass("invalid");
+            $(".label-background").removeClass("invalid");
+            $("#invalid-message").attr("aria-hidden", "true");
           }
         });
 
@@ -285,19 +304,26 @@
       <main>
         <div class="bod">
           <div id="about" class="section about">
-            <h1>< Stephanie Thornley /></h1>
-            <p class="blurb">
-              Hello! I'm Stephanie, a hopeful Junior Software
-              Developer from Leeds.<br />
-              I've gone from History grad to coding bootcamp grad,
-              which seems like a big change, but they're not too
-              different - as a logical thinker who appreciates the
-              smaller details as well as the bigger picture, the
-              transition came naturally to me. I love the process of
-              coding (even debugging!), and I also enjoy learning
-              about the history of tech and how advancements in
-              technology are affected by social issues.
-            </p>
+            <section>
+              <h1>
+                <span aria-hidden="true">< </span>
+                Stephanie Thornley
+                <span aria-hidden="true"> /> </span>
+              </h1>
+              <h2 class="screen-reader-only">- About -</h2>
+              <p class="blurb">
+                Hello! I'm Stephanie, a hopeful Junior Software
+                Developer from Leeds.<br />
+                I've gone from History grad to coding bootcamp grad,
+                which seems like a big change, but they're not too
+                different - as a logical thinker who appreciates the
+                smaller details as well as the bigger picture, the
+                transition came naturally to me. I love the process of
+                coding (even debugging!), and I also enjoy learning
+                about the history of tech and how advancements in
+                technology are affected by social issues.
+              </p>
+            </section>
           </div>
 
           <div class="line"></div>
@@ -499,12 +525,16 @@
                     group project for the Northcoders coding bootcamp
                     course.
                   </p>
-                  <button id="budding" class="show-more-button">
+                  <button
+                    id="budding"
+                    aria-expanded="false"
+                    class="show-more-button"
+                  >
                     Show more
                   </button>
 
                   <div class="hidden-info">
-                    <div id="budding-more-info">
+                    <div id="demo-more-info">
                       <p>
                         The user places markers on the photo at the
                         bottom of the pot, the top of the pot, and top
@@ -520,7 +550,7 @@
                         a chart, enabling the tracking of plant growth
                         over time.
                       </p>
-                      <div class="budding-demo-card">
+                      <div class="mobile-demo-card">
                         <h3>Video here</h3>
                       </div>
                     </div>
@@ -549,7 +579,11 @@
                     vote and down vote, browse by topic, and sort by
                     date or most popular.
                   </p>
-                  <button id="nc-news" class="show-more-button">
+                  <button
+                    id="nc-news"
+                    aria-expanded="false"
+                    class="show-more-button"
+                  >
                     Show more
                   </button>
                   <div class="hidden-info">
@@ -566,7 +600,7 @@
                       tested RESTful API, also made as part of the
                       Northcoders bootcamp, and hosted with Heroku.
                     </p>
-                    <div class="nc-news-demo-card">
+                    <div class="desktop-demo-card">
                       <h3>Video here</h3>
                     </div>
                     <div class="project-links">
@@ -604,6 +638,7 @@
                     <a
                       href="https://github.com/thorners55"
                       target="_blank"
+                      aria-label="GitHub logo"
                     >
                       <svg
                         id="Layer_1"
@@ -624,6 +659,7 @@
                     <a
                       href="https://dev.to/thorners55"
                       target="_blank"
+                      aria-label="Dev.to logo"
                     >
                       <svg
                         id="Layer_1"
@@ -647,6 +683,7 @@
                     <a
                       href="https://twitter.com/stephaniethorns"
                       target="_blank"
+                      aria-label="Twitter logo"
                     >
                       <svg
                         id="Layer_1"
@@ -667,6 +704,7 @@
                     <a
                       href="https://www.linkedin.com/in/stephanie-thornley/"
                       target="_blank"
+                      aria-label="LinkedIn logo"
                     >
                       <svg
                         id="Layer_1"
@@ -685,7 +723,10 @@
                     </a>
                   </div>
 
-                  <div class="twitter-border">
+                  <div
+                    class="twitter-border"
+                    aria-label="Stephanie's Twitter feed"
+                  >
                     <a
                       class="twitter-timeline"
                       href="https://twitter.com/stephaniethorns"
@@ -701,60 +742,102 @@
                     ></script>
                   </div>
                 </div>
+
                 <form
                   name="contact"
+                  aria-label="contact form"
                   method="POST"
                   data-netlify="true"
                 >
                   <h3 class="contact-form-heading">Get in touch!</h3>
-                  <div id="float-container" class="float-container">
-                    <label for="name">Name </label>
+
+                  <label id="name-label"
+                    >Name
                     <input
                       type="text"
                       name="name"
                       id="name"
                       minlength="5"
                       maxlength="30"
+                      aria-labelledby="name-label"
+                      aria-describedby="name-screen-reader"
+                      aria-required="true"
                       required
                     />
-                    <p class="invalid-name">
-                      Name must have a minimum of 5 characters, no
-                      special characters
-                    </p>
-                  </div>
+                  </label>
+                  <span
+                    id="name-screen-reader"
+                    class="screen-reader-only"
+                    >Must have between 5 and 30 characters with no
+                    special characters.</span
+                  >
+                  <p
+                    class="invalid-name"
+                    id="invalid-name"
+                    aria-hidden="true"
+                  >
+                    <span class="screen-reader-only">
+                      Invalid input:
+                    </span>
+                    Name must have between 5 and 30 characters with no
+                    special characters
+                  </p>
 
-                  <div id="float-container" class="float-container">
-                    <label for="email">Email </label
-                    ><input
+                  <label id="email-label"
+                    >Email
+                    <input
                       type="email"
                       name="email"
                       id="email"
                       minlength="6"
-                      maxlength="25"
+                      maxlength="30"
+                      aria-labelledby="email-label"
+                      aria-describedby="email-screen-reader"
+                      aria-required="true"
                       required
                     />
-                    <p class="invalid-email">
-                      Must be a valid email address with a minimum of
-                      6 characters
-                    </p>
-                  </div>
+                  </label>
+                  <span
+                    id="email-screen-reader"
+                    class="screen-reader-only"
+                    >Must be a valid email address between 6 and 30
+                    characters.</span
+                  >
+                  <p class="invalid-email">
+                    <span class="screen-reader-only">
+                      Invalid input:
+                    </span>
+                    Email must be a valid email address between 6 and
+                    30 characters
+                  </p>
 
-                  <div id="float-container" class="float-container">
-                    <div class="label-background">
-                      <label for="message">Message</label>
-                    </div>
+                  <label id="message-label"
+                    >Message
                     <textarea
                       name="message"
                       id="message"
                       minlength="70"
                       maxlength="600"
+                      aria-labelledby="message-label"
+                      aria-describedby="message-screen-reader"
+                      aria-required="true"
                       required
                     ></textarea>
-                    <p class="invalid-message">
-                      Message must be a minimum of 70 characters
-                    </p>
-                  </div>
-                  <button type="submit">Send</button>
+                  </label>
+                  <span
+                    id="message-screen-reader"
+                    class="screen-reader-only"
+                  >
+                    Must be between 70 and 600 characters.</span
+                  >
+                  <p class="invalid-message">
+                    <span class="screen-reader-only">
+                      Invalid input:
+                    </span>
+                    Message must be between 70 and 600 characters
+                  </p>
+
+                  <button type="submit">Submit</button>
                 </form>
               </div>
             </section>
