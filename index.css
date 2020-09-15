@@ -1,7 +1,7 @@
 /* Global styles */
 
 html {
-  font-size: 18px;
+  font-size: 62.5%;
   color: #381460;
   overflow-x: hidden;
   margin: -10px -10px;
@@ -11,6 +11,8 @@ html {
 }
 
 body {
+  font-size: 16px;
+  font-size: 1.8rem;
   margin-bottom: -10px;
 }
 
@@ -30,7 +32,6 @@ a {
   text-decoration: none;
   cursor: pointer;
   pointer-events: auto;
-  margin-bottom: 1ch;
   color: #381460;
 }
 
@@ -92,13 +93,14 @@ nav {
 }
 
 nav > a {
-  border-bottom: 3px solid #fefefa;
+  border-bottom: 3px solid transparent;
   width: 100px;
+  margin-bottom: 10%;
 }
 
 .focused-section-link {
-  border-bottom: 3px solid #b21f66;
-  width: 100px;
+  border-bottom: 0.3rem solid #b21f66;
+  width: 10rem;
 }
 
 /* Main area */
@@ -110,24 +112,24 @@ nav > a {
 
 h1 {
   font-family: "Asap";
-  font-size: 50px;
+  font-size: 5rem;
 }
 
 h2 {
   font-family: "Asap";
-  font-size: 30px;
+  font-size: 3rem;
 }
 
 h3,
 h4 {
-  font-size: 24px;
+  font-size: 2.4rem;
   color: #381460;
   font-family: "Nunito", sans-serif;
   font-weight: "800";
 }
 
 .line {
-  border-bottom: 5px solid #a07dcf;
+  border-bottom: 0.5rem solid #a07dcf;
   width: 300px;
 }
 
@@ -151,11 +153,18 @@ h3.skills-heading:before {
   content: "\25BA";
   color: #03a090;
   padding-right: 1ch;
+  padding-left: 1.5ch;
   display: inline-block;
 }
 
 h3.expanded:before {
   content: "\25BC";
+}
+
+button.accordion {
+  text-align: left;
+  margin-left: 2em;
+  text-indent: -2em;
 }
 
 .info {
@@ -180,9 +189,13 @@ h3.expanded:before {
 
 /* Main area - Projects */
 
+.shadow-card {
+  box-shadow: -0.4rem -0.4rem 2rem 0 #949494;
+  border-radius: 0.5rem;
+  background-color: #fefefa;
+}
+
 .card {
-  box-shadow: -4px -4px 20px 0 #949494;
-  border-radius: 5px;
   margin: 50px 0 70px 0;
   padding: 40px 40px 60px 40px;
   width: 100%;
@@ -190,7 +203,7 @@ h3.expanded:before {
 
 ul.project-tech li {
   display: inline;
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 ul.project-tech {
@@ -201,6 +214,7 @@ ul.project-tech {
 .card > p {
   text-align: justify;
 }
+
 .card > div > div > p {
   text-align: justify;
   padding-right: 1ch;
@@ -209,9 +223,9 @@ ul.project-tech {
 
 .show-more-button {
   font-family: "Nunito", sans-serif;
-  font-size: 16px;
+  font-size: 1.6rem;
   text-decoration: underline;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: bold;
   color: #381460;
   padding-left: 0;
@@ -222,11 +236,8 @@ ul.project-tech {
 }
 
 .mobile-demo-card {
-  box-shadow: -4px -4px 20px 0 #949494;
-  border-radius: 5px;
   width: 350px;
   height: 520px;
-  background-color: #fefefa;
   margin-left: 2ch;
   margin-bottom: 4ch;
 }
@@ -237,16 +248,13 @@ ul.project-tech {
 
 .project-links > a {
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 2ch;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.8rem;
   text-decoration: underline;
 }
 
 .desktop-demo-card {
-  box-shadow: -4px -4px 20px 0 #949494;
-  border-radius: 5px;
-  background-color: #fefefa;
   height: 500px;
   margin: 4ch 1ch;
 }
@@ -268,17 +276,17 @@ ul.project-tech {
   margin-top: 15px;
 }
 
+.social-logos {
+  margin: 10vh 0;
+  display: flex;
+}
+
 .logo {
-  height: 50px;
+  height: 5rem;
   margin-top: -60px;
   opacity: 0;
   display: inline-block;
   position: relative;
-}
-
-.social-logos {
-  margin: 10vh 0;
-  display: flex;
 }
 
 div > a {
@@ -291,16 +299,13 @@ div > a {
   width: 249px;
   padding: 1px;
   border-radius: 2%;
-  box-shadow: 0px 0px 20px 4px #949494;
+  box-shadow: 0px 0px 2rem 0.4rem #949494;
 }
 
 form {
-  background-color: #ccbae3;
-  color: #03776a;
+  background-color: #ccbae3 !important;
   padding: 5%;
   width: 50%;
-  box-shadow: -4px -4px 20px 0 #949494;
-  border-radius: 5px;
   margin-top: 3ch;
 }
 
@@ -321,7 +326,7 @@ form {
 
 label {
   font-family: "Asap", sans-serif;
-  height: 20px;
+  height: 2rem;
 }
 
 input {
@@ -329,22 +334,17 @@ input {
   padding: 1ch;
   margin-bottom: 5%;
   font-family: "Nunito", sans-serif;
-  font-size: 18px;
+  font-size: 1.8rem;
   color: #381460;
   width: 70%;
   background-color: #fafad2;
   border: 0px solid;
 }
 
-input:focus {
-  outline: 2px solid #b21f66;
-}
-
 textarea {
-  font-size: 16px;
   color: #381460;
   font-family: "Nunito", sans-serif;
-  font-size: 18px;
+  font-size: 1.8rem;
   resize: none;
   padding: 0.5em;
   background-color: lightgoldenrodyellow;
@@ -352,10 +352,6 @@ textarea {
   width: 100%;
   height: 10em;
   box-sizing: border-box;
-}
-
-textarea:focus {
-  outline: 3px solid #b21f66;
 }
 
 .invalid {
@@ -373,8 +369,8 @@ textarea:focus {
 form button {
   background-color: #03b5a3;
   padding: 20px;
-  font-size: 20px;
-  border-radius: 20px;
+  font-size: 2rem;
+  border-radius: 2rem;
   font-family: "Asap", sans-serif;
   color: #fafad2;
   display: block;
@@ -407,16 +403,16 @@ form button:focus {
 footer {
   left: 0;
   bottom: 0;
-  height: 150px;
+  height: 15rem;
   width: 100vw;
   text-align: center;
   background: linear-gradient(0deg, #a07dcf 0%, #fefefa 100%);
 }
 
 footer > p {
-  font-size: 16px;
+  font-size: 1.6rem;
   color: #381460;
-  padding-top: 50px;
+  padding-top: 5rem;
   text-align: center;
 }
 
@@ -478,11 +474,15 @@ footer > p {
     flex: 1 0 auto;
   }
 
+  nav > a {
+    margin-bottom: 2%;
+  }
+
   #side-section {
     display: flex;
     position: static;
     grid-area: side-section;
-    font-size: 18px;
+    font-size: 1.8rem;
     justify-content: space-evenly;
     flex-wrap: wrap;
     width: 100vw;
@@ -513,6 +513,14 @@ footer > p {
 
   /* Main area - About */
 
+  div#about > section {
+    margin-top: 2ch;
+  }
+
+  h1 {
+    margin-top: 0;
+  }
+
   h1,
   h2 {
     text-align: center;
@@ -525,6 +533,11 @@ footer > p {
   }
 
   /* Main area - Skills and Experience */
+
+  h3.skills-heading {
+    text-indent: -1.5em;
+    margin-left: 2em;
+  }
 
   .experience {
     padding-inline-start: 10vw;
@@ -575,6 +588,10 @@ footer > p {
     justify-content: space-between;
   }
 
+  .logo {
+    height: 4rem;
+  }
+
   form {
     width: 80%;
   }
@@ -593,8 +610,6 @@ footer > p {
 
   .contact-grid > form {
     margin: auto;
-    box-shadow: -4px -4px 20px 0 #949494;
-    border-radius: 5px;
     margin-top: 3ch;
     padding-top: 10%;
     padding-bottom: 10%;
@@ -620,8 +635,8 @@ footer > p {
 
   #scroll-top-button {
     display: block;
-    height: 40px;
-    width: 40px;
+    height: 4rem;
+    width: 4rem;
     position: fixed;
     bottom: 3vh;
     right: 5vw;
@@ -631,7 +646,7 @@ footer > p {
     background-color: #03a090;
     color: white;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 2.5rem;
   }
 
   #scroll-top-button:hover {
