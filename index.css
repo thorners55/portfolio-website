@@ -244,14 +244,14 @@ ul.project-tech {
   margin-bottom: 4ch;
 }
 
-.mobile-video {
+.mobile-gif {
   display: flex;
   height: 50%;
-  width: 45%;
+  width: 40%;
   box-shadow: -0.4rem -0.4rem 2rem 0 #949494;
   border-radius: 0.5rem;
   margin-bottom: 4ch;
-  margin-left: 2ch;
+  margin-left: 4ch;
   align-self: center;
 }
 
@@ -267,14 +267,11 @@ ul.project-tech {
   text-decoration: underline;
 }
 
-.desktop-demo-card {
-  margin: 4ch 1ch;
-}
-
-.desktop-video {
+.desktop-gif {
   width: 100%;
   box-shadow: -0.4rem -0.4rem 2rem 0 #949494;
   border-radius: 0.5rem;
+  margin: 2ch 0;
 }
 
 .project-links {
@@ -591,11 +588,15 @@ footer > p > a {
     text-align: center;
   }
 
-  .mobile-video {
-    width: 50vw;
+  .mobile-gif {
+    width: 40vw;
     margin: auto;
     margin-top: 4ch;
     margin-bottom: 4ch;
+  }
+
+  .desktop-gif {
+    width: 100%;
   }
 
   .desktop-demo-card {
