@@ -1,0 +1,21 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio site",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thorners55/portfolio-website.git"
+  },
+  "author": "Stephanie Thornley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thorners55/portfolio-website/issues"
+  },
+  "homepage": "https://github.com/thorners55/portfolio-website#readme"
+}

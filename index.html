@@ -23,6 +23,7 @@
       src="https://kit.fontawesome.com/fc41b503ab.js"
       crossorigin="anonymous"
     ></script>
+
     <script>
       $(document).ready(function () {
         /*----------------GLOBAL----------------------*/
@@ -272,6 +273,59 @@
           window.scrollTo(0, 0);
         });
         /*----------------END RESPONSIVE ----------------*/
+
+        /*--------------- BLOG ---------------- */
+
+        // Get request using Ajax
+        // Comes back with array of objects
+        // Map through the objects using $.map and append onto .articles
+
+        const months = {
+          "01": "January",
+          "02": "February",
+          "03": "March",
+          "04": "April",
+          "05": "May",
+          "06": "June",
+          "07": "July",
+          "08": "August",
+          "09": "September",
+          10: "October",
+          11: "November",
+          12: "December",
+        };
+        const url = "https://dev.to/api/articles?username=thorners55";
+        $.ajax({
+          type: "GET",
+          url,
+        }).done(function (articles) {
+          console.log(articles);
+          $.map(articles, function (article, index) {
+            let created = article.created_at.split("T");
+            let date = created[0].split("-");
+
+            let day = date[2];
+            let newDay = day.split("");
+
+            if (newDay[0] === "0") {
+              newDay.splice(0, 1);
+              day = newDay;
+            }
+
+            let formattedDate = `${day} ${months[date[1]]}, ${
+              date[0]
+            }`;
+
+            $(".articles").append(
+              `<article class="article-card shadow-card">
+                <a href=${article.url} target="_blank">
+                  <h3>${article.title}</h3>
+                </a>
+                <p>Posted on ${formattedDate}</p>
+              </article>`,
+            );
+          });
+        });
       });
     </script>
   </head>
@@ -563,10 +617,22 @@
                       />
                     </div>
                     <div class="project-links">
-                      <a href="#">Live app</a>
-                      <a href="#">Back-end code</a>
-                      <a href="#">Front-end code</a>
-                      <a href="#">Demo</a>
+                      <a href="#" target="_blank">Live app</a>
+                      <a
+                        href="https://github.com/thorners55/budding-back-end"
+                        target="_blank"
+                        >Back-end code</a
+                      >
+                      <a
+                        href="https://github.com/thorners55/budding-front-end"
+                        target="_blank"
+                        >Front-end code</a
+                      >
+                      <a
+                        href="https://www.youtube.com/watch?v=llKXad2gF8c&t=242s"
+                        target="_blank"
+                        >Demo</a
+                      >
                     </div>
                   </div>
                 </div>
@@ -621,17 +687,20 @@
                     <div class="project-links">
                       <a
                         href="https://stephanies-nc-news.netlify.app/"
+                        target="_blank"
                         >Live site</a
                       >
                       <a
                         href="https://stephanies-news.herokuapp.com/api/"
+                        target="_blank"
                         >Live API</a
                       >
                       <a
                         href="https://github.com/thorners55/stephanies-nc-news"
+                        target="_blank"
                         >Front-end code</a
                       >
-                      <a href="#">Back-end code</a>
+                      <a href="#" target="_blank">Back-end code</a>
                     </div>
                   </div>
                 </div>
@@ -644,6 +713,7 @@
           <div id="blog" class="section blog">
             <section>
               <h2>Blog</h2>
+              <div class="articles"></div>
             </section>
           </div>
 
