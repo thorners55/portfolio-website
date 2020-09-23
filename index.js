@@ -156,39 +156,15 @@ $(document).ready(function () {
     11: "November",
     12: "December",
   };
+
   const url = "https://dev.to/api/articles?username=thorners55";
+
   $.ajax({
     type: "GET",
     url,
-  })
-    .done(function (articles) {
-      console.log(articles);
-      $.map(articles, function (article, index) {
-        let created = article.created_at.split("T");
-        let date = created[0].split("-");
-
-        let day = date[2];
-        let newDay = day.split("");
-
-        if (newDay[0] === "0") {
-          newDay.splice(0, 1);
-          day = newDay;
-        }
-
-        let formattedDate = `${day} ${months[date[1]]}, ${date[0]}`;
-
-        $(".articles").append(
-          `<article class="article-card shadow-card">
-                <h3><a href=${article.url} target="_blank">
-                  ${article.title}
-                </a></h3>
-                <p>Posted on ${formattedDate}</p>
-              </article>`,
-        );
-      });
-    })
-    .error(function () {
-      "$.articles".append(
+    error: function () {
+      $("#loading-articles").css("display", "none");
+      $("$.articles").append(
         `<p>
           Oops! An error occured loading blog posts. Please try{" "}
           <a href="https://dev.to/thorners55" target="_blank">
@@ -197,7 +173,34 @@ $(document).ready(function () {
           to see my posts.
         </p>`,
       );
+    },
+  }).done(function (articles) {
+    $("#loading-articles").css("display", "none");
+    $.map(articles, function (article, index) {
+      let created = article.created_at.split("T");
+      let date = created[0].split("-");
+
+      let day = date[2];
+      let newDay = day.split("");
+
+      if (newDay[0] === "0") {
+        newDay.splice(0, 1);
+        day = newDay;
+      }
+
+      let formattedDate = `${day} ${months[date[1]]}, ${date[0]}`;
+
+      $(".articles").append(
+        `<article class="article-card shadow-card">
+                <h3><a href=${article.url} target="_blank">
+                  ${article.title}
+                </a></h3>
+                <p>Posted on ${formattedDate}</p>
+              </article>`,
+      );
     });
+  });
+
   /*-----------------END BLOG--------------*/
 
   /*----------------CONTACT-------------------*/
