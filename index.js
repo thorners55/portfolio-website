@@ -11,6 +11,28 @@ $(document).ready(function () {
       $(this).find("h3").css("color", "#381460");
     });
   });
+
+  /* If the section is contacts and is first time have scrolled to contacts section, animate social media logos to bounce and fade in one after the other */
+
+  /* Logo changes colour when hover over it, changes back when focus away */
+  $(".logo").hover(
+    function () {
+      $(this).attr("fill", "#b21f66");
+    },
+    function () {
+      $(this).attr("fill", "#03a090");
+    },
+  );
+
+  $(".logo").each(function (i) {
+    $(this)
+      .delay(500 * i)
+      .animate({ top: -10 }, "fast")
+      .animate({ opacity: 1 }, "fast")
+      .animate({ top: 30 }, "fast")
+      .animate({ top: 10 }, "fast");
+  });
+
   /* -------------------END GLOBAL----------------*/
 
   /*----------------ABOUT SECTION-------------------*/
@@ -25,7 +47,7 @@ $(document).ready(function () {
   $(window).scroll(function () {
     /* Check the location of each 'section'. If it is more than 1/5th of the screen height from the bottom of the screen, fade in */
     let screenBottom = $($(window).scrollTop() + $(window).height());
-    let appearAfterScroll = $(window).height() / 2;
+    let appearAfterScroll = $(window).height() / 5;
     let navFocus = $(window).height() / 2;
 
     $(".section").each(function () {
@@ -34,20 +56,6 @@ $(document).ready(function () {
         screenBottom[0]
       ) {
         $(this).animate({ opacity: 1 }, 1200);
-        /* If the section is contacts and is first time have scrolled to contacts section, animate social media logos to bounce and fade in one after the other */
-        if (
-          $(this).attr("id") === "contact" &&
-          $(this).css("opacity") === "0"
-        ) {
-          $(".logo").each(function (i) {
-            $(this)
-              .delay(500 * i)
-              .animate({ top: -10 }, "fast")
-              .animate({ opacity: 1 }, "fast")
-              .animate({ top: 30 }, "fast")
-              .animate({ top: 10 }, "fast");
-          });
-        }
       }
 
       /* Shows underline only on nav link in nav bar corresponding to the section screen is on.
@@ -128,7 +136,72 @@ $(document).ready(function () {
   });
   /* -----------------END PROJECTS----------------*/
 
+  /*--------------- BLOG ---------------- */
+
+  // Get request using Ajax
+  // Comes back with array of objects
+  // Map through the objects using $.map and append onto .articles
+
+  const months = {
+    "01": "January",
+    "02": "February",
+    "03": "March",
+    "04": "April",
+    "05": "May",
+    "06": "June",
+    "07": "July",
+    "08": "August",
+    "09": "September",
+    10: "October",
+    11: "November",
+    12: "December",
+  };
+  const url = "https://dev.to/api/articles?username=thorners55";
+  $.ajax({
+    type: "GET",
+    url,
+  })
+    .done(function (articles) {
+      console.log(articles);
+      $.map(articles, function (article, index) {
+        let created = article.created_at.split("T");
+        let date = created[0].split("-");
+
+        let day = date[2];
+        let newDay = day.split("");
+
+        if (newDay[0] === "0") {
+          newDay.splice(0, 1);
+          day = newDay;
+        }
+
+        let formattedDate = `${day} ${months[date[1]]}, ${date[0]}`;
+
+        $(".articles").append(
+          `<article class="article-card shadow-card">
+                <h3><a href=${article.url} target="_blank">
+                  ${article.title}
+                </a></h3>
+                <p>Posted on ${formattedDate}</p>
+              </article>`,
+        );
+      });
+    })
+    .error(function () {
+      "$.articles".append(
+        `<p>
+          Oops! An error occured loading blog posts. Please try{" "}
+          <a href="https://dev.to/thorners55" target="_blank">
+            dev.to/thorners55
+          </a>{" "}
+          to see my posts.
+        </p>`,
+      );
+    });
+  /*-----------------END BLOG--------------*/
+
   /*----------------CONTACT-------------------*/
+
   /* FORM INPUTS:
       Name: During input, if character length of name is less than 5, background of input box goes pink. Shows message telling minimum characters if less than 5 when leave the focus of the box.
       Email: During input, if email does not match regex or is less than 6 characters, background of input box goes pink. Shows message telling minimum characters and allowed characters if less than 6 when leave the focus of the box.
@@ -227,14 +300,6 @@ $(document).ready(function () {
     });
   });
 
-  $(".logo").hover(
-    function () {
-      $(this).attr("fill", "#b21f66");
-    },
-    function () {
-      $(this).attr("fill", "#03a090");
-    },
-  );
   /* -----------------END CONTACTS----------------*/
 
   /*----------------RESPONSIVE----------------------*/
@@ -242,68 +307,4 @@ $(document).ready(function () {
     window.scrollTo(0, 0);
   });
   /*----------------END RESPONSIVE ----------------*/
-
-  /*--------------- BLOG ---------------- */
-
-  // Get request using Ajax
-  // Comes back with array of objects
-  // Map through the objects using $.map and append onto .articles
-
-  const months = {
-    "01": "January",
-    "02": "February",
-    "03": "March",
-    "04": "April",
-    "05": "May",
-    "06": "June",
-    "07": "July",
-    "08": "August",
-    "09": "September",
-    10: "October",
-    11: "November",
-    12: "December",
-  };
-  const url = "https://dev.to/api/articles?username=thorners55";
-  $.ajax({
-    type: "GET",
-    url,
-  })
-    .done(function (articles) {
-      console.log(articles);
-      $.map(articles, function (article, index) {
-        let created = article.created_at.split("T");
-        let date = created[0].split("-");
-
-        let day = date[2];
-        let newDay = day.split("");
-
-        if (newDay[0] === "0") {
-          newDay.splice(0, 1);
-          day = newDay;
-        }
-
-        let formattedDate = `${day} ${months[date[1]]}, ${date[0]}`;
-
-        $(".articles").append(
-          `<article class="article-card shadow-card">
-                <a href=${article.url} target="_blank">
-                  <h3>${article.title}</h3>
-                </a>
-                <p>Posted on ${formattedDate}</p>
-              </article>`,
-        );
-      });
-    })
-    .error(function () {
-      "$.articles".append(
-        `<p>
-          Oops! An error occured loading blog posts. Please try{" "}
-          <a href="https://dev.to/thorners55" target="_blank">
-            dev.to/thorners55
-          </a>{" "}
-          to see my posts.
-        </p>`,
-      );
-    });
-  /*-----------------END BLOG--------------*/
 });
