@@ -312,7 +312,7 @@ $(document).ready(function () {
     $("#submitted-message").attr("aria-hidden", "false");
   });
 
-  $("button").click(function () {
+  $("button[type=submit]").click(function () {
     $("input, textarea").val("");
     $("#submitted-message").css("display", "block");
     $("#submitted-message").attr("aria-hidden", "false");
