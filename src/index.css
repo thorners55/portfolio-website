@@ -1,7 +1,7 @@
 /* Global styles */
 @font-face {
   font-family: "Bubbleboddy Light";
-  src: url("../assets/fonts/Bubbleboddy-Regular.ttf")
+  src: url("./assets/fonts/Bubbleboddy-Regular.ttf")
     format("truetype");
 }
 
