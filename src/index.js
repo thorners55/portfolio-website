@@ -278,8 +278,10 @@ $(document).ready(function () {
     var message = $(this).val();
     if (message.length < 70) {
       $(this).addClass("invalid");
+      $(".invalid-message").show("fast");
       $("#invalid-message").attr("aria-hidden", "false");
     } else {
+      $(".invalid-message").hide("fast");
       $(this).removeClass("invalid");
       $("#invalid-message").attr("aria-hidden", "true");
     }
@@ -290,23 +292,30 @@ $(document).ready(function () {
     if (message.length < 70) {
       $(".invalid-message").show("fast");
       $(this).addClass("invalid");
-      $(".label-background").addClass("invalid");
       $("#invalid-message").attr("aria-hidden", "false");
     } else {
       $(".invalid-message").hide("fast");
       $(this).removeClass("invalid");
-      $(".label-background").removeClass("invalid");
       $("#invalid-message").attr("aria-hidden", "true");
     }
   });
 
-  /* On contact form submit, form goes to Netlify, which emails me form input */
+  /* On contact form submit, form goes to Netlify, which emails form input */
   $("form").submit(function (e) {
     e.preventDefault();
     var $form = $(this);
     $.post($form.attr("action"), $form.serialize()).then(function () {
-      alert("Thank you!");
+      alert("Thank you! Your message has been submitted!");
     });
+    $("input", "textarea").val("");
+    $("#submitted-message").css("display", "block");
+    $("#submitted-message").attr("aria-hidden", "false");
+  });
+
+  $("button").click(function () {
+    $("input, textarea").val("");
+    $("#submitted-message").css("display", "block");
+    $("#submitted-message").attr("aria-hidden", "false");
   });
 
   /* -----------------END CONTACTS----------------*/

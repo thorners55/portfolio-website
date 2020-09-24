@@ -431,6 +431,11 @@ textarea {
   text-align: left;
 }
 
+#submitted-message {
+  display: none;
+  text-align: center;
+}
+
 form button {
   background-color: #381460;
   padding: 2rem;
