@@ -2,7 +2,7 @@ $(document).ready(function () {
   /*----------------GLOBAL----------------------*/
   $("button").each(function () {
     $(this).mouseover(function () {
-      $(this).find("h3").css("color", "#b21f66");
+      $(this).find("h3").css("color", "#CC2014");
     });
   });
 
@@ -17,10 +17,10 @@ $(document).ready(function () {
   /* Logo changes colour when hover over it, changes back when focus away */
   $(".logo").hover(
     function () {
-      $(this).attr("fill", "#b21f66");
+      $(this).attr("fill", "#381460");
     },
     function () {
-      $(this).attr("fill", "#03a090");
+      $(this).attr("fill", "#eb4034");
     },
   );
 
@@ -34,6 +34,12 @@ $(document).ready(function () {
   });
 
   /* -------------------END GLOBAL----------------*/
+
+  /*----------------RESPONSIVE----------------------*/
+  $("#scroll-top-button").click(function () {
+    window.scrollTo(0, 0);
+  });
+  /*----------------END RESPONSIVE ----------------*/
 
   /*----------------ABOUT SECTION-------------------*/
   /* Load about section and slide on site load */
@@ -304,10 +310,4 @@ $(document).ready(function () {
   });
 
   /* -----------------END CONTACTS----------------*/
-
-  /*----------------RESPONSIVE----------------------*/
-  $("#scroll-top-button").click(function () {
-    window.scrollTo(0, 0);
-  });
-  /*----------------END RESPONSIVE ----------------*/
 });
