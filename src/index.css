@@ -162,7 +162,6 @@ nav > a:focus {
 }
 
 .section {
-  opacity: 0;
   scroll-margin-top: 5vh;
 }
 
@@ -194,11 +193,6 @@ h4 {
 #about-box {
   box-shadow: 1rem 1rem 0 0rem #312fac;
   background-color: #b5b5e6;
-}
-
-.blurb {
-  display: none;
-  width: 95%;
 }
 
 /* Main area - Skills and Experience */
@@ -363,10 +357,10 @@ button:hover {
 
 /* Main area - Blog */
 
-#blog-box {
+/* #blog-box {
   box-shadow: 1rem 1rem 0 0rem #ffce54;
   background-color: #f1f19c;
-}
+} */
 
 /* Main area - Contact */
 
@@ -393,7 +387,7 @@ button:hover {
 }
 
 form {
-  margin: auto;
+  margin: 4rem auto;
   width: 75%;
 }
 
@@ -521,12 +515,6 @@ footer > p > a {
 
   #name-area {
     grid-template-columns: 1fr 1fr;
-  }
-  /* Main  area - Blog */
-  .articles {
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-    grid-gap: 2ch;
   }
 }
 
@@ -705,14 +693,6 @@ footer > p > a {
     height: 30vh;
   }
 
-  /* Main area - Blog */
-
-  .articles {
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-    grid-gap: 2ch;
-  }
-
   /* Main area - Contact */
 
   #contact > section > p {
@@ -779,16 +759,6 @@ footer > p > a {
 }
 
 @media (max-width: 400px) {
-  /* Main area - Blog */
-  .articles {
-    grid-template-columns: 1fr;
-  }
-
-  .article-card {
-    width: 70%;
-    margin: 0 auto;
-  }
-
   /* Header and navigation */
 
   #nav-box {

@@ -41,13 +41,6 @@ $(document).ready(function () {
   });
   /*----------------END RESPONSIVE ----------------*/
 
-  /*----------------ABOUT SECTION-------------------*/
-  /* Load about section and slide on site load */
-  $(".about").animate({ opacity: 1 }, 1000, function () {
-    $(".blurb").slideDown(3000);
-  });
-  /* --------------END ABOUT SECTION----------------*/
-
   /*-------------ON SCROLL: SECTIONS -------------*/
   /* Every time the window is scrolled ... */
   $(window).scroll(function () {
@@ -141,10 +134,6 @@ $(document).ready(function () {
     $(this).attr("aria-expanded", flipped);
   });
   /* -----------------END PROJECTS----------------*/
-
-  /*--------------- BLOG ---------------- */
-
-  /*-----------------END BLOG--------------*/
 
   /*----------------CONTACT-------------------*/
 
