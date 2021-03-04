@@ -7,11 +7,11 @@
 
 html {
   font-size: 62.5%;
+  font-family: "Nunito", sans-serif;
   color: #381460;
   overflow-x: hidden;
   margin: -10px -10px;
   background: #fefefa;
-  font-family: "Nunito", sans-serif;
   line-height: 1.8;
 }
 
@@ -68,7 +68,6 @@ div > section {
 /* Page layout */
 #bod {
   grid-area: bod;
-  padding-top: 10vh;
   padding-right: 20vw;
   background-color: #fefefa;
 }
@@ -76,18 +75,31 @@ div > section {
 /* Side area */
 
 #side-section {
-  display: grid;
+  /*display: grid;
   grid-template-columns: 18vw;
-  grid-template-rows: 33vh 33vh 33vh;
+  grid-template-rows: 33vh 33vh 33vh; */
+  display: flex;
+  align-items: center;
   position: fixed;
   height: 101%;
-  background-color: #693ad6;
-  border-right: 2.5rem solid #eb7100;
+  background-color: #fefefa;
 }
 
-.photo {
-  width: 60%;
+#photo {
+  display: inline-block;
   margin: auto;
+  margin-left: 0;
+  width: 15rem;
+}
+
+#photo-small-screen {
+  display: none;
+}
+
+#name-area {
+  display: grid;
+  width: 90%;
+  grid-template-columns: 2fr 1fr;
 }
 
 /* Navigation */
@@ -96,7 +108,15 @@ nav {
   font-family: "Asap", sans-serif;
   font-weight: 700;
   padding-top: 10%;
-  margin-left: 15%;
+}
+
+#nav-box {
+  background: rgb(100, 241, 206);
+  padding: 40% 30%;
+  margin-left: 20%;
+  box-shadow: 1rem 1rem 0 0rem #3c8368;
+  border-radius: 0.5rem;
+  background-color: #7eecc2;
 }
 
 nav > a {
@@ -104,22 +124,22 @@ nav > a {
   margin-bottom: 10%;
   letter-spacing: 0.1rem;
   width: 12rem;
-  color: lightgoldenrodyellow;
+  color: #381460;
 }
 
 nav > a:visited {
-  color: lightgoldenrodyellow;
+  color: #381460;
 }
 
 nav > a:hover,
 nav > a:focus {
-  color: #381460;
+  color: #eb4034;
   background-color: #fefefa;
   text-decoration: none;
 }
 
 .focused-section-link {
-  border-bottom: 0.3rem solid lightgoldenrodyellow;
+  border-bottom: 0.3rem solid #381460;
   width: 12rem;
 }
 
@@ -142,12 +162,12 @@ nav > a:focus {
 }
 
 h1 {
-  font-family: "Bubbleboddy Light", sans-serif;
+  display: inline;
   font-size: 5rem;
+  padding-right: 1ch;
 }
 
 h2 {
-  font-family: "Bubbleboddy Light", sans-serif;
   font-size: 4rem;
 }
 
@@ -155,7 +175,6 @@ h3,
 h4 {
   font-size: 2.4rem;
   color: #381460;
-  font-family: "Nunito", sans-serif;
   font-weight: "800";
 }
 
@@ -165,10 +184,6 @@ h4 {
 }
 
 /* Main area - About */
-
-.photo-small-screen {
-  display: none;
-}
 
 .blurb {
   display: none;
@@ -495,6 +510,14 @@ footer > p > a {
 /* MEDIA QUERIES */
 
 @media (max-width: 1050px) {
+  /*Main area - About */
+  #photo {
+    margin: auto;
+  }
+
+  #name-area {
+    grid-template-columns: 1fr 1fr;
+  }
   /* Main  area - Blog */
   .articles {
     grid-template-columns: 1fr 1fr;
@@ -578,26 +601,32 @@ footer > p > a {
     border: none;
   }
 
-  .photo {
-    display: none;
-  }
-
-  .photo-small-screen {
-    display: block;
-    padding: 5% 0;
-    width: 20%;
-    height: 20%;
-    margin: auto;
-  }
-
   /* Main area - About */
 
   div#about > section {
     margin-top: 2ch;
   }
 
+  #name-area {
+    display: block;
+    width: 100%;
+  }
+
+  #photo {
+    display: none;
+  }
+
+  #photo-small-screen {
+    display: block;
+    width: 15rem;
+    margin: auto;
+    padding: 1ch;
+  }
+
   h1 {
-    margin-top: 0;
+    margin: 0;
+    display: block;
+    padding-right: 0;
   }
 
   h1,
@@ -608,6 +637,7 @@ footer > p > a {
   p.blurb {
     padding: 0;
     width: auto;
+    text-align: center;
   }
 
   /* Main area - Skills and Experience */
@@ -747,9 +777,6 @@ footer > p > a {
 
 @media (max-width: 800px) {
   /* Main area - About */
-  .photo-small-screen {
-    width: 30%;
-  }
 }
 
 @media (max-width: 400px) {
@@ -778,12 +805,6 @@ footer > p > a {
 
   .focused-section-link {
     width: auto;
-  }
-
-  /* Main area - About */
-
-  .photo-small-screen {
-    width: 40%;
   }
 
   /* Main area - Contact */

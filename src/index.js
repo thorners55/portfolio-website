@@ -44,7 +44,7 @@ $(document).ready(function () {
   /*----------------ABOUT SECTION-------------------*/
   /* Load about section and slide on site load */
   $(".about").animate({ opacity: 1 }, 1000, function () {
-    $(".blurb").slideDown(1000);
+    $(".blurb").slideDown(3000);
   });
   /* --------------END ABOUT SECTION----------------*/
 

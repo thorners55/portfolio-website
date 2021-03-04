@@ -31,24 +31,19 @@
     <div id="wrapper">
       <header>
         <div id="side-section">
-          <img
-            class="photo"
-            src="./assets/images/circle-cropped.png"
-            alt="Stephanie sporting a cheesy grin"
-            width="200
-            "
-          />
-          <nav>
-            <a href="#about" class="nav-about focused-section-link"
-              >ABOUT</a
-            >
-            <a href="#skills" class="nav-skills"
-              >SKILLS AND EXPERIENCE</a
-            >
-            <a href="#projects" class="nav-projects">PROJECTS</a>
-            <a href="#blog" class="nav-blog">BLOG</a>
-            <a href="#contact" class="nav-contact">CONTACT</a>
-          </nav>
+          <div id="nav-box">
+            <nav>
+              <a href="#about" class="nav-about focused-section-link"
+                >About</a
+              >
+              <a href="#skills" class="nav-skills"
+                >Skills and experience</a
+              >
+              <a href="#projects" class="nav-projects">Projects</a>
+              <a href="#blog" class="nav-blog">Blog</a>
+              <a href="#contact" class="nav-contact">Contact</a>
+            </nav>
+          </div>
         </div>
       </header>
 
@@ -144,16 +139,21 @@
           </div>
           <div id="about" class="section about">
             <section>
-              <img
-                class="photo-small-screen"
-                src="./assets/images/circle-cropped.png"
-                alt="Stephanie sporting a cheesy grin"
-                width="200
-                          "
-              />
-              <h1 aria-label="Stephanie Thornley">
-                STEPHANIE THORNLEY
-              </h1>
+              <div id="name-area">
+                <img
+                  id="photo-small-screen"
+                  src="./assets/images/circle-cropped.png"
+                  alt="Stephanie sporting a cheesy grin"
+                />
+                <h1 aria-label="Stephanie Thornley">
+                  Stephanie Thornley
+                </h1>
+                <img
+                  id="photo"
+                  src="./assets/images/circle-cropped.png"
+                  alt="Stephanie sporting a cheesy grin"
+                />
+              </div>
               <h2 class="screen-reader-only">About</h2>
               <p class="blurb">
                 Hello! I'm Stephanie, a hopeful Junior Software
@@ -170,12 +170,10 @@
             </section>
           </div>
 
-          <div class="line"></div>
-
           <div id="skills" class="section skills">
             <section>
               <h2 aria-label="Skills and Experience">
-                SKILLS AND EXPERIENCE
+                Skills and Experience
               </h2>
               <button
                 aria-expanded="false"
@@ -346,11 +344,9 @@
             </section>
           </div>
 
-          <div class="line"></div>
-
           <div id="projects" class="section">
             <section>
-              <h2 aria-label="Projects">PROJECTS</h2>
+              <h2 aria-label="Projects">Projects</h2>
               <div class="container">
                 <div class="card shadow-card">
                   <h3>Budding</h3>
@@ -500,22 +496,18 @@
             </section>
           </div>
 
-          <div class="line"></div>
-
           <div id="blog" class="section blog">
             <section>
-              <h2 aria-label="Blog">BLOG</h2>
+              <h2 aria-label="Blog">Blog</h2>
               <div class="articles">
                 <p id="loading-articles">Loading articles...</p>
               </div>
             </section>
           </div>
 
-          <div class="line"></div>
-
           <div id="contact" class="section contact">
             <section>
-              <h2 aria-label="Contact">CONTACT</h2>
+              <h2 aria-label="Contact">Contact</h2>
               <p>
                 Feel free to get in touch using the secure form, or
                 reach out on LinkedIn or Twitter!
