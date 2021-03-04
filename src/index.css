@@ -247,15 +247,16 @@ ul.accordion {
   list-style-type: disc;
 }
 
-.experience > li > ul {
+.experience > li > ul,
+#volunteer-work > li > ul {
   padding-inline-start: 5%;
 }
 
-.volunteer-work {
+#volunteer-work {
   padding-inline-start: 0;
 }
 
-.volunteer-work > li {
+#volunteer-work > li {
   list-style-type: none;
 }
 
@@ -266,7 +267,7 @@ ul.accordion {
   background-color: #9ecfe2;
 }
 
-.project {
+#project {
   padding-bottom: 1rem;
 }
 
@@ -636,7 +637,7 @@ footer > p > a {
     text-align: center;
   }
 
-  p.blurb {
+  p#blurb {
     padding: 0;
     width: auto;
     text-align: center;
