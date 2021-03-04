@@ -49,9 +49,9 @@ a:focus {
   text-decoration: underline;
 }
 
-ul {
+/* ul {
   padding-bottom: 1em;
-}
+} */
 
 button {
   display: block;
@@ -65,6 +65,12 @@ div > section {
   margin: 15vh 0;
 }
 
+.box {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  padding-bottom: 5rem;
+}
+
 /* Page layout */
 #bod {
   grid-area: bod;
@@ -75,9 +81,6 @@ div > section {
 /* Side area */
 
 #side-section {
-  /*display: grid;
-  grid-template-columns: 18vw;
-  grid-template-rows: 33vh 33vh 33vh; */
   display: flex;
   align-items: center;
   position: fixed;
@@ -98,7 +101,6 @@ div > section {
 
 #name-area {
   display: grid;
-  width: 90%;
   grid-template-columns: 2fr 1fr;
 }
 
@@ -111,9 +113,8 @@ nav {
 }
 
 #nav-box {
-  background: rgb(100, 241, 206);
-  padding: 40% 30%;
-  margin-left: 20%;
+  padding: 4rem 3rem;
+  margin-left: 2rem;
   box-shadow: 1rem 1rem 0 0rem #3c8368;
   border-radius: 0.5rem;
   background-color: #7eecc2;
@@ -145,15 +146,22 @@ nav > a:focus {
 
 /* Main area */
 
-#fixed-social-logos {
+#fixed-social-logos-container {
+  display: flex;
+  align-items: center;
   position: fixed;
+  height: 101%;
   right: 0;
-  top: 20%;
+}
+
+#fixed-social-logos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #fixed-social-logos > a {
-  display: block;
-  margin: 4ch;
+  margin: 5ch;
 }
 
 .section {
@@ -176,6 +184,7 @@ h4 {
   font-size: 2.4rem;
   color: #381460;
   font-weight: "800";
+  font-family: "Nunito", sans-serif;
 }
 
 .line {
@@ -185,13 +194,22 @@ h4 {
 
 /* Main area - About */
 
+#about-box {
+  box-shadow: 1rem 1rem 0 0rem #312fac;
+  background-color: #b5b5e6;
+}
+
 .blurb {
   display: none;
-  width: 90%;
-  padding-bottom: 10vh;
+  width: 95%;
 }
 
 /* Main area - Skills and Experience */
+
+#skills-box {
+  box-shadow: 1rem 1rem 0 0rem #b43c3c;
+  background-color: #f0b5b5;
+}
 
 h3.skills-heading {
   text-decoration: underline;
@@ -201,7 +219,7 @@ h3.skills-heading {
 
 h3.skills-heading:before {
   content: "\25BA";
-  color: #eb4034;
+  color: #381460;
   padding-right: 1ch;
   padding-left: 1.5ch;
   display: inline-block;
@@ -247,16 +265,13 @@ button.accordion {
 
 /* Main area - Projects */
 
-.shadow-card {
-  box-shadow: -0.4rem -0.4rem 2rem 0 #949494;
-  border-radius: 0.5rem;
-  background-color: #f8e4d6;
+#projects-box {
+  box-shadow: 1rem 1rem 0 0rem #0b92c7;
+  background-color: #9ecfe2;
 }
 
 .card {
-  margin: 5rem 0 7rem 0;
-  padding: 4rem 4rem 6rem 4rem;
-  width: 100%;
+  padding-bottom: 1rem;
 }
 
 ul.project-tech li {
@@ -289,9 +304,15 @@ ul.project-tech {
   padding-left: 0;
 }
 
+button:hover {
+  color: #cc2014;
+  background: #fefefa;
+}
+
 .show-more-button:hover,
 .show-more-button:focus {
   color: #cc2014;
+  background: #fefefa;
 }
 
 #budding-more-info {
@@ -340,57 +361,37 @@ ul.project-tech {
 
 /* Main area - Blog */
 
-#blog > section > .articles {
-  margin-top: 5rem;
-}
-
-.articles {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: 30ch;
-  width: 110%;
-  grid-gap: 3%;
-}
-
-.article-card {
-  padding: 10%;
-  display: inline-block;
-  position: relative;
-}
-
-.article-card > h3 > a {
-  font-size: 2rem;
-  text-decoration: underline;
-}
-
-.article-card > p {
-  position: absolute;
-  bottom: 0;
-  font-size: 1.6rem;
-  text-align: left;
-  padding-right: 10%;
-  padding-top: 1ch;
+#blog-box {
+  box-shadow: 1rem 1rem 0 0rem #ffce54;
+  background-color: #f1f19c;
 }
 
 /* Main area - Contact */
+
+#contact-box {
+  box-shadow: 1rem 1rem 0 0rem #831876dc;
+  background-color: #dbb1d6;
+}
 
 #contact-social-logos {
   display: none;
 }
 
 .logo {
+  display: block;
   height: 5rem;
   margin-top: -6rem;
   opacity: 0;
-  display: inline-block;
   position: relative;
+  fill: #381460;
+}
+
+.logo:hover {
+  fill: #eb4034;
 }
 
 form {
-  background-color: #f8e4d6 !important;
-  padding: 5%;
   width: 50%;
-  margin-top: 3ch;
 }
 
 .screen-reader-only {
@@ -404,6 +405,7 @@ form {
 
 label {
   font-family: "Asap", sans-serif;
+  font-weight: bold;
   height: 2rem;
 }
 
@@ -415,7 +417,7 @@ input {
   font-size: 1.8rem;
   color: #381460;
   width: 70%;
-  background-color: #fafad2;
+  background-color: #fefefa;
   border: 0.1rem solid #381460;
   border-radius: 0.5rem;
 }
@@ -426,16 +428,12 @@ textarea {
   font-size: 1.8rem;
   resize: none;
   padding: 0.5em;
-  background-color: lightgoldenrodyellow;
+  background-color: #fefefa;
   border: 0.1rem solid #381460;
   width: 100%;
   height: 10em;
   box-sizing: border-box;
   border-radius: 0.5rem;
-}
-
-.invalid {
-  background-color: lightpink;
 }
 
 .invalid-name,
@@ -477,7 +475,10 @@ select:-webkit-autofill:focus {
 
 form button:hover,
 form button:focus {
-  background-color: #cc2014;
+  background-color: #fefefa;
+  color: #d82518;
+  font-weight: bold;
+  border: solid 2px #381460;
 }
 
 /* Footer */
