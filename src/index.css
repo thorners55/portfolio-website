@@ -173,6 +173,7 @@ h1 {
 
 h2 {
   font-size: 4rem;
+  letter-spacing: 0.1rem;
 }
 
 h3,
@@ -230,6 +231,10 @@ button.accordion {
   display: none;
 }
 
+#skills ul {
+  padding-bottom: 1em;
+}
+
 ul#non-tech-skills > li,
 #tech-skills > li {
   margin-left: 5%;
@@ -247,8 +252,8 @@ ul.accordion {
   list-style-type: disc;
 }
 
-.experience > li > ul,
-#volunteer-work > li > ul {
+.experience li ul,
+#volunteer-work li ul {
   padding-inline-start: 5%;
 }
 
@@ -652,15 +657,6 @@ footer > p > a {
 
   .experience {
     padding-inline-start: 10%;
-  }
-
-  .experience > li > ul {
-    padding-inline-start: 5%;
-  }
-
-  ul#non-tech-skills,
-  #tech-skills {
-    margin-left: 5%;
   }
 
   /* Main area - Projects */
