@@ -22,6 +22,7 @@ body {
 
 p {
   text-align: justify;
+  width: 95%;
 }
 
 main {
@@ -48,10 +49,6 @@ a:focus {
   color: #cc2014;
   text-decoration: underline;
 }
-
-/* ul {
-  padding-bottom: 1em;
-} */
 
 button {
   display: block;
@@ -239,8 +236,13 @@ button.accordion {
   display: none;
 }
 
+ul#non-tech-skills > li,
 #tech-skills > li {
-  padding-bottom: 1em;
+  margin-left: 5%;
+}
+
+ul.accordion {
+  margin-top: 0;
 }
 
 .experience {
@@ -252,7 +254,7 @@ button.accordion {
 }
 
 .experience > li > ul {
-  padding-inline-start: 1.5vw;
+  padding-inline-start: 5%;
 }
 
 .volunteer-work {
@@ -270,7 +272,7 @@ button.accordion {
   background-color: #9ecfe2;
 }
 
-.card {
+.project {
   padding-bottom: 1rem;
 }
 
@@ -391,7 +393,8 @@ button:hover {
 }
 
 form {
-  width: 50%;
+  margin: auto;
+  width: 75%;
 }
 
 .screen-reader-only {
@@ -575,7 +578,6 @@ footer > p > a {
     width: 101%;
     padding: 0;
     border-right: 0;
-    border-bottom: 2.5rem solid #ff7b00;
   }
 
   nav {
@@ -588,9 +590,20 @@ footer > p > a {
     margin-top: 1ch;
   }
 
+  #nav-box {
+    padding: 4rem 3rem;
+    margin-left: 2rem;
+    box-shadow: 0 0 0 0 #3c8368;
+    border-radius: 0.5rem;
+    background-color: #7eecc2;
+    margin: auto;
+    width: 80%;
+  }
+
   nav > a {
     display: inline;
-    padding: 1ch 2ch;
+    padding: 0 2ch;
+    border-left: solid 2px #381460;
   }
 
   nav > a:hover,
@@ -645,23 +658,23 @@ footer > p > a {
 
   h3.skills-heading {
     text-indent: -1.5em;
-    margin-left: 2em;
+    margin-left: 1ch;
   }
 
   .experience {
-    padding-inline-start: 10vw;
+    padding-inline-start: 10%;
   }
 
   .experience > li > ul {
-    padding-inline-start: 5vw;
+    padding-inline-start: 5%;
+  }
+
+  ul#non-tech-skills,
+  #tech-skills {
+    margin-left: 5%;
   }
 
   /* Main area - Projects */
-
-  .card {
-    width: 70%;
-    margin: 50px auto;
-  }
 
   #budding-more-info {
     display: block;
@@ -712,29 +725,18 @@ footer > p > a {
 
   #contact-social-logos {
     display: flex;
-    margin: 4rem 0;
-    padding: 0 15%;
+    padding: 7rem 15% 0;
     justify-content: space-between;
   }
+
   .logo {
     height: 4rem;
-  }
-
-  form.card {
-    margin: 0;
-    margin-right: 0;
-    margin-top: 0;
-  }
-
-  form.shadow-card {
-    padding-top: 7%;
-    padding-bottom: 3%;
   }
 
   form {
     width: 60%;
     margin: auto;
-    margin-top: 3ch;
+    margin-top: 1ch;
     padding-top: 10%;
     padding-bottom: 10%;
   }
@@ -763,7 +765,7 @@ footer > p > a {
     z-index: 99;
     border-radius: 50%;
     outline: none;
-    background-color: #eb4034;
+    background-color: #381460;
     color: white;
     cursor: pointer;
     font-size: 2.5rem;
@@ -774,10 +776,6 @@ footer > p > a {
   #scroll-top-button:focus {
     background-color: #381460;
   }
-}
-
-@media (max-width: 800px) {
-  /* Main area - About */
 }
 
 @media (max-width: 400px) {
@@ -792,6 +790,10 @@ footer > p > a {
   }
 
   /* Header and navigation */
+
+  #nav-box {
+    padding: 0;
+  }
 
   nav > a {
     margin-bottom: 2%;
