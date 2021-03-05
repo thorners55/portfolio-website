@@ -73,6 +73,15 @@ $(document).ready(function () {
   });
   /* -----------END ON SCROLL: SECTIONS--------------*/
 
+  $(".hidden-info").each(function () {
+    $(this).click(function (event) {
+      var target = $(event.target);
+      if (target.is("button.show-more-button")) {
+        $;
+      }
+    });
+  });
+
   /*----------------SKILLS AND EXP--------------------*/
   /* Shows/hides content when click headings in Skills and Experience section */
   $(".accordion").each(function () {
@@ -108,18 +117,23 @@ $(document).ready(function () {
 
   /*-----------------PROJECTS-------------------*/
   /* Show/hide project button */
+
   $(".hidden-info").hide();
 
-  let show = false;
+  //let show = false;
+
   $("#projects")
     .find("button")
     .click(function () {
-      if (show === false) {
+      /* When button is clicked, checks to see if the text on the button says "Show more" or "Show less", and switches to the opposite one when clicked, then the hidden info toggles (slides down or up) */
+      let buttonText = "";
+      buttonText = $(this).text();
+      let show = buttonText.includes("more");
+
+      if (show) {
         $(this).text("Show less");
-        show = true;
       } else {
         $(this).text("Show more");
-        show = false;
       }
 
       $(this).parent().find(".hidden-info").slideToggle("slow");
