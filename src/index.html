@@ -7,7 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1"
     />
-    <title>Stephanie Thornley's Portfolio Site</title>
+    <title>Stephanie Thornley's Portfolio</title>
     <link rel="stylesheet" href="./index.css" />
 
     <link
@@ -129,7 +129,7 @@
                 </div>
                 <h2 class="screen-reader-only">About</h2>
                 <p id="blurb">
-                  Hello! I'm Stephanie, a hopeful Junior Software
+                  Hello! I'm Stephanie, a Junior Software
                   Developer from Leeds.<br />
                   I've gone from History grad to coding bootcamp grad,
                   which seems like a big change, but they're not so
@@ -363,8 +363,46 @@
             <section>
               <div id="projects-box" class="box">
                 <h2 aria-label="Projects">Projects</h2>
-
                 <div>
+                  <div class="project">
+                  <h3>Undercover Elf</h3>
+                  <ul class="project-tech">
+                    <li>Javascript,</li>
+                    <li>Vue,</li>
+                    <li>Vuex,</li>
+                    <li>AWS Amplify,</li>
+                    <li>AWS Cognito,</li>
+                    <li>AWS Lambda,</li>
+                    <li>DynamoDB,</li>
+                    <li>CSS</li>
+                  </ul>
+                  <p>Undercover Elf is a Secret Santa style app made for my family as a more user-friendly alternative to current popular sites such as drawnames.co.uk.</p> 
+                  <button
+                    id="undercover-elf"
+                    aria-expanded="false"
+                    class="show-more-button"
+                  >
+                    Show more
+                  </button>
+                  <div class="hidden-info">
+                    <div id="undercover-elf-more-info">
+                    <p>The free-to-use Secret Santa style websites currently available are often populated with many adverts of suggestions of items to put on their wishlists, which was confusing for my ageing parents. Undercover Elf eliminated this issue, and also gave me freedom to write more explicit instructions of how to use the site than is generally available on free-to-use sites.</p>
+                    <p>Users can securely create their own accounts using AWS Cognito, with the ability to change their password. When a user creates a new group, an invitation ID and link are generated. This ID can can be sent to friends and family to easily search for the group on their account, or click the link to join the group directly. When a group is created, the creator is registered as the admin, and can edit the group's name, budget, and gift
+                    exchange date. Users have a wishlist for each group, where items can be added, edited, or deleted.  </p>
+                      <img
+                        src=""
+                        alt="gif showing a demonstration of the Undercover Elf app"
+                        class="desktop-gif"
+                      />
+                    </div>
+                    <div class="project-links">
+                      <a href="#" target="_blank">Demo site</a>
+                      <a href="" target="_blank">Full stack code</a>
+                    </div>
+                  </div>
+                  </div>
+
+                  <div class="project">
                   <h3>Budding</h3>
                   <ul class="project-tech">
                     <li>JavaScript,</li>
@@ -373,8 +411,8 @@
                     <li>PostgreSQL,</li>
                     <li>AWS S3,</li>
                     <li>Express.js,</li>
-                    <li>CSS,</li>
-                    <li>Node.js</li>
+                    <li>Node.js,</li>
+                    <li>CSS</li>
                   </ul>
                   <p>
                     Budding is an app for measuring and tracking the
@@ -396,8 +434,7 @@
                       <p>
                         The user places markers on the photo at the
                         bottom of the pot, the top of the pot, and the
-                        top of the plant.<br />
-                        <br />
+                        top of the plant.
                         The app uses the position of these markers to
                         calculate the distance between the bottom and
                         top of the pot in pixels, and create a
@@ -449,8 +486,9 @@
                     <li>PostgreSQL,</li>
                     <li>Axios,</li>
                     <li>Jest,</li>
-                    <li>CSS,</li>
-                    <li>Node.js</li>
+                    <li>Node.js,</li>
+                    <li>CSS</li>
+
                   </ul>
                   <p>
                     A Reddit-style discussion website with articles
@@ -504,7 +542,11 @@
                         target="_blank"
                         >Front-end code</a
                       >
-                      <a href="https://github.com/thorners55/be-stephanies-nc-news" target="_blank">Back-end code</a>
+                      <a
+                        href="https://github.com/thorners55/be-stephanies-nc-news"
+                        target="_blank"
+                        >Back-end code</a
+                      >
                     </div>
                   </div>
                 </div>
