@@ -450,6 +450,7 @@ textarea {
 #submitted-message {
   display: none;
   text-align: center;
+  margin-right: 0;
 }
 
 form button {

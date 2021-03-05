@@ -120,8 +120,6 @@ $(document).ready(function () {
 
   $(".hidden-info").hide();
 
-  //let show = false;
-
   $("#projects")
     .find("button")
     .click(function () {
@@ -242,20 +240,15 @@ $(document).ready(function () {
 
   /* On contact form submit, form goes to Netlify, which emails form input */
   $("form").submit(function (e) {
+    console.log(e, "submit");
     e.preventDefault();
     var $form = $(this);
     $.post($form.attr("action"), $form.serialize()).then(function () {
       alert("Thank you! Your message has been submitted!");
+      $("input", "textarea").val("");
+      $("#submitted-message").css("display", "block");
+      $("#submitted-message").attr("aria-hidden", "false");
     });
-    $("input", "textarea").val("");
-    $("#submitted-message").css("display", "block");
-    $("#submitted-message").attr("aria-hidden", "false");
-  });
-
-  $("button[type=submit]").click(function () {
-    $("input, textarea").val("");
-    $("#submitted-message").css("display", "block");
-    $("#submitted-message").attr("aria-hidden", "false");
   });
 
   /* -----------------END CONTACTS----------------*/
