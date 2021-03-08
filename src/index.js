@@ -127,11 +127,14 @@ $(document).ready(function () {
       let buttonText = "";
       buttonText = $(this).text();
       let show = buttonText.includes("more");
+      let project = $(this).siblings("h3").text();
 
       if (show) {
         $(this).text("Show less");
+        $(this).attr("aria-label", `Show less of ${project} project`);
       } else {
         $(this).text("Show more");
+        $(this).attr("aria-label", `Show more of ${project} project`);
       }
 
       $(this).parent().find(".hidden-info").slideToggle("slow");
