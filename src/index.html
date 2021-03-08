@@ -6,9 +6,12 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1"
-    >
-    <meta name="author" content="Stephanie Thornley">
-    <meta name="description" content="Portfolio site for Stephanie Thornley, a junior software developer from Leeds, UK, outlining her skills and experience, and providing demos of projects and links to their source code.">
+    />
+    <meta name="author" content="Stephanie Thornley" />
+    <meta
+      name="description"
+      content="Portfolio site for Stephanie Thornley, a junior software developer from Leeds, UK, outlining her skills and experience, and providing demos of projects and links to their source code."
+    />
     <title>Stephanie Thornley's Portfolio</title>
     <link rel="stylesheet" href="./index.css" />
 
@@ -35,6 +38,7 @@
         <div id="side-section">
           <div id="nav-box">
             <nav>
+              <h2>Menu</h2>
               <a href="#about" class="nav-about focused-section-link"
                 >About</a
               >
@@ -118,7 +122,7 @@
                   <img
                     id="photo-small-screen"
                     src="./assets/images/circle-cropped.png"
-                    alt="Stephanie sporting a cheesy grin"
+                    alt="Photo of Stephanie sporting a cheesy grin"
                   />
                   <h1 aria-label="Stephanie Thornley">
                     Stephanie Thornley
@@ -126,21 +130,22 @@
                   <img
                     id="photo"
                     src="./assets/images/circle-cropped.png"
-                    alt="Stephanie sporting a cheesy grin"
+                    alt="Photo of Stephanie sporting a cheesy grin"
                   />
                 </div>
                 <h2 class="screen-reader-only">About</h2>
                 <p id="blurb">
-                  Hello! I'm Stephanie, a Junior Software
-                  Developer from Leeds.<br />
+                  Hello! I'm Stephanie, a Junior Software Developer
+                  from Leeds.<br />
                   I've gone from History grad to coding bootcamp grad,
                   which seems like a big change, but they're not so
-                  different - as a logical thinker who appreciates the
+                  different. As a logical thinker who appreciates the
                   smaller details as well as the bigger picture, the
                   transition came naturally to me. I love the process
                   of coding (even debugging!), and I also enjoy
                   learning about the history of tech and how its
-                  advancements are affected by society, and vice versa.
+                  advancements are affected by society, and vice
+                  versa.
                 </p>
               </div>
             </section>
@@ -364,10 +369,9 @@
             <section>
               <div id="projects-box" class="box">
                 <h2 aria-label="Projects">Projects</h2>
-                <div>
-                  <div class="project">
+                <div class="project">
                   <h3>Undercover Elf</h3>
-                  <p aria-hidden="false" class="screen-reader-only">Made using</p>
+                  <p class="screen-reader-only">Made using</p>
                   <ul class="project-tech">
                     <li>Javascript,</li>
                     <li>Vue,</li>
@@ -378,7 +382,11 @@
                     <li>DynamoDB,</li>
                     <li>CSS</li>
                   </ul>
-                  <p>Undercover Elf is a Secret Santa style app made for my family as a more user-friendly alternative to current popular sites such as drawnames.co.uk.</p> 
+                  <p>
+                    Undercover Elf is a Secret Santa style app made
+                    for my family as a more user-friendly alternative
+                    to current popular sites such as drawnames.co.uk.
+                  </p>
                   <button
                     id="undercover-elf"
                     aria-expanded="false"
@@ -389,9 +397,32 @@
                   </button>
                   <div class="hidden-info">
                     <div id="undercover-elf-more-info">
-                    <p>The free-to-use Secret Santa style websites currently available are often populated with many adverts of suggestions of items to put on their wishlists, which was confusing for my ageing parents. Undercover Elf eliminated this issue, and also gave me freedom to write more explicit instructions of how to use the site than is generally available on free-to-use sites.</p>
-                    <p>Users can securely create their own accounts using AWS Cognito, with the ability to change their password. When a user creates a new group, an invitation ID and link are generated. This ID can can be sent to friends and family to easily search for the group on their account, or click the link to join the group directly. When a group is created, the creator is registered as the admin, and can edit the group's name, budget, and gift
-                    exchange date. Users have a wishlist for each group, where items can be added, edited, or deleted.  </p>
+                      <p>
+                        The free-to-use Secret Santa style websites
+                        currently available are often populated with
+                        many adverts of suggestions of items to put on
+                        their wishlists, which was confusing for my
+                        ageing parents. Undercover Elf eliminated this
+                        issue, and also gave me freedom to write more
+                        explicit instructions of how to use the site
+                        than is generally available on free-to-use
+                        sites.
+                      </p>
+                      <p>
+                        Users can securely create their own accounts
+                        using AWS Cognito, with the ability to change
+                        their password. When a user creates a new
+                        group, an invitation ID and link are
+                        generated. This ID can can be sent to friends
+                        and family to easily search for the group on
+                        their account, or click the link to join the
+                        group directly. When a group is created, the
+                        creator is registered as the admin, and can
+                        edit the group's name, budget, and gift
+                        exchange date. Users have a wishlist for each
+                        group, where items can be added, edited, or
+                        deleted.
+                      </p>
                       <img
                         src="./assets/project-demos/undercover-elf-demo.gif"
                         alt="gif showing a demonstration of the Undercover Elf app"
@@ -403,11 +434,67 @@
                       <a href="" target="_blank">Full stack code</a>
                     </div>
                   </div>
-                  </div>
+                </div>
 
-                  <div class="project">
+                <div class="project">
+                  <h3>Accessible portfolio site</h3>
+                  <p class="screen-reader-only">Made using</p>
+                  <ul class="project-tech">
+                    <li>jQuery,</li>
+                    <li>HTML,</li>
+                    <li>CSS,</li>
+                    <li>ARIA suite,</li>
+                    <li>Chrome screen reader</li>
+                  </ul>
+                  <p>
+                    This portfolio site had been made along Web
+                    Content Accessibility Guidelines (WCAG), with
+                    appropriate contrast ratios and text sizes, and
+                    tested using a screen reader.
+                  </p>
+                  <button
+                    id="undercover-elf"
+                    aria-expanded="false"
+                    class="show-more-button"
+                    aria-label="show more of Undercover Elf project"
+                  >
+                    Show more
+                  </button>
+                  <div class="hidden-info">
+                    <div id="portfolio-site-more-info">
+                      <p>
+                        I took the opportunity whilst making my
+                        portfolio site to learn more about how to make
+                        a website more accessible to people with
+                        disabilities, for example, those who rely on
+                        screen readers, cannot use a mouse, have
+                        visual impairments, or learning difficulties
+                        such as dyslexia.
+                      </p>
+                      <p>
+                        Following WCAG, the accessibility of this site
+                        was improved by using semantic HTML, ARIA
+                        attributes, appropriate colour contrasts,
+                        visual and text cues, and readable fonts and
+                        bodies of text. Using the Chrome screen reader
+                        extension, I checked that my site would be
+                        easy to follow for someone using a screen
+                        reader.
+                      </p>
+                    </div>
+                    <div class="project-links">
+                      <a
+                        href="https://github.com/thorners55/portfolio-website"
+                        target="_blank"
+                        >Source code</a
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project">
                   <h3>Budding</h3>
-                  <p aria-hidden="false" class="screen-reader-only">Made using</p>
+                  <p class="screen-reader-only">Made using</p>
                   <ul class="project-tech">
                     <li>JavaScript,</li>
                     <li>React Native,</li>
@@ -437,25 +524,24 @@
                   <div class="hidden-info">
                     <div id="budding-more-info">
                       <div>
-                      <p>
-                        The user places markers on the photo at the
-                        bottom of the pot, the top of the pot, and the
-                        top of the plant.
-                        The app uses the position of these markers to
-                        calculate the distance between the bottom and
-                        top of the pot in pixels, and create a
-                        pixel-to-cm scale using the real-life pot
-                        height.
-                      </p>
-                      <p>
-                        It then uses this scale to calculate the
-                        real-life height of the plant. Each time a
-                        user measures their plant, it is saved as a
-                        snapshot and can be viewed on the plant's
-                        page. Measurements are displayed on a chart,
-                        enabling the tracking of plant growth over
-                        time.
-                      </p>
+                        <p>
+                          The user places markers on the photo at the
+                          bottom of the pot, the top of the pot, and
+                          the top of the plant. The app uses the
+                          position of these markers to calculate the
+                          distance between the bottom and top of the
+                          pot in pixels, and create a pixel-to-cm
+                          scale using the real-life pot height.
+                        </p>
+                        <p>
+                          It then uses this scale to calculate the
+                          real-life height of the plant. Each time a
+                          user measures their plant, it is saved as a
+                          snapshot and can be viewed on the plant's
+                          page. Measurements are displayed on a chart,
+                          enabling the tracking of plant growth over
+                          time.
+                        </p>
                       </div>
 
                       <img
@@ -487,7 +573,7 @@
 
                 <div class="project">
                   <h3>Northcoders News</h3>
-                  <p aria-hidden="false" class="screen-reader-only">Made using</p>
+                  <p class="screen-reader-only">Made using</p>
                   <ul class="project-tech">
                     <li>JavaScript,</li>
                     <li>React,</li>
@@ -496,7 +582,6 @@
                     <li>Jest,</li>
                     <li>Node.js,</li>
                     <li>CSS</li>
-
                   </ul>
                   <p>
                     A Reddit-style discussion website with articles
